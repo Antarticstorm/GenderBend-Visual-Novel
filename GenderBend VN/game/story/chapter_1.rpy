@@ -4,20 +4,22 @@ label chapter_1:
     # SCENE 1 - TANSY'S LAB
     # =========================
 
-    "(You open your eyes to find the ceiling spinning. The air smells strongly of burnt cinnamon and ozone.)"
-    "(As you sit up on the stone workbench, your hair feels unnaturally long, cascading past your shoulders.)" 
-    "(When you clear your throat, the sound that escapes your mouth is a high, soft melodic voice.)"
+    # "(You open your eyes to find the ceiling spinning. The air smells strongly of burnt cinnamon and ozone.)"
+    # "(As you sit up on the stone workbench, your hair feels unnaturally long, cascading past your shoulders.)" 
+    # "(When you clear your throat, the sound that escapes your mouth is a high, soft melodic voice.)"
 
-    mc "Ngh... my head... {w} Wait. What happened to my voice?!"
+    # mc "Ngh... my head... {w} Wait. What happened to my voice?!"
 
-    "(You scramble to reach for a shiny silver flask on the table, staring at your reflection.)" 
-    "(The sharp face of a young male apprentice is gone—replaced by a strikingly beautiful young woman with bright, startled eyes.)"
+    # "(You scramble to reach for a shiny silver flask on the table, staring at your reflection.)" 
+    # "(The sharp face of a young male apprentice is gone—replaced by a strikingly beautiful young woman with bright, startled eyes.)"
     
-    mc "WHAT IN THE SANCTUM’S NAME—?!"
+    # mc "WHAT IN THE SANCTUM’S NAME—?!"
 
-    "(A sudden burst of loud, unrestrained cackling echoes from behind a row of glowing green alembics.)"
+    # "(A sudden burst of loud, unrestrained cackling echoes from behind a row of glowing green alembics.)"
 
-    tansy "BHAHAHA! {w} Oh, by the stars! Look at you! {w} It took three weeks of trial and error, but the Aura-Shift Catalytic Broth actually worked!"
+    show tansy normal at tansy_size
+
+    tansy "BHAHAHA! Oh, by the stars! Look at you! {w} It took three weeks of trial and error, but the Aura-Shift Catalytic Broth actually worked!"
 
     "(Tansy strides over, resting her elbows on your bench with an enormous, wicked grin. She pokes your cheek with the feather end of her quill.)"
 
@@ -31,7 +33,7 @@ label chapter_1:
 
 
     tansy "Here’s the catch, little wizard: brewing the Alkahest requires six rare catalyst ingredients scattered across Mirthhaven's districts." 
-    tansy "And since my hands are tied stabilizing the lab warding... {w} you get to go on a city-wide scavenger hunt.!"
+    tansy "And since my hands are tied stabilizing the lab warding... {w} you get to go on a city-wide scavenger hunt!"
 
     # CHOICE 1
     # Does NOT affect the ending.
@@ -72,7 +74,7 @@ label chapter_1:
 
     "(Clara walks around her desk, gently taking your arm and guiding you to a plush velvet armchair by the hearth. She pours a steaming cup of spiced tea and places it in your hands.)"
 
-    clara "Drink this. It will settle your nerves. That woman is a absolute force of nature, but she certainly keeps life in Mirthhaven entertaining. Now, tell me—what did she send you here for?"
+    clara "Drink this. It will settle your nerves. That woman is an absolute force of nature, but she certainly keeps life in Mirthhaven entertaining. Now, tell me—what did she send you here for?"
 
     mc "She needs Sunstone Powder from your guild vault to stabilize the Alkahest of True Form."
 
@@ -114,17 +116,13 @@ label chapter_1:
 
     tariq "An accident? Well, well... I'd call it an upgrade, little wizard. You carry the look surprisingly well."
 
-    MC: "I’m not looking for compliments, Tariq. I’m looking for cure ingredients."
+    mc "I’m not looking for compliments, Tariq. I’m looking for cure ingredients."
 
     tariq "Oh, I know. I saw the parchment in your cloak pocket. But if you think Sunstone Powder is hard to get, wait until you try finding the Midnight Lotus Petal in the Sun-Gilded Market. The contraband merchants don't hand those out for tea and smiles."
 
     "(Tariq leans in slightly, his voice dropping to an intriguing whisper as his coin catches the firelight.)"
 
     tariq "When you're ready for a real deal, come find me in the backroom stalls. That is... if you've got the wits to bargain with a fox."
-
-
-    tariq "When you're ready for a real deal, come find me in the backroom stalls."
-
 
     # =========================
     # CHOICE 3 - IMPORTANT
@@ -158,8 +156,7 @@ label chapter_1_ending_a:
 
     $ story_progress += 1
 
-    return
-    #jump chapter_2
+    jump chapter_2
 
 
 label chapter_1_ending_b:
@@ -176,8 +173,7 @@ label chapter_1_ending_b:
 
     $ story_progress += 1
 
-    return
-    #jump chapter_2
+    jump chapter_2
 
 
 label chapter_1_ending_c:
@@ -194,5 +190,4 @@ label chapter_1_ending_c:
 
     $ story_progress += 1
 
-    return
-    #jump chapter_2
+    jump chapter_2

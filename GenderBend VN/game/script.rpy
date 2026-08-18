@@ -8,6 +8,7 @@ default clara_event_1_seen = False
 default tariq_event_1_seen = False
 
 default chapter_1_ending = None
+default chapter_2_ending = None
 
 label start:
 
