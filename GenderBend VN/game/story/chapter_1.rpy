@@ -4,13 +4,34 @@ label chapter_1:
     # SCENE 1 - TANSY'S LAB
     # =========================
 
-    "You open your eyes..."
+    "(You open your eyes to find the ceiling spinning. The air smells strongly of burnt cinnamon and ozone.)"
+    "(As you sit up on the stone workbench, your hair feels unnaturally long, cascading past your shoulders.)" 
+    "(When you clear your throat, the sound that escapes your mouth is a high, soft melodic voice.)"
 
-    mc "Ngh... my head... Wait. What happened to my voice?!"
+    mc "Ngh... my head... {w} Wait. What happened to my voice?!"
 
-    # Rest of story...
+    "(You scramble to reach for a shiny silver flask on the table, staring at your reflection.)" 
+    "(The sharp face of a young male apprentice is gone—replaced by a strikingly beautiful young woman with bright, startled eyes.)"
+    
+    mc "WHAT IN THE SANCTUM’S NAME—?!"
 
-    tansy "Here's the catch, little wizard..."
+    "(A sudden burst of loud, unrestrained cackling echoes from behind a row of glowing green alembics.)"
+
+    tansy "BHAHAHA! {w} Oh, by the stars! Look at you! {w} It took three weeks of trial and error, but the Aura-Shift Catalytic Broth actually worked!"
+
+    "(Tansy strides over, resting her elbows on your bench with an enormous, wicked grin. She pokes your cheek with the feather end of her quill.)"
+
+    tansy "Relax, my dear apprentice! You aren't dead, and your mana channels are completely intact. Sure, I accidentally spilled the catalyst into your morning tea instead of the testing beaker... but look at the silver lining! The magic is delightfully stable!"
+
+    mc "Tansy! You transformed me into a woman! How is this stable?!"
+
+    tansy "Details, details! An arch-mage never dwells on minor side effects. Besides, I already know the cure: the Alkahest of True Form. One swig of that golden brew, and you’ll be shifted back to your handsome old self in no time."
+
+    "(She pulls a parchment roll from her leather coat and snaps it open with a flourish. A list of six complex ingredients is drawn in gold ink.)"
+
+
+    tansy "Here’s the catch, little wizard: brewing the Alkahest requires six rare catalyst ingredients scattered across Mirthhaven's districts." 
+    tansy "And since my hands are tied stabilizing the lab warding... {w} you get to go on a city-wide scavenger hunt.!"
 
     # CHOICE 1
     # Does NOT affect the ending.
@@ -26,21 +47,34 @@ label chapter_1:
         "Fine. Hand over the list. The faster I get these ingredients, the faster I get my body back.":
             tansy "Ooh, pragmatic! I knew I picked the right apprentice."
 
-    # All three choices automatically merge here.
 
-    tansy "Your first stop is The Wanderlust Wheel..."
-
+    tansy "Your first stop is The Wanderlust Wheel in the central merchant district." 
+    tansy "Go find Clara Vane. She holds the first key to our brew: Sunstone Powder."
+    tansy "Tell her Tansy sent you—and try not to trip over your new hemline on the way out!"
 
 
     # =========================
     # SCENE 2 - CLARA
     # =========================
 
-    "You enter the cozy, oak-paneled headquarters..."
+    "(You enter the cozy, oak-paneled headquarters of the merchant guild.)" 
+    "(Maps and velvet cases cover the walls. Clara Vane stands behind a large polished desk, carefully reviewing a ledger.)"
 
-    clara "Welcome to The Wanderlust Wheel!"
+    clara "Welcome to The Wanderlust Wheel! {w} How can the guild help you today, young lady—"
 
-    # Story continues...
+    "(Clara pauses, taking in your frantic expression, your oversized sorcerer robes, and the unmistakable Sanctum apprentice crest pinned to your cloak.)"
+
+    clara "Wait... those robes. That magic signature... Is that you, little apprentice?"
+
+    mc "Clara... please don't laugh. Tansy spiked my tea with an untested catalytic broth."
+
+    clara "Oh, my poor dear! Tansy strikes again!"
+
+    "(Clara walks around her desk, gently taking your arm and guiding you to a plush velvet armchair by the hearth. She pours a steaming cup of spiced tea and places it in your hands.)"
+
+    clara "Drink this. It will settle your nerves. That woman is a absolute force of nature, but she certainly keeps life in Mirthhaven entertaining. Now, tell me—what did she send you here for?"
+
+    mc "She needs Sunstone Powder from your guild vault to stabilize the Alkahest of True Form."
 
     # CHOICE 2
     # Also does NOT affect the ending.
@@ -58,22 +92,38 @@ label chapter_1:
 
     # All three merge again.
 
-    clara "Luckily for you, Sunstone Powder is something I can authorize directly."
+    clara "Luckily for you, Sunstone Powder is something I can authorize directly. Consider it a gift from the guild to set right Tansy's chaos."
 
-    clara "Here you are. Ingredient number one: Sunstone Powder."
+    "(Clara pulls a small iron key from her apron, unlocks a decorative wall safe, and retrieves a velvet pouch filled with shimmering, golden dust. She places it securely into your hands.)"
 
+    clara "Here you are. Ingredient number one: Sunstone Powder. One step closer to your true form."
 
+    #SFX
 
     # =========================
     # SCENE 3 - TARIQ
     # =========================
 
-    tariq "Now what do we have here?"
+    "(A smooth, fox-like voice cuts through the quiet room as a tall, sharp-dressed man leans lazily against the doorframe, flipping an obsidian coin between his fingers.)"
 
-    # Rest of Tariq scene...
+    tariq "Now what do we have here? Dear sister, since when did we start giving away vault catalysts to mysterious, pretty sorceresses?"
+
+    clara "Tariq... do behave. This is Tansy's apprentice. There was an... accidental potion mishap this morning."
+
+    "(Tariq pushes off the doorframe, strolling closer with a slow, deliberate stride. His dark eyes sparkle with sharp amusement as he inspects you from head to toe.)"
+
+    tariq "An accident? Well, well... I'd call it an upgrade, little wizard. You carry the look surprisingly well."
+
+    MC: "I’m not looking for compliments, Tariq. I’m looking for cure ingredients."
+
+    tariq "Oh, I know. I saw the parchment in your cloak pocket. But if you think Sunstone Powder is hard to get, wait until you try finding the Midnight Lotus Petal in the Sun-Gilded Market. The contraband merchants don't hand those out for tea and smiles."
+
+    "(Tariq leans in slightly, his voice dropping to an intriguing whisper as his coin catches the firelight.)"
+
+    tariq "When you're ready for a real deal, come find me in the backroom stalls. That is... if you've got the wits to bargain with a fox."
+
 
     tariq "When you're ready for a real deal, come find me in the backroom stalls."
-
 
 
     # =========================
@@ -108,7 +158,8 @@ label chapter_1_ending_a:
 
     $ story_progress += 1
 
-    jump chapter_2
+    return
+    #jump chapter_2
 
 
 label chapter_1_ending_b:
@@ -125,7 +176,8 @@ label chapter_1_ending_b:
 
     $ story_progress += 1
 
-    jump chapter_2
+    return
+    #jump chapter_2
 
 
 label chapter_1_ending_c:
@@ -142,4 +194,5 @@ label chapter_1_ending_c:
 
     $ story_progress += 1
 
-    jump chapter_2
+    return
+    #jump chapter_2
