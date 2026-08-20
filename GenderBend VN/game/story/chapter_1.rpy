@@ -4,18 +4,25 @@ label chapter_1:
     # SCENE 1 - TANSY'S LAB
     # =========================
 
-    # "(You open your eyes to find the ceiling spinning. The air smells strongly of burnt cinnamon and ozone.)"
-    # "(As you sit up on the stone workbench, your hair feels unnaturally long, cascading past your shoulders.)" 
-    # "(When you clear your throat, the sound that escapes your mouth is a high, soft melodic voice.)"
+    $ mc_name = renpy.input("What is your name?", default="")
 
-    # mc "Ngh... my head... {w} Wait. What happened to my voice?!"
+    $ mc_name = mc_name.strip()
 
-    # "(You scramble to reach for a shiny silver flask on the table, staring at your reflection.)" 
-    # "(The sharp face of a young male apprentice is gone—replaced by a strikingly beautiful young woman with bright, startled eyes.)"
+    if mc_name == "":
+        $ mc_name = "Apprentice"
+
+    "(You open your eyes to find the ceiling spinning. The air smells strongly of burnt cinnamon and ozone.)"
+    "(As you sit up on the stone workbench, your hair feels unnaturally long, cascading past your shoulders.)" 
+    "(When you clear your throat, the sound that escapes your mouth is a high, soft melodic voice.)"
+
+    mc "Ngh... my head... {w} Wait. What happened to my voice?!"
+
+    "(You scramble to reach for a shiny silver flask on the table, staring at your reflection.)" 
+    "(The sharp face of a young male apprentice is gone—replaced by a strikingly beautiful young woman with bright, startled eyes.)"
     
-    # mc "WHAT IN THE SANCTUM’S NAME—?!"
+    mc "WHAT IN THE SANCTUM’S NAME—?!"
 
-    # "(A sudden burst of loud, unrestrained cackling echoes from behind a row of glowing green alembics.)"
+    "(A sudden burst of loud, unrestrained cackling echoes from behind a row of glowing green alembics.)"
 
     show tansy normal at tansy_size
 
