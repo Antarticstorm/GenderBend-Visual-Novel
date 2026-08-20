@@ -1,5 +1,6 @@
 label chapter_3:
 
+    call chapter_transition(3, "Shadow Bargains & The Crucible")
     # =========================
     # SCENE 1 - Shaded Silk & Cursed Trinkets
     # =========================

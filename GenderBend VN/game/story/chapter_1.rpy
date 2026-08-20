@@ -1,5 +1,6 @@
 label chapter_1:
 
+    call chapter_transition(1, "The Mishap & The Master Plan")
     # =========================
     # SCENE 1 - TANSY'S LAB
     # =========================
@@ -26,7 +27,10 @@ label chapter_1:
 
     show tansy normal at tansy_size
 
+
     tansy "BHAHAHA! Oh, by the stars! Look at you! {w} It took three weeks of trial and error, but the Aura-Shift Catalytic Broth actually worked!"
+
+    hide tansy
 
     "(Tansy strides over, resting her elbows on your bench with an enormous, wicked grin. She pokes your cheek with the feather end of her quill.)"
 
@@ -162,8 +166,12 @@ label chapter_1_ending_a:
     "With the Sunstone Powder secured in your pouch and Tariq's curiosity piqued, you step out of The Wanderlust Wheel with newfound confidence, ready to brave the docks of Nautilus Point."
 
     $ story_progress += 1
+    $ chapter = 1
 
-    jump chapter_2
+    $ day = 1
+    $ main_story_day = 3
+
+    jump free_time
 
 
 label chapter_1_ending_b:
@@ -179,8 +187,12 @@ label chapter_1_ending_b:
     "Holding the Sunstone Powder tightly, you march out of the guild hall with unwavering determination, ready to take on whatever challenges lie ahead at Nautilus Point."
 
     $ story_progress += 1
+    $ chapter = 1
 
-    jump chapter_2
+    $ day = 1
+    $ main_story_day = 3
+
+    jump free_time
 
 
 label chapter_1_ending_c:
@@ -196,5 +208,9 @@ label chapter_1_ending_c:
     "Flustered but holding ingredient number one—the Sunstone Powder—safely in hand, you hurry out of the office, eager to put distance between yourself and Tariq as you head toward the coastal breeze of Nautilus Point."
 
     $ story_progress += 1
+    $ chapter = 1
 
-    jump chapter_2
+    $ day = 1
+    $ main_story_day = 3
+
+    jump free_time

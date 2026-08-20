@@ -1,5 +1,6 @@
 label chapter_5:
 
+    call chapter_transition(5, "Rebirth & A Master's Pride")
     # =========================
     # SCENE 1 - The Drinking of the Alkahest
     # =========================

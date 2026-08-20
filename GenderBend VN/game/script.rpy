@@ -1,4 +1,4 @@
-﻿default chapter = 3
+﻿default chapter = 1
 default story_progress = 0
 
 default clara_route = 0
@@ -18,4 +18,13 @@ default mc_name = "Apprentice"
 label start:
 
     # Chapter 1 begins
-    jump chapter_2
+    jump chapter_1
+
+# =========================
+# CALENDAR SYSTEM
+# =========================
+
+default day = 1
+
+# Day on which the next mandatory story event occurs.
+default main_story_day = 3

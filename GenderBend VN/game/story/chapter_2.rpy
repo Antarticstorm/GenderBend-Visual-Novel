@@ -1,5 +1,6 @@
 label chapter_2:
 
+    call chapter_transition(2, "Muscle, Fire & The Docks")
     # =========================
     # SCENE 1 - Salt-Air & Strained Ropes
     # =========================

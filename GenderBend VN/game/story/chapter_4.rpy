@@ -1,5 +1,6 @@
 label chapter_4:
 
+    call chapter_transition(4, "The Double-Witch Lab Panic")
     # =========================
     # SCENE 1 - Sparks & Tripping Hazards
     # =========================
