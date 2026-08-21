@@ -172,11 +172,8 @@ label chapter_2_ending_a:
 
     "The whole table cheers as you cork the glowing flask, holding two completed ingredients while Barek and Bao toast to your fearlessness."
 
-    $ story_progress += 1
-    $ chapter = 3
-
-    jump chapter_3
-
+    $ setup_free_time(2)
+    jump free_time
 
 label chapter_2_ending_b:
 
@@ -190,10 +187,8 @@ label chapter_2_ending_b:
 
     "With your magic control praised by both your mentor and Mirthhaven's greatest smith, you secure your third ingredient with complete composure."
 
-    $ story_progress += 1
-    $ chapter = 3
-
-    jump chapter_3
+    $ setup_free_time(2)
+    jump free_time
 
 
 label chapter_2_ending_c:
@@ -208,7 +203,5 @@ label chapter_2_ending_c:
 
     "The taproom bursts into laughter as you cap the glowing vial, enjoying the wild, jovial energy of the docks as you prepare for the next leg of your quest."
 
-    $ story_progress += 1
-    $ chapter = 3
-
-    jump chapter_3
+    $ setup_free_time(2)
+    jump free_time

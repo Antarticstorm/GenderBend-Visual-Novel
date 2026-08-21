@@ -192,12 +192,7 @@ label chapter_1_ending_a:
 
     "With the Sunstone Powder secured in your pouch and Tariq's curiosity piqued, you step out of The Wanderlust Wheel with newfound confidence, ready to brave the docks of Nautilus Point."
 
-    $ story_progress += 1
-    $ chapter = 1
-
-    $ day = 1
-    $ main_story_day = 3
-
+    $ setup_free_time(1)
     jump free_time
 
 
@@ -213,14 +208,8 @@ label chapter_1_ending_b:
 
     "Holding the Sunstone Powder tightly, you march out of the guild hall with unwavering determination, ready to take on whatever challenges lie ahead at Nautilus Point."
 
-    $ story_progress += 1
-    $ chapter = 1
-
-    $ day = 1
-    $ main_story_day = 3
-
+    $ setup_free_time(1)
     jump free_time
-
 
 label chapter_1_ending_c:
 
@@ -234,10 +223,5 @@ label chapter_1_ending_c:
 
     "Flustered but holding ingredient number one—the Sunstone Powder—safely in hand, you hurry out of the office, eager to put distance between yourself and Tariq as you head toward the coastal breeze of Nautilus Point."
 
-    $ story_progress += 1
-    $ chapter = 1
-
-    $ day = 1
-    $ main_story_day = 3
-
+    $ setup_free_time(1)
     jump free_time

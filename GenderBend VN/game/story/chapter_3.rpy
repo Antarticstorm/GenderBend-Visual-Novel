@@ -150,10 +150,8 @@ label chapter_3_ending_a:
 
     bruni "Ingredient number five: Steel-Core Marrow! You earned it, sorcerer! Any time you want a real commission in the Vanguard, my doors are open!"
 
-    $ story_progress += 1
-    $ chapter = 4
-
-    jump chapter_4
+    $ setup_free_time(3)
+    jump free_time
 
 
 label chapter_3_ending_b:
@@ -171,10 +169,8 @@ label chapter_3_ending_b:
 
     bruni "You've got raw iron in your core, scholar! Few recruits can take a hit like that without breaking a shoulder. Here is your Steel-Core Marrow—use it well!"
 
-    $ story_progress += 1
-    $ chapter = 4
-
-    jump chapter_4
+    $ setup_free_time(3)
+    jump free_time
 
 
 label chapter_3_ending_c:
@@ -200,7 +196,5 @@ label chapter_3_ending_c:
 
     bruni "Take your marrow and get out of my ring. You have the ingredient, but you leave here with broken gear, bruised ribs, and zero honor. Learn how to fight properly before you get yourself killed."
 
-    $ story_progress += 1
-    $ chapter = 4
-
-    jump chapter_4
+    $ setup_free_time(3)
+    jump free_time

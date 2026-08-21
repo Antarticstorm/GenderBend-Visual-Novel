@@ -129,10 +129,8 @@ label chapter_4_ending_a:
 
     "(The golden potion settles into a crystal goblet, radiating pure reversal magic. You stand over the completed cure with total mastery.)"
 
-    $ story_progress += 1
-    $ chapter = 5
-
-    jump chapter_5
+    $ setup_free_time(4)
+    jump free_time
 
 
 label chapter_4_ending_b:
@@ -148,10 +146,8 @@ label chapter_4_ending_b:
 
     "(The glowing potion fills the goblet, perfectly matched to your personal spell-weave.)"
 
-    $ story_progress += 1
-    $ chapter = 5
-
-    jump chapter_5
+    $ setup_free_time(4)
+    jump free_time
 
 
 label chapter_4_ending_c:
@@ -177,7 +173,5 @@ label chapter_4_ending_c:
 
     "(You hold the dark, foul-smelling goblet with bandaged, throbbing hands. The cure is barely usable, leaving you injured and forced to drink an agonizingly flawed potion.)"
 
-    $ story_progress += 1
-    $ chapter = 5
-
-    jump chapter_5
+    $ setup_free_time(4)
+    jump free_time

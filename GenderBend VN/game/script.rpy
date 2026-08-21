@@ -12,6 +12,13 @@ default chapter_5_ending = None
 
 default mc_name = "Apprentice"
 
+# =========================
+# FREE ACTION SYSTEM
+# =========================
+
+default max_free_actions = 2
+default free_actions = 0
+
 label start:
 
     # Chapter 1 begins
@@ -22,9 +29,6 @@ label start:
 # =========================
 
 default day = 1
-default time_slot = "morning"
-
-default main_story_day = 3
 
 default free_time_active = False
 
@@ -42,23 +46,10 @@ default clara_route_progress = 0
 default clara_affection = 0
 default clara_kid_warning = False
 default clara_romance_locked = False
-
-# Tansy prerequisite
-default tansy_route_triggered = False
+default clara_route_locked = False
 
 # Clara route ending
 default clara_ending = None
-
-
-# =========================
-# TARIQ ROUTE
-
-default tariq_route_unlocked = True
-default tariq_route_progress = 0
-default tariq_affection = 0
-
-default tariq_romance_locked = False
-default tariq_route_locked = False
 
 # =========================
 # TANSY SPECIAL ROUTE
@@ -70,6 +61,18 @@ default tansy_affection = 0
 
 default tansy_romance_locked = False
 default tansy_route_locked = False
-
-# Has the player already been offered the special route?
 default tansy_route_offer_seen = False
+
+default tansy_ending = None
+
+# =========================
+# TARIQ ROUTE
+
+default tariq_route_unlocked = True
+default tariq_route_progress = 0
+
+default tariq_affection = 0
+default tariq_romance_locked = False
+default tariq_route_locked = False
+
+default tariq_ending = Nonee
