@@ -5,6 +5,34 @@ label chapter_1:
     # SCENE 1 - TANSY'S LAB
     # =========================
 
+    # [SPRITE: Tansy — Grinning]
+    show tansy tease at tansy_size
+
+    tansy "Record check, one two, three... Alright! Let's talk about my favorite star apprentice—the one currently running around Mirthhaven trying not to trip over their own spell-robe!"
+
+    tansy "Meet our lead sorcerer-in-training: bright, ridiculously persistent, and entirely incapable of staying inside a classroom." 
+
+    show tansy talk at tansy_size
+
+    tansy "While most Sanctum scholars spend four years glued to dusty spellbooks until they turn as grey as gargoyles, my apprentice learned magic the practical way—by getting dragged across all six districts of Mirthhaven running errands for my 'highly experimental' alchemy trials."
+
+    tansy "Naturally, walking around a bustling port city with glowing magical reagents in your satchel means you tend to bump into... eccentric locals. Before the big potion disaster hit, they were just familiar faces around town:"
+
+    show tansy surprised1 at tansy_size
+
+    tansy "'Bo' Shen & Barek Tidejaw: Met 'em down at Nautilus Point while hunting for bioluminescent fish-scales. Bo almost mistook my apprentice for a forge-bellows assistant, and Barek threatened to throw them into the harbor if they didn't stop levitating the dock crates. Standard greeting!"
+
+    tansy "Clara & Tariq Vane: Bumps into them in the trade square. Tariq tried to sell them 'genuine dragon teeth' (spoiler: painted shark teeth from Barek), while Clara took one look at their ragged apprentice cloak and offered a quick lesson on proper district diplomacy."
+    
+    show tansy talk at tansy_size
+
+    tansy "Commander Domitilla Bruni: Knows them as 'that loud Sanctum kid who keeps setting off the Vanguard's anti-magic wards near the Iron Ring gate.' She threatened three days of guard duty, but secretly respects anyone who doesn't faint when she draws that massive sword."
+
+    tansy "Ellianna Sylvane: The absolute saint of the Sanctum. Ellie is the only student with enough patience to help my apprentice mop up exploded potion cauldrons without reporting us to the Headmaster."
+
+    hide tansy
+
+    #Player name
     $ mc_name = renpy.input("What is your name?", default="")
 
     $ mc_name = mc_name.strip()
@@ -29,8 +57,6 @@ label chapter_1:
 
 
     tansy "BHAHAHA! Oh, by the stars! Look at you! {w} It took three weeks of trial and error, but the Aura-Shift Catalytic Broth actually worked!"
-
-    hide tansy
 
     "(Tansy strides over, resting her elbows on your bench with an enormous, wicked grin. She pokes your cheek with the feather end of her quill.)"
 
@@ -111,6 +137,7 @@ label chapter_1:
 
     clara "Here you are. Ingredient number one: Sunstone Powder. One step closer to your true form."
 
+    hide tansy
     #SFX
 
     # =========================

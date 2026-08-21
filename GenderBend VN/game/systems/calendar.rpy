@@ -4,110 +4,122 @@
 
 label free_time:
 
-    # Check whether we've reached
-    # the next mandatory story date.
+    $ free_time_active = True
+
+    # ==================================
+    # MAIN STORY DEADLINE
+    # ==================================
 
     if day >= main_story_day:
+
+        $ free_time_active = False
         jump main_story_event
 
-    # Otherwise open the map.
-    call screen mirthaven_map
 
-    # Safety fallback.
+    # ==================================
+    # SPECIAL ROUTE EVENTS
+    # ==================================
+
+    if (
+        chapter >= 3
+        and chapter <= 4
+        and tansy_route_triggered
+        and not tansy_route_offer_seen
+        and not tansy_route_locked
+    ):
+
+        jump tansy_route_offer
+
+
+    # ==================================
+    # NORMAL FREE ACTION
+    # ==================================
+
+    call screen mirthhaven_map
+
     jump free_time
 
-screen mirthaven_map():
+# =========================
+# TIME ADJUSTMENT
+# =========================
+label advance_time:
+
+    if time_slot == "morning":
+
+        $ time_slot = "afternoon"
+
+    elif time_slot == "afternoon":
+
+        $ time_slot = "evening"
+
+    elif time_slot == "evening":
+
+        $ time_slot = "morning"
+        $ day += 1
+
+    jump free_time
+
+#PLACE HOLDER SYSTEM
+screen mirthhaven_map():
 
     tag menu
 
-    text "Mirthhaven" xalign 0.5 ypos 40 size 50
+    text "Mirthhaven":
+        xalign 0.5
+        ypos 40
+        size 50
 
-    text "Day [day]" xalign 0.5 ypos 110 size 35
+    text "Day [day]":
+        xalign 0.5
+        ypos 110
+        size 35
 
-    text "Next Main Story: Day [main_story_day]" xalign 0.5 ypos 155
+    text "[time_slot!c]":
+        xalign 0.5
+        ypos 155
+        size 28
 
+    text "Main Story: Day [main_story_day]":
+        xalign 0.5
+        ypos 195
+        size 24
 
-    # Clara
     textbutton "Wanderlust Wheel - Clara":
         xpos 150
-        ypos 300
-        action Jump("visit_clara")
+        ypos 320
+        action Jump("label clara_route_event:")
 
+        
+    textbutton "Rest / Pass Time":
+        xalign 0.5
+        ypos 750
+        action Jump("pass_time")
 
-    # Tariq
-    textbutton "Sun-Gilded Market - Tariq":
-        xpos 600
-        ypos 300
-        action Jump("visit_tariq")
+label pass_time:
 
+    "You decide to spend some time resting."
 
-    # Barek
-    textbutton "Nautilus Point - Barek":
-        xpos 150
-        ypos 500
-        action Jump("visit_barek")
+    jump advance_time
 
+label clara_route_event:
 
-    # Ellie
-    textbutton "Solarium Sanctum - Ellie":
-        xpos 600
-        ypos 500
-        action Jump("visit_ellie")
+    if clara_route_locked:
+        jump free_time
 
-label visit_clara:
+    if clara_route_progress == 0:
+        jump clara_chapter_1
 
-    clara "Oh! It's good to see you again, [mc_name]."
+    elif clara_route_progress == 1:
+        jump clara_chapter_2
 
-    clara "How is your search progressing?"
+    elif clara_route_progress == 2:
+        jump clara_chapter_3
 
-    mc "Slowly, but I'm getting there."
+    elif clara_route_progress == 3:
+        jump clara_chapter_4
 
-    clara "Then make sure you don't exhaust yourself."
-
-    $ clara_route += 1
-
-    $ day += 1
-
-    jump free_time
-
-label visit_tariq:
-
-    tariq "Back already, little wizard?"
-
-    mc "Don't sound so disappointed."
-
-    tariq "Quite the opposite."
-
-    $ tariq_route += 1
-
-    $ day += 1
-
-    jump free_time
-
-label visit_barek:
-
-    barek "Back at the docks, wizard?"
-
-    mc "I had some free time."
-
-    barek "Then you're always welcome here!"
-
-    $ day += 1
-
-    jump free_time
-
-
-label visit_ellie:
-
-    ellie "Oh! Hello, [mc_name]!"
-
-    mc "Busy?"
-
-    ellie "Always..."
-
-    $ day += 1
-
-    jump free_time
+    else:
+        jump free_time
 
 label main_story_event:
 
