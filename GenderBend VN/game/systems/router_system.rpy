@@ -130,3 +130,79 @@ label tansy_route_event:
         jump tansy_chapter_4
 
     jump free_time
+
+# =========================
+# FINISH TANSY CHAPTER 3
+# =========================
+
+label finish_tansy_chapter_3:
+
+    $ tansy_route_progress = 4
+    $ finish_character_action("tansy")
+
+    jump free_time
+
+# =========================
+# YOU FAILED TANSY 
+# =========================
+
+label finish_tansy_failed_event:
+
+    $ tansy_route_progress = 5
+    $ finish_character_action("tansy")
+
+    jump free_time  
+
+# =========================
+# FINISH TANSY CHAPTER 4
+# =========================
+
+label finish_tansy_chapter_4:
+
+    $ tansy_route_progress = 5
+    $ finish_character_action("tansy")
+
+    jump free_time
+
+
+# ============================================================
+# TARIQ EVENT RESOLVER
+# ============================================================
+
+label tariq_route_event:
+
+    if not tariq_route_unlocked or tariq_route_locked:
+        jump free_time
+
+    if tariq_route_progress == 0 and chapter >= 1:
+        jump tariq_chapter_1
+
+    elif tariq_route_progress == 1 and chapter >= 2:
+        jump tariq_chapter_2
+
+    elif tariq_route_progress == 2 and chapter >= 3:
+        jump tariq_chapter_3
+
+    elif tariq_route_progress == 3 and chapter >= 4:
+        jump tariq_chapter_4
+
+    jump free_time
+
+# ============================================================
+# COMPLETION HELPER
+# ============================================================
+
+label finish_clara_event:
+
+    $ clara_route_progress += 1
+    $ finish_character_action("clara")
+
+    jump free_time
+
+
+label finish_tariq_event:
+
+    $ tariq_route_progress += 1
+    $ finish_character_action("tariq")
+
+    jump free_time

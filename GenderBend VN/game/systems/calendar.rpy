@@ -32,15 +32,6 @@ label free_time:
 
     jump free_time
 
-# =========================
-# CHARACTER ACTION COMPLETE
-# =========================
-
-label complete_free_action:
-
-    $ free_actions -= 1
-
-    jump free_time
 
 # =========================
 # START FREE-TIME PERIOD
@@ -61,11 +52,36 @@ label start_free_time(completed_chapter):
 # =========================
 init python:
 
+
     def setup_free_time(completed_chapter):
+
         store.story_progress += 1
         store.chapter = completed_chapter
+
         store.free_actions = store.max_free_actions
         store.free_time_active = True
+
+        # New free-time period.
+        # Everyone becomes visitable again.
+        store.characters_visited_this_period = []
+    
+    def can_visit_character(character_id):
+
+        # Chapter 4 is the catch-up / commitment period.
+        # Repeat visits are allowed.
+        if store.chapter == 4:
+            return True
+
+        # Chapters 1-3:
+        # Character can only be selected once per period.
+        return character_id not in store.characters_visited_this_period
+
+    def finish_character_action(character_id):
+
+        if character_id not in store.characters_visited_this_period:
+            store.characters_visited_this_period.append(character_id)
+
+        store.free_actions -= 1
 
 #PLACE HOLDER MAP LAYOUT SYSTEM
 screen mirthhaven_map():
@@ -93,7 +109,7 @@ screen mirthhaven_map():
     # CLARA
     # =========================
 
-    if clara_event_available():
+    if clara_event_available() and can_visit_character("clara"):
 
         textbutton "Wanderlust Wheel - Clara":
             xpos 150
@@ -104,10 +120,10 @@ screen mirthhaven_map():
     # TANSY
     # =========================
 
-    if tansy_event_available():
+    if tansy_event_available() and can_visit_character("tansy"):
 
         textbutton "Solarium Sanctum - Tansy":
-            xpos 600
+            xpos 900
             ypos 320
             action Jump("tansy_route_event")
 
@@ -115,7 +131,7 @@ screen mirthhaven_map():
     # TARIQ
     # =========================
 
-    if tariq_event_available():
+    if tariq_event_available() and can_visit_character("tariq"):
 
         textbutton "Sun-Gilded Market - Tariq":
             xpos 600
@@ -160,3 +176,24 @@ label main_story_event:
         jump chapter_5
 
     return
+
+# =========================
+# CHARACTER ACTION COMPLETE
+# =========================
+
+label complete_free_action:
+
+    $ free_actions -= 1
+
+    jump free_time
+
+
+#=========================
+# Checks for what chapter you're on
+#========================= 
+label complete_character_action(character_id):
+
+    $ characters_visited_this_period.append(character_id)
+    $ free_actions -= 1
+
+    jump free_time

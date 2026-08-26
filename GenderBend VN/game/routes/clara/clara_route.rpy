@@ -1,5 +1,5 @@
 # Clara Vane Route — The Hearth Beyond the Ledger
-# Requires the Clara/Tansy state variables and complete_free_action backend.
+# Requires the Clara/Tansy state variables and finish_clara_event backend.
 
 label clara_chapter_1:
     "The Guildmaster's office is usually an oasis of order. Today, mountains of manifests, tax disputes, and Sanctum reagent permits cover Clara's desk."
@@ -66,13 +66,13 @@ label clara_chapter_1_tansy_scene:
     tansy "You actually brought me lunch."
     mc "Someone has to keep our lead alchemist alive."
     tansy "Tell Clara her chicken saved my life... and tell yourself that you just earned priority status in my laboratory."
-    $ clara_route_progress = 1
-    jump complete_free_action
+
+    jump finish_clara_event
 
 label clara_chapter_1_clara_only:
     "You remain in Clara's quiet office, sharing hot tea and conversation until the afternoon shadows lengthen."
-    $ clara_route_progress = 1
-    jump complete_free_action
+    
+    jump finish_clara_event
 
 
 label clara_chapter_2:
@@ -123,8 +123,7 @@ label clara_chapter_2:
             mc "It's my official duty as your favorite scholar."
             clara "Favorite scholar, hmm? You're playing a dangerous game, little sorcerer..."
 
-    $ clara_route_progress = 2
-    jump complete_free_action
+    jump finish_clara_event
 
 
 label clara_chapter_3:
@@ -170,14 +169,12 @@ label clara_chapter_3_romance_continue:
         "You pull Clara close and share a passionate kiss beneath the starlight."
     else:
         "You hold her hand against your heart. Clara kisses your cheek and rests her head against your shoulder."
-    $ clara_route_progress = 3
-    jump complete_free_action
+    jump finish_clara_event
 
 label clara_chapter_3_family:
     "Clara wraps a motherly arm around your shoulders in an affectionate side-hug."
     clara "You're a good kid, sorcerer. You and Tariq really are the little brothers I never knew I needed."
-    $ clara_route_progress = 3
-    jump complete_free_action
+    jump finish_clara_event
 
 
 label clara_chapter_4:
@@ -232,16 +229,15 @@ label clara_ending_true:
     clara "You made me feel wild, beautiful, and desperately in love."
     clara "I don't care how busy my days get—my nights will always belong to you."
     "Clara pulls you into a deep kiss beneath the warm glow of the Guildhall hearth."
-    $ clara_route_progress = 4
-    jump complete_free_action
+    
+    jump finish_clara_event
 
 label clara_ending_good:
     $ clara_ending = "anchored_in_devotion"
     "Clara rests her head against your shoulder beside the warm Guildhall hearth."
     clara "When I'm in your arms, time doesn't mean a thing. You are my anchor, wizard."
     "She presses a tender kiss to your lips."
-    $ clara_route_progress = 4
-    jump complete_free_action
+    jump finish_clara_event
 
 label clara_chapter_4_family_path:
     $ clara_romance_locked = True
@@ -250,5 +246,4 @@ label clara_chapter_4_family_path:
     clara "You're family now, sorcerer. Official Guild family."
     clara "If anyone in Mirthhaven ever gives you trouble, you come tell your big sister."
     "Though romantic love was not found, you earn an unshakeable place in Clara and Tariq's family."
-    $ clara_route_progress = 4
-    jump complete_free_action
+    jump finish_clara_event

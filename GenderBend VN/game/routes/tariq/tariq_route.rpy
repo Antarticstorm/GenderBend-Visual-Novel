@@ -123,9 +123,7 @@ label tariq_chapter_1:
             tariq "Is that a threat, or a business proposal? Because either way, you have my undivided attention."
 
 
-    $ tariq_route_progress = 1
-
-    jump complete_free_action
+    jump finish_tariq_event
 
 
 # ============================================================
@@ -234,9 +232,7 @@ label tariq_chapter_2:
             tariq "Is that a challenge? I'm a sore loser... and a very creative winner."
 
 
-    $ tariq_route_progress = 2
-
-    jump complete_free_action
+    jump finish_tariq_event
 
 
 # ============================================================
@@ -330,9 +326,7 @@ label tariq_chapter_3:
 
             tariq "Consider contract terms finalized. You're stuck with me now."
 
-            $ tariq_route_progress = 3
-
-            jump complete_free_action
+        jump finish_tariq_event
 
 
         "Nobody has ever stood up for me like that before. Thank you, Tariq.":
@@ -343,9 +337,7 @@ label tariq_chapter_3:
 
             tariq "You'll never stand alone in the dark again. That's a merchant's guarantee."
 
-            $ tariq_route_progress = 3
-
-            jump complete_free_action
+            jump finish_tariq_event
 
 
         "Don't act like you own me! You're just a scheming street thief showing off his muscle.":
@@ -363,9 +355,7 @@ label tariq_chapter_3:
 
             "Tariq leaves without another word. His trust has been damaged beyond repair."
 
-            $ tariq_route_progress = 3
-
-            jump complete_free_action
+            jump finish_tariq_event
 
 
 # ============================================================
@@ -486,9 +476,7 @@ label tariq_ending_true:
 
     tariq "Partners. High-tier sorcery and shadow trades... Mirthhaven won't know what hit it."
 
-    $ tariq_route_progress = 4
-
-    jump complete_free_action
+    jump finish_tariq_event
 
 
 label tariq_ending_companion:
@@ -501,9 +489,7 @@ label tariq_ending_companion:
 
     tariq "I'll guard it with my life, partner."
 
-    $ tariq_route_progress = 4
-
-    jump complete_free_action
+    jump finish_tariq_event
 
 
 label tariq_ending_bittersweet:
@@ -518,9 +504,7 @@ label tariq_ending_bittersweet:
 
     tariq "My vault is always open to you, sorcerer."
 
-    $ tariq_route_progress = 4
-
-    jump complete_free_action
+    jump finish_tariq_event
 
 
 label tariq_locked_conclusion:
@@ -535,6 +519,4 @@ label tariq_locked_conclusion:
 
     "The two of you part as professional allies, the possibility of something deeper left behind."
 
-    $ tariq_route_progress = 4
-
-    jump complete_free_action
+    jump finish_tariq_event

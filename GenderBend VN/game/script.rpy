@@ -18,6 +18,11 @@ default mc_name = "Apprentice"
 
 default max_free_actions = 2
 default free_actions = 0
+default free_time_active = False
+
+# Remembers who the player has visited during
+# the CURRENT free-time period.
+default characters_visited_this_period = []
 
 label start:
 
@@ -38,22 +43,18 @@ default free_time_active = False
 
 # =========================
 # CLARA ROUTE
-
 default clara_route_unlocked = True
 default clara_route_progress = 0
 
-# Relationship / performance
 default clara_affection = 0
 default clara_kid_warning = False
 default clara_romance_locked = False
 default clara_route_locked = False
 
-# Clara route ending
 default clara_ending = None
 
 # =========================
 # TANSY SPECIAL ROUTE
-
 default tansy_route_triggered = False
 default tansy_route_unlocked = False
 default tansy_route_progress = 0
@@ -67,7 +68,6 @@ default tansy_ending = None
 
 # =========================
 # TARIQ ROUTE
-
 default tariq_route_unlocked = True
 default tariq_route_progress = 0
 

@@ -56,19 +56,19 @@ label tansy_chapter_3:
             $ tansy_affection += 30
             tansy "Deal! If the narrative crashes because we fell in love before Chapter 4, I'm blaming you!"
             "She grabs your collar and pulls you into a wild, messy kiss."
-            $ tansy_route_progress = 4
-            jump complete_free_action
+            jump finish_tansy_chapter_3
         "You're a complete mess, Tansy... but you're my favorite mess in Mirthhaven.":
             $ tansy_affection += 20
             tansy "Your favorite mess?! I'm framing that quote on the wall!"
-            $ tansy_route_progress = 4
-            jump complete_free_action
+            jump finish_tansy_chapter_3
         "Honestly, this lab is a safety hazard. I think I made a mistake coming here.":
             $ tansy_route_locked = True
             $ tansy_romance_locked = True
             $ tansy_ending = "route_crash"
+
             tansy "Boring! Absolute buzzkill! The door's behind you, scholar!"
-            jump complete_free_action
+
+            jump finish_tansy_failed_event
 
 label tansy_chapter_4:
     "Dawn reveals an Alchemy Wing covered in glitter, floating bubbles, and empty coffee mugs."
@@ -115,19 +115,16 @@ label tansy_ending_true:
     tansy "Best secret route ending in visual novel history! Official statement!"
     mc "No more scripts, Tansy. Just you and me."
     tansy "You and me, wizard."
-    $ tansy_route_progress = 5
-    jump complete_free_action
+    jump finish_tansy_chapter_4
 
 label tansy_ending_partners:
     tansy "Mirthhaven isn't ready for the two of us!"
     tansy "We're going to revolutionize magic and rewrite every textbook in the Sanctum!"
     "She jumps into your arms as you both laugh beneath the sunrise."
-    $ tansy_route_progress = 5
-    jump complete_free_action
+    jump finish_tansy_chapter_4
 
 label tansy_ending_fail:
     "Tansy's playful spark is replaced by a polite, distant posture."
     tansy "Thank you for visiting the Sanctum Alchemy Wing, scholar! Health potions are twenty copper pieces each."
     "You leave with Tansy's secret route permanently closed."
-    $ tansy_route_progress = 5
-    jump complete_free_action
+    jump finish_tansy_chapter_4
