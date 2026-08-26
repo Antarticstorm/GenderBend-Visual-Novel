@@ -6,7 +6,10 @@ label chapter_1:
     # =========================
 
     # [SPRITE: Tansy — Grinning]
-    show tansy tease at tansy_size
+    show tansy happy at tansy_size, char_center
+    show clara teasing at clar_size, char_right
+    show elianna sad at elianna_size, char_left
+
 
     tansy "Record check, one two, three... Alright! Let's talk about my favorite star apprentice—the one currently running around Mirthhaven trying not to trip over their own spell-robe!"
 
@@ -31,6 +34,8 @@ label chapter_1:
     tansy "Ellianna Sylvane: The absolute saint of the Sanctum. Ellie is the only student with enough patience to help my apprentice mop up exploded potion cauldrons without reporting us to the Headmaster."
 
     hide tansy
+    hide clara
+    hide elianna
 
     #Player name
     $ mc_name = renpy.input("What is your name?", default="")

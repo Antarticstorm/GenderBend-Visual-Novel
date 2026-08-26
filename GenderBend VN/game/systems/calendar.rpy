@@ -6,10 +6,10 @@ label free_time:
 
     $ free_time_active = True
 
-    # Both free actions have been used.
-    if free_actions <= 0:
+    if chapter < 4 and free_actions <= 0:
 
         $ free_time_active = False
+
         jump main_story_event
 
 
@@ -58,135 +58,135 @@ init python:
         store.story_progress += 1
         store.chapter = completed_chapter
 
-        store.free_actions = store.max_free_actions
         store.free_time_active = True
-
-        # New free-time period.
-        # Everyone becomes visitable again.
         store.characters_visited_this_period = []
+
+        # Chapters 1-3 use normal free actions.
+        if completed_chapter < 4:
+            store.free_actions = store.max_free_actions
+
+        # Chapter 4 uses route commitments instead.
+        elif completed_chapter == 4:
+            store.free_actions = 0
+            store.committed_routes = []
     
     def can_visit_character(character_id):
 
-        # Chapter 4 is the catch-up / commitment period.
-        # Repeat visits are allowed.
-        if store.chapter == 4:
-            return True
+        # ========================================================
+        # CHAPTERS 1-3
+        # One interaction with each character per free-time period.
+        # ========================================================
 
-        # Chapters 1-3:
-        # Character can only be selected once per period.
-        return character_id not in store.characters_visited_this_period
+        if store.chapter < 4:
+
+            return character_id not in store.characters_visited_this_period
+
+
+        # ========================================================
+        # CHAPTER 4
+        # Only committed characters remain available once
+        # both commitment slots are occupied.
+        # ========================================================
+
+        if store.chapter == 4:
+
+            return can_commit_character(character_id)
+
+
+        return False
 
     def finish_character_action(character_id):
 
-        if character_id not in store.characters_visited_this_period:
-            store.characters_visited_this_period.append(character_id)
+        # ========================================================
+        # CHAPTERS 1-3
+        # ========================================================
 
-        store.free_actions -= 1
+        if store.chapter < 4:
 
-#PLACE HOLDER MAP LAYOUT SYSTEM
-screen mirthhaven_map():
+            if character_id not in store.characters_visited_this_period:
+                store.characters_visited_this_period.append(character_id)
 
-    tag menu
-
-    text "Mirthhaven":
-        xalign 0.5
-        ypos 40
-        size 50
-
-    text "Day [day]":
-        xalign 0.5
-        ypos 110
-        size 35
+            store.free_actions -= 1
 
 
-    text "Character Interactions: [free_actions] / [max_free_actions]":
-        xalign 0.5
-        ypos 195
-        size 24
+        # ========================================================
+        # CHAPTER 4
+        # ========================================================
+
+        elif store.chapter == 4:
+
+            commit_character(character_id)
+
+    def route_is_committed(character_id):
+
+        return character_id in store.committed_routes
 
 
-    # =========================
-    # CLARA
-    # =========================
+    def commitment_slots_full():
 
-    if clara_event_available() and can_visit_character("clara"):
+        return len(store.committed_routes) >= store.max_committed_routes
 
-        textbutton "Wanderlust Wheel - Clara":
-            xpos 150
-            ypos 320
-            action Jump("clara_route_event")
 
-    # =========================
-    # TANSY
-    # =========================
+    def can_commit_character(character_id):
 
-    if tansy_event_available() and can_visit_character("tansy"):
+        # Already committed.
+        if character_id in store.committed_routes:
+            return True
 
-        textbutton "Solarium Sanctum - Tansy":
-            xpos 900
-            ypos 320
-            action Jump("tansy_route_event")
+        # Still have an empty slot.
+        return len(store.committed_routes) < store.max_committed_routes
 
-    # =========================
-    # TARIQ
-    # =========================
 
-    if tariq_event_available() and can_visit_character("tariq"):
+    def commit_character(character_id):
 
-        textbutton "Sun-Gilded Market - Tariq":
-            xpos 600
-            ypos 320
-            action Jump("tariq_route_event")
+        # Don't add duplicates.
+        if character_id in store.committed_routes:
+            return
 
-    # =========================
-    # BAO
-    # =========================
-    if bao_event_available() and can_visit_character("bao"):
+        # Add character if a slot exists.
+        if len(store.committed_routes) < store.max_committed_routes:
+            store.committed_routes.append(character_id)
 
-        textbutton "The Laughing Anchor - Bao":
-            xpos 150
-            ypos 500
-            action Jump("bao_route_event")
-        
-    # =========================
-    # ELIANNA
-    # =========================
-    if elianna_event_available() and can_visit_character("elianna"):
+    def normal_route_event_available(progress, unlocked, locked):
 
-        textbutton "Solarium Sanctum - Elianna":
-            xpos 600
-            ypos 500
-            action Jump("elianna_route_event")
+        if not unlocked or locked:
+            return False
 
-    # =========================
-    # DOMITILLA
-    # =========================
-    if domitilla_event_available() and can_visit_character("domitilla"):
 
-        textbutton "Crestward Bastion - Domitilla":
-            xpos 900
-            ypos 500
-            action Jump("domitilla_route_event")
+        # ========================================================
+        # CHAPTERS 1-3
+        # ========================================================
 
-    # =========================
-    # BAREK
-    # =========================
-    if barek_event_available() and can_visit_character("barek"):
+        if store.chapter < 4:
 
-    textbutton "Nautilus Point - Barek":
-        xpos 150
-        ypos 650
-        action Jump("barek_route_event")
+            if progress == 0 and store.chapter >= 1:
+                return True
 
-    # =========================
-    # PASS TIME
-    # =========================
+            if progress == 1 and store.chapter >= 2:
+                return True
 
-    textbutton "Spend Free Time Alone":
-        xalign 0.5
-        ypos 750
-        action Jump("pass_time")
+            if progress == 2 and store.chapter >= 3:
+                return True
 
+            return False
+
+
+        # ========================================================
+        # CHAPTER 4
+        # ========================================================
+
+        if store.chapter == 4:
+
+            # Player must have interacted with this
+            # character at least once before Chapter 4.
+            #
+            # Progress 1-3 can catch up.
+            # Progress 4 is already finished.
+
+            return progress >= 1 and progress < 4
+
+
+        return False
 # =========================
 # PASS TIME EVENT
 # =========================
@@ -197,6 +197,17 @@ label pass_time:
 
     jump complete_free_action
     
+# ============================================================
+# FINISH CHAPTER 4 FREE TIME
+# ============================================================
+
+label finish_chapter_4_free_time:
+
+    $ free_time_active = False
+    $ characters_visited_this_period = []
+
+    jump chapter_5
+
 #=========================
 # Checks for what chapter you're on
 #========================= 
@@ -223,17 +234,6 @@ label main_story_event:
 
 label complete_free_action:
 
-    $ free_actions -= 1
-
-    jump free_time
-
-
-#=========================
-# Checks for what chapter you're on
-#========================= 
-label complete_character_action(character_id):
-
-    $ characters_visited_this_period.append(character_id)
     $ free_actions -= 1
 
     jump free_time

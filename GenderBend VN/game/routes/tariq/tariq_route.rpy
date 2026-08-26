@@ -326,7 +326,7 @@ label tariq_chapter_3:
 
             tariq "Consider contract terms finalized. You're stuck with me now."
 
-        jump finish_tariq_event
+            jump finish_tariq_event
 
 
         "Nobody has ever stood up for me like that before. Thank you, Tariq.":

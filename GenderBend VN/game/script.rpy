@@ -24,18 +24,20 @@ default free_time_active = False
 # the CURRENT free-time period.
 default characters_visited_this_period = []
 
+default day = 1
+
 label start:
 
     # Chapter 1 begins
     jump chapter_1
 
-# =========================
-# CALENDAR SYSTEM
-# =========================
+# ===========================
+# CHAPTER 4 ROUTE COMMITMENT
+# ===========================
 
-default day = 1
+default committed_routes = []
 
-default free_time_active = False
+default max_committed_routes = 2
 
 # =========================
 # ROUTE SYSTEM
@@ -75,7 +77,7 @@ default tariq_affection = 0
 default tariq_romance_locked = False
 default tariq_route_locked = False
 
-default tariq_ending = Nonee
+default tariq_ending = None
 
 # =========================
 # BAO ROUTE

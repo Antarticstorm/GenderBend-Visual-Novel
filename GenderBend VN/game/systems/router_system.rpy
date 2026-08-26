@@ -5,177 +5,52 @@
 init python:
 
     def romance_available(affection, romance_locked):
-        """
-        Returns True when the character's romantic ending
-        is still obtainable.
-        """
 
         return affection >= 80 and not romance_locked
 
 
     def route_available(unlocked, locked):
-        """
-        Returns True when the character's route can
-        currently be pursued.
-        """
 
         return unlocked and not locked
-    
-    #Is clara available?
-    def clara_event_available():
 
-        if not clara_route_unlocked:
+
+    def normal_route_event_available(progress, unlocked, locked):
+
+        if not unlocked or locked:
             return False
 
-        if clara_route_locked:
-            return False
-
-        if clara_route_progress == 0 and chapter >= 1:
+        # Event 1
+        if progress == 0 and store.chapter >= 1:
             return True
 
-        if clara_route_progress == 1 and chapter >= 2:
+        # Event 2
+        if progress == 1 and store.chapter >= 2:
             return True
 
-        if clara_route_progress == 2 and chapter >= 3:
+        # Event 3
+        if progress == 2 and store.chapter >= 3:
             return True
 
-        if clara_route_progress == 3 and chapter >= 4:
+        # Event 4
+        if progress == 3 and store.chapter >= 4:
             return True
 
         return False
 
-    #Is Tansy available?
+
     def tansy_event_available():
 
-        # Tansy's route must have been accepted.
-        if not tansy_route_unlocked:
+        if not store.tansy_route_unlocked:
             return False
 
-        # Route was permanently closed.
-        if tansy_route_locked:
+        if store.tansy_route_locked:
             return False
 
-        # Chapter 3 is launched directly by the special-route offer,
-        # so the normal map only needs to expose Chapter 4.
-        if tansy_route_progress == 4 and chapter >= 4:
-            return True
-
-        return False
-    
-    #Is tariq available?
-    def tariq_event_available():
-
-        if not tariq_route_unlocked:
-            return False
-
-        if tariq_route_locked:
-            return False
-
-        if tariq_route_progress == 0 and chapter >= 1:
-            return True
-
-        if tariq_route_progress == 1 and chapter >= 2:
-            return True
-
-        if tariq_route_progress == 2 and chapter >= 3:
-            return True
-
-        if tariq_route_progress == 3 and chapter >= 4:
-            return True
-
-        return False
-
-    #Is bao available?
-    def bao_event_available():
-
-        if not bao_route_unlocked:
-            return False
-
-        if bao_route_locked:
-            return False
-
-        if bao_route_progress == 0 and chapter >= 1:
-            return True
-
-        if bao_route_progress == 1 and chapter >= 2:
-            return True
-
-        if bao_route_progress == 2 and chapter >= 3:
-            return True
-
-        if bao_route_progress == 3 and chapter >= 4:
-            return True
-
-        return False
-
-    #Is elianna available?
-    def elianna_event_available():
-
-        if not elianna_route_unlocked:
-            return False
-
-        if elianna_route_locked:
-            return False
-
-        if elianna_route_progress == 0 and chapter >= 1:
-            return True
-
-        if elianna_route_progress == 1 and chapter >= 2:
-            return True
-
-        if elianna_route_progress == 2 and chapter >= 3:
-            return True
-
-        if elianna_route_progress == 3 and chapter >= 4:
-            return True
-
-        return False
-
-    #Is domitilla available?
-    def domitilla_event_available():
-
-        if not domitilla_route_unlocked:
-            return False
-
-        if domitilla_route_locked:
-            return False
-
-        if domitilla_route_progress == 0 and chapter >= 1:
-            return True
-
-        if domitilla_route_progress == 1 and chapter >= 2:
-            return True
-
-        if domitilla_route_progress == 2 and chapter >= 3:
-            return True
-
-        if domitilla_route_progress == 3 and chapter >= 4:
-            return True
-
-        return False
-
-    #Is barek available?   
-    def barek_event_available():
-
-        if not barek_route_unlocked:
-            return False
-
-        if barek_route_locked:
-            return False
-
-        if barek_route_progress == 0 and chapter >= 1:
-            return True
-
-        if barek_route_progress == 1 and chapter >= 2:
-            return True
-
-        if barek_route_progress == 2 and chapter >= 3:
-            return True
-
-        if barek_route_progress == 3 and chapter >= 4:
-            return True
-
-        return False
+        return (
+            store.tansy_route_progress == 4
+            and store.chapter >= 4
+        )
+        
 # ============================================================
 # CLARA EVENT RESOLVER
 # ============================================================
@@ -185,6 +60,10 @@ label clara_route_event:
     # Entire route unavailable.
     if not clara_route_unlocked or clara_route_locked:
         jump free_time
+
+    # Chapter 4 commitment.
+    if chapter == 4:
+        $ commit_character("clara")
 
     # Clara Chapter 1
     if clara_route_progress == 0 and chapter >= 1:
@@ -264,6 +143,10 @@ label tariq_route_event:
     if not tariq_route_unlocked or tariq_route_locked:
         jump free_time
 
+    # Chapter 4 commitment.
+    if chapter == 4:
+        $ commit_character("tariq")
+
     if tariq_route_progress == 0 and chapter >= 1:
         jump tariq_chapter_1
 
@@ -286,6 +169,10 @@ label bao_route_event:
 
     if not bao_route_unlocked or bao_route_locked:
         jump free_time
+
+    # Chapter 4 commitment.
+    if chapter == 4:
+        $ commit_character("bao")
 
     if bao_route_progress == 0 and chapter >= 1:
         jump bao_chapter_1
@@ -310,6 +197,10 @@ label elianna_route_event:
     if not elianna_route_unlocked or elianna_route_locked:
         jump free_time
 
+    # Chapter 4 commitment.
+    if chapter == 4:
+        $ commit_character("elianna")
+
     if elianna_route_progress == 0 and chapter >= 1:
         jump elianna_chapter_1
 
@@ -332,6 +223,10 @@ label domitilla_route_event:
 
     if not domitilla_route_unlocked or domitilla_route_locked:
         jump free_time
+    
+    # Chapter 4 commitment.
+    if chapter == 4:
+        $ commit_character("domitilla")
 
     if domitilla_route_progress == 0 and chapter >= 1:
         jump domitilla_chapter_1
@@ -355,6 +250,10 @@ label barek_route_event:
 
     if not barek_route_unlocked or barek_route_locked:
         jump free_time
+
+    # Chapter 4 commitment.
+    if chapter == 4:
+        $ commit_character("barek")
 
     if barek_route_progress == 0 and chapter >= 1:
         jump barek_chapter_1
