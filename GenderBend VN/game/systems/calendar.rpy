@@ -137,7 +137,47 @@ screen mirthhaven_map():
             xpos 600
             ypos 320
             action Jump("tariq_route_event")
-            
+
+    # =========================
+    # BAO
+    # =========================
+    if bao_event_available() and can_visit_character("bao"):
+
+        textbutton "The Laughing Anchor - Bao":
+            xpos 150
+            ypos 500
+            action Jump("bao_route_event")
+        
+    # =========================
+    # ELIANNA
+    # =========================
+    if elianna_event_available() and can_visit_character("elianna"):
+
+        textbutton "Solarium Sanctum - Elianna":
+            xpos 600
+            ypos 500
+            action Jump("elianna_route_event")
+
+    # =========================
+    # DOMITILLA
+    # =========================
+    if domitilla_event_available() and can_visit_character("domitilla"):
+
+        textbutton "Crestward Bastion - Domitilla":
+            xpos 900
+            ypos 500
+            action Jump("domitilla_route_event")
+
+    # =========================
+    # BAREK
+    # =========================
+    if barek_event_available() and can_visit_character("barek"):
+
+    textbutton "Nautilus Point - Barek":
+        xpos 150
+        ypos 650
+        action Jump("barek_route_event")
+
     # =========================
     # PASS TIME
     # =========================

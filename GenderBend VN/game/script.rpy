@@ -76,3 +76,49 @@ default tariq_romance_locked = False
 default tariq_route_locked = False
 
 default tariq_ending = Nonee
+
+# =========================
+# BAO ROUTE
+default bao_route_unlocked = True
+default bao_route_progress = 0
+
+default bao_affection = 0
+default bao_romance_locked = False
+default bao_route_locked = False
+
+default bao_ending = None
+
+# =========================
+# ELIANNA ROUTE
+default elianna_route_unlocked = True
+default elianna_route_progress = 0
+
+default elianna_affection = 0
+default elianna_bad_mood = 0
+
+default elianna_romance_locked = False
+default elianna_route_locked = False
+
+default elianna_ending = None
+
+# =========================
+# DOMITILLA ROUTE
+default domitilla_route_unlocked = True
+default domitilla_route_progress = 0
+
+default domitilla_affection = 0
+default domitilla_romance_locked = False
+default domitilla_route_locked = False
+
+default domitilla_ending = None
+
+# =========================
+# BAREK ROUTE
+default barek_route_unlocked = True
+default barek_route_progress = 0
+
+default barek_affection = 0
+default barek_romance_locked = False
+default barek_route_locked = False
+
+default barek_ending = None
