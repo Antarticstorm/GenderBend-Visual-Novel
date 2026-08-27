@@ -106,8 +106,12 @@ label tansy_route_event:
 
 label finish_tansy_chapter_3:
 
+    hide tansy
+
     $ tansy_route_progress = 4
     $ finish_character_action("tansy")
+
+    call route_end_transition("Tansy")
 
     jump free_time
 
@@ -128,8 +132,12 @@ label finish_tansy_failed_event:
 
 label finish_tansy_chapter_4:
 
+    hide tansy
+
     $ tansy_route_progress = 5
     $ finish_character_action("tansy")
+
+    call route_end_transition("Tansy")
 
     jump free_time
 
@@ -274,43 +282,67 @@ label barek_route_event:
 
 label finish_clara_event:
 
+    hide clara
+
     $ clara_route_progress += 1
     $ finish_character_action("clara")
+
+    call route_end_transition("Clara Vane")
 
     jump free_time
 
 
 label finish_tariq_event:
 
+    hide tariq
+
     $ tariq_route_progress += 1
     $ finish_character_action("tariq")
+
+    call route_end_transition("Tariq Vane")
 
     jump free_time
 
 label finish_bao_event:
 
+    hide bao
+
     $ bao_route_progress += 1
     $ finish_character_action("bao")
+
+    call route_end_transition("Bao Shen")
 
     jump free_time
 
 label finish_elianna_event:
 
+    hide elianna
+
     $ elianna_route_progress += 1
     $ finish_character_action("elianna")
+
+    call route_end_transition("Elianna Sylvane")
 
     jump free_time
 
 label finish_domitilla_event:
 
+    hide domitilla
+
     $ domitilla_route_progress += 1
     $ finish_character_action("domitilla")
+
+    call route_end_transition("Domitilla Bruni")
 
     jump free_time
     
 label finish_barek_event:
 
+    hide barek
+
     $ barek_route_progress += 1
     $ finish_character_action("barek")
+
+    call route_end_transition("Barek Tidejaw")
 
     jump free_time

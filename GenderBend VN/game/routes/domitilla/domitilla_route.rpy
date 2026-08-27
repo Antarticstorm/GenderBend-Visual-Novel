@@ -14,6 +14,16 @@
 
 label domitilla_chapter_1:
 
+    call route_transition(
+    "Domitilla Bruni",
+    1,
+    "Discipline and Iron"
+)
+
+
+    show domitilla angry at domitilla_size, char_center
+
+
     "At the Crestward Bastion's Iron Ring, Commander Domitilla Bruni drives a line of exhausted recruits through relentless drills."
 
     domitilla "Wider stance! If a harbor drake hits that shield wall, half of you are going into the bay! Again!"
@@ -22,6 +32,7 @@ label domitilla_chapter_1:
 
     "Without warning, she hurls a padded practice buckler directly at your chest."
 
+    show domitilla talking
     domitilla "Hey! Sanctum scholar! Stop gawking from the cheap seats and get in the Ring!"
 
     menu:
@@ -45,20 +56,24 @@ label domitilla_chapter_1:
         "Reinforce the buckler with a kinetic barrier and absorb the blow head-on.":
             $ domitilla_affection += 20
             "The impact sends a shock through your arms, but your stance holds."
+            show domitilla happy
             domitilla "Solid! You actually rooted your weight!"
 
         "Use a flash-light spell and pivot around her flank.":
             $ domitilla_affection += 20
             "Her strike misses as you ring your buckler against her backplate."
+            show domitilla surprised
             domitilla "Clever footwork! Using the sun against me!"
 
         "Counter with kinetic force and lock weapons with her.":
             $ domitilla_affection += 20
             "You stand toe-to-toe in a contest of leverage."
+            show domitilla happy
             domitilla "Look at you pushing back! Not bad, kid!"
 
     "Domitilla finally lowers her weapon, an approving smirk cutting across her scarred face."
 
+    show domitilla happy
     domitilla "You've got actual iron in your spine, sorcerer. Come back when you want real training."
 
     menu:
@@ -73,12 +88,23 @@ label domitilla_chapter_1:
         "I wanted to see the famous Commander Bruni in action.":
             $ domitilla_affection += 20
             "A flustered heat flashes briefly in her eyes."
+            show domitilla surprised
             domitilla "Is that so? Don't be a stranger. I keep a close eye on people who catch my attention."
 
+    hide domitilla
     jump finish_domitilla_event
 
 
 label domitilla_chapter_2:
+
+    call route_transition(
+    "Domitilla Bruni",
+    1,
+    "Scars and Heavy Armor"
+)
+
+    show domitilla normal at domitilla_size, char_center
+
 
     "Late at night, you enter the Bastion's shadowed central armory carrying fire-resistant warding charms."
 
@@ -88,6 +114,7 @@ label domitilla_chapter_2:
 
     "She notices you."
 
+    show domitilla surprised
     domitilla "Ah. It's you, wizard. Fourteen hours in full plate will make a woman blind to who's walking through the door."
 
     menu:
@@ -103,6 +130,7 @@ label domitilla_chapter_2:
 
         "Even the unbreakable Commander Bruni needs a tune-up after shift?":
             $ domitilla_affection += 15
+            show domitilla happy
             domitilla "Keep your voice down, scholar. You'll ruin my terrifying reputation."
 
     "You produce a jar of magic-infused warming salve."
@@ -122,6 +150,7 @@ label domitilla_chapter_2:
         "Focus on easing the deep knots in her muscles.":
             $ domitilla_affection += 20
             mc "Breathe through it. Your muscles are practically locked up."
+            show domitilla happy
             domitilla "Gods above... that magic of yours is a miracle, wizard."
 
         "Tell her she doesn't always have to bear the brunt of every hit.":
@@ -130,6 +159,7 @@ label domitilla_chapter_2:
 
     "Domitilla looks down at her calloused hands."
 
+    show domitilla normal
     domitilla "In the garrison, everyone looks to me as an unbreakable wall."
 
     domitilla "It's... rare for anyone to ask if the wall ever gets tired."
@@ -143,17 +173,29 @@ label domitilla_chapter_2:
         "You're a human being before you're a commander. You deserve care too.":
             $ domitilla_affection += 25
             mc "You're allowed to be human."
+            show domitilla happy
             domitilla "You see right through the armor, don't you? Thank you."
 
         "You're much softer under all that steel than you let on.":
             $ domitilla_affection += 20
             "A dark flush rises across her cheeks."
+            show domitilla happy
             domitilla "Careful, wizard... say things like that, and I might keep you trapped in my armory all night."
 
+    hide domitilla
     jump finish_domitilla_event
 
 
 label domitilla_chapter_3:
+
+    call route_transition(
+    "Domitilla Bruni",
+    3,
+    "Off-Duty Fire"
+)
+
+    show domitilla happy at domitilla_size, char_center
+
 
     "At The Laughing Anchor, you find Domitilla completely out of uniform in a secluded corner booth."
 
@@ -177,6 +219,7 @@ label domitilla_chapter_3:
 
     "A drunken mercenary approaches the booth and insults both of you before aggressively reaching across the table."
 
+    show domitilla angry
     domitilla "You've got three seconds to pull that filthy hand back before I—"
 
     menu:
@@ -196,6 +239,7 @@ label domitilla_chapter_3:
 
             "The mercenary collapses in agony. The tavern falls silent."
 
+            show domitilla angry
             domitilla "Enough!"
 
             "Domitilla breaks your spell focus with a sharp strike to your wrist."
@@ -210,7 +254,8 @@ label domitilla_chapter_3:
 
             "She leaves the tavern in bitter disappointment."
 
-            jump finish_domitilla_event
+            hide domitilla
+    jump finish_domitilla_event
 
 
 label domitilla_chapter_3_honorable:
@@ -219,10 +264,12 @@ label domitilla_chapter_3_honorable:
 
     "She grabs your hand in a firm, lingering grip."
 
+    show domitilla surprised
     domitilla "You... you stepped up when it counted."
 
     domitilla "I've spent fifteen years taking the blow for everyone in this city. Nobody steps in front of Commander Bruni. Nobody... except you."
 
+    show domitilla happy
     domitilla "I like it. Gods help me... I really like it."
 
     menu:
@@ -240,10 +287,20 @@ label domitilla_chapter_3_honorable:
             "Domitilla pulls you slightly closer by your collar."
             domitilla "Watch your tongue, scholar... or I'll show you exactly how a commander handles a teasing subordinate."
 
+    hide domitilla
     jump finish_domitilla_event
 
 
 label domitilla_chapter_4:
+
+    call route_transition(
+    "Domitilla Bruni",
+    3,
+    "The Sentinel's Vow"
+)
+    
+    show domitilla normal at domitilla_size, char_center
+
 
     "At dusk, you join Domitilla on the rooftop ramparts of the Crestward Bastion overlooking Mirthhaven."
 
@@ -268,6 +325,7 @@ label domitilla_chapter_4:
 
     "Domitilla unclasps the ancient bronze commander's crest from her cloak."
 
+    show domitilla talking
     domitilla "When I took command fifteen years ago, they gave me this crest. It represents my blood, my oath, and my life."
 
     "She presses the warm bronze insignium into your palm."
@@ -291,6 +349,7 @@ label domitilla_chapter_4:
 
     domitilla "I spent my whole life training to be an unbreakable shield for Mirthhaven."
 
+    show domitilla happy
     domitilla "I never thought I'd find someone who made me want to lay that heavy shield down... and just be a woman."
 
     domitilla "You fought your way through my armor, sorcerer... into my heart. And I am never letting you go."
@@ -313,6 +372,8 @@ label domitilla_chapter_4:
 
 label domitilla_ending_true:
 
+    show domitilla happy
+
     "You grab the lapels of Domitilla's cloak and pull the towering commander down into a fierce, breathless kiss."
 
     "Her arms wrap around your waist and lift you slightly from your feet."
@@ -323,10 +384,13 @@ label domitilla_ending_true:
 
     domitilla "Not alone, wizard. We stand shoulder to shoulder. In the garrison, in the Sanctum, and in every night to come."
 
+    hide domitilla
     jump finish_domitilla_event
 
 
 label domitilla_ending_companion:
+
+    show domitilla happy
 
     "You press the bronze crest firmly over your heart."
 
@@ -336,10 +400,13 @@ label domitilla_ending_companion:
 
     domitilla "You are my equal, my partner, and my closest companion."
 
+    hide domitilla
     jump finish_domitilla_event
 
 
 label domitilla_ending_bittersweet:
+
+    show domitilla normal
 
     "You gently close Domitilla's fingers back over the bronze crest."
 
@@ -353,10 +420,13 @@ label domitilla_ending_bittersweet:
 
     domitilla "The garrison will always consider you one of our own."
 
+    hide domitilla
     jump finish_domitilla_event
 
 
 label domitilla_locked_conclusion:
+
+    show domitilla angry
 
     $ domitilla_ending = "dishonorable_steel"
 
@@ -370,4 +440,5 @@ label domitilla_locked_conclusion:
 
     "You part as distant professional allies."
 
+    hide domitilla
     jump finish_domitilla_event

@@ -15,6 +15,15 @@
 
 label elianna_chapter_1:
 
+    call route_transition(
+    "Elianna Sylvane",
+    1,
+    "Bandages & Broken Vials"
+)
+
+    show elianna worried at elianna_size, char_center
+
+
     "After a rough training session leaves your arms singed and bruised, you visit the Sunlit Wards of the Solarium Sanctum."
 
     "A frantic blur of white robes and golden hair chases a rolling vial across the floor."
@@ -27,10 +36,12 @@ label elianna_chapter_1:
 
     mc "Got them. Easy there, Nurse Ellie."
 
+    show elianna surprised
     elianna "Wh-Whah—?! Oh! The bandages! They didn't hit the floor!"
 
     "As she takes the supplies, her eyes immediately notice the burns on your forearm."
 
+    show elianna worried
     elianna "Ah, wait! Look at you! Was that Tansy's practical casting drill again?!"
 
     mc "Yeah. A stray flame-burst caught me off guard."
@@ -41,6 +52,7 @@ label elianna_chapter_1:
 
     "You flinch slightly."
 
+    show elianna sad
     elianna "Ah! S-Sorry! Did that hurt?! I'm so bad at this..."
 
     "Her eyes fill with genuine tears."
@@ -55,16 +67,19 @@ label elianna_chapter_1:
 
             mc "Anyone can apply salve, Ellie, but not everyone actually cares about the person hurting."
 
+            show elianna surprised
             elianna "Y-You really think so...?"
 
             "Her movements become calmer and steadier as she finishes wrapping your arm."
 
+            show elianna happy
             elianna "Thank you, sorcerer. You have no idea how much those words mean to me."
 
 
         "It stings a bit, but I can handle it. Just focus on wrapping it up.":
             $ elianna_affection += 15
 
+            show elianna talking
             elianna "O-Oh! Right! Sorry, I'll stop rambling and focus!"
 
             "She carefully finishes the bandage and gives you extra ointment."
@@ -77,16 +92,28 @@ label elianna_chapter_1:
 
             "The bright emotional light in Ellie's eyes dims."
 
+            show elianna sad
             elianna "I... I see. You're right, of course."
 
             elianna "I'm just a liability in here..."
 
             elianna "You're all patched up now. I'll try not to bother you next time."
 
+    hide elianna
     jump finish_elianna_event
 
 
 label elianna_chapter_2:
+
+    call route_transition(
+    "Elianna Sylvane",
+    2,
+    "The Weight of Centuries"
+
+)
+
+    show elianna sad at elianna_size, char_center
+
 
     "Late at night, you enter the Solarium Sanctum's glass conservatory."
 
@@ -96,10 +123,12 @@ label elianna_chapter_2:
 
     mc "Ellie? What are you doing out here so late?"
 
+    show elianna surprised
     elianna "Ah! Sorcerer! I couldn't sleep. The Night-Blooming Lilies need very delicate care."
 
     "You sit beside her on a cool marble bench."
 
+    show elianna sad
     elianna "Did you know I've been the head nurse here for over two hundred years?"
 
     elianna "I watch bright young students walk through these halls... fix their scrapes, listen to their dreams, watch them become great sorcerers..."
@@ -116,16 +145,19 @@ label elianna_chapter_2:
 
             "Ellie's breath catches."
 
+            show elianna surprised
             elianna "You... you really mean that?"
 
             "She rests her head softly against your shoulder and closes her hand over yours."
 
+            show elianna happy
             elianna "When you're around... the solitude doesn't feel so heavy anymore."
 
 
         "Living a long time must be tough, but at least you get to help so many generations.":
             $ elianna_affection += 15
 
+            show elianna happy
             elianna "Fufu... That's a very practical way to look at it, sorcerer."
 
             elianna "Every potion I brew and every bandage I wrap is a small mark left on the world, isn't it?"
@@ -138,14 +170,26 @@ label elianna_chapter_2:
 
             "The soft light in Ellie's eyes extinguishes."
 
+            show elianna sad
             elianna "...Right. Of course. Distance is safer..."
 
             elianna "It's late. You should get back to your dorms."
 
+    hide elianna
     jump finish_elianna_event
 
 
 label elianna_chapter_3:
+
+    call route_transition(
+    "Elianna Sylvane",
+    3,
+    "A Healing Touch"
+
+)
+
+    show elianna talking at elianna_size, char_center
+
 
     "At the Crestward Bastion field clinic, Ellie rushes between wounded knights after a heavy training exercise."
 
@@ -159,16 +203,19 @@ label elianna_chapter_3:
 
     "Your radiant barrier catches the beam, splintering it harmlessly against the shield."
 
+    show elianna surprised
     elianna "A-AHHH! Sorcerer?!"
 
     "Ellie rushes toward you, frantically checking your hands, face, and shoulders."
 
+    show elianna sad
     elianna "Are you hurt?! Is your head bleeding?! Speak to me, please!"
 
     mc "Ellie, calm down! I'm completely fine!"
 
     "Her knees weaken and she collapses against your chest."
 
+    show elianna happy
     elianna "Thank goodness... oh, thank the gods..."
 
     elianna "I spend my whole life hurting for everyone else... but if anything ever happened to you, I don't think I could ever heal from that!"
@@ -179,10 +226,12 @@ label elianna_chapter_3:
 
             "You hold her tightly until her trembling stops."
 
+            show elianna surprised
             elianna "S-Sorcerer..."
 
             elianna "I'm supposed to be the one taking care of you... but having you hold me like this makes me feel so safe."
 
+            show elianna happy
             elianna "I never want to let go..."
 
 
@@ -201,6 +250,7 @@ label elianna_chapter_3:
 
             "Ellie immediately steps away, deeply embarrassed."
 
+            show elianna sad
             elianna "Ah—! Y-Yes! Of course! Forgive me!"
 
             elianna "I'm being completely unprofessional. I'll return to my duties at once."
@@ -209,10 +259,20 @@ label elianna_chapter_3:
     if elianna_bad_mood >= 2:
         $ elianna_romance_locked = True
 
+    hide elianna
     jump finish_elianna_event
 
 
 label elianna_chapter_4:
+
+    call route_transition(
+    "Elianna Sylvane",
+    4,
+    "Eternal Bloom"
+
+)
+    show elianna happy at elianna_size, char_center
+
 
     "At dusk, Ellie waits for you on the balcony outside the Sunlit Wards."
 
@@ -222,18 +282,22 @@ label elianna_chapter_4:
 
     "She turns too quickly and the crown slips lopsided over one pointed ear."
 
+    show elianna surprised
     elianna "Eek—! Oh no, not again!"
 
     "You step close and gently straighten it."
 
     mc "Hold still, Ellie. There... perfectly centered."
 
+    show elianna happy
     elianna "Ehehe... thank you."
 
     "Ellie takes both of your hands."
 
+    show elianna sad
     elianna "I used to think my long life was a curse of solitude... meant for watching people come and go while I tripped through the centuries alone."
 
+    show elianna happy
     elianna "But you looked past my awkwardness. You shared my pain, protected me, and gave me a reason to look forward to every single day."
 
     "She presses a rare, glowing Moon-Lily into your palm."
@@ -274,6 +338,8 @@ label elianna_chapter_4:
 
 label elianna_ending_true:
 
+    show elianna happy
+
     mc "I love you too, Ellie. Let's spend eternity together."
 
     "You pull her gently into a loving kiss beneath the golden twilight."
@@ -284,10 +350,13 @@ label elianna_ending_true:
 
     "No longer a lonely ghost passing through time, Ellie has found a home in your arms."
 
+    hide elianna
     jump finish_elianna_event
 
 
 label elianna_ending_companion:
+
+    show elianna happy
 
     mc "I cherish you deeply, Ellie. I promise to always stay by your side."
 
@@ -297,10 +366,13 @@ label elianna_ending_companion:
 
     elianna "As long as I can hold your hand and walk through these centuries with you by my side, I'll never be afraid of the future again."
 
+    hide elianna
     jump finish_elianna_event
 
 
 label elianna_ending_bittersweet:
+
+    show elianna sad
 
     mc "Ellie... I care about you, but I don't think I can promise you forever."
 
@@ -312,4 +384,5 @@ label elianna_ending_bittersweet:
 
     elianna "I'll always keep this flower to remember the warmth you brought into my quiet life."
 
+    hide elianna
     jump finish_elianna_event
