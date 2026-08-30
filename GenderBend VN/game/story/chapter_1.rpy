@@ -7,7 +7,6 @@
 label chapter_1:
 
     call chapter_transition(1, "The Mishap & The Master Plan")
-
     # Opening narration / character introductions.
     show tansy happy at tansy_size, char_center
     show clara flirty at clara_size, char_left
@@ -51,7 +50,6 @@ label chapter_1:
 
     if mc_name == "":
         $ mc_name = "Apprentice"
-
     # Scene 1 — Waking Up Under the Alchemy Glass
     # Location: The Solarium Sanctum — Tansy's Alchemy Lab
     # SFX: Sound Effect: Bubbling cauldrons, glass vials clinking, distant thunder of a small magical reaction
@@ -65,20 +63,24 @@ label chapter_1:
     mc "WHAT IN THE SANCTUM’S NAME—?!"
     "(A sudden burst of loud, unrestrained cackling echoes from behind a row of glowing green alembics.)"
     show tansy happy at tansy_size, char_center
+
     tansy "BHAHAHA! Oh, by the stars! Look at you! It took three weeks of trial and error, but the Aura-Shift Catalytic Broth actually worked!"
     "(Tansy strides over, resting her elbows on your bench with an enormous, wicked grin. She pokes your cheek with the feather end of her quill.)"
     # Source [SPRITE: Tansy — Excited, Mischievous]
+    show tansy teasing
     tansy "Relax, my dear apprentice! You aren't dead, and your mana channels are completely intact."
     tansy "Sure, I accidentally spilled the catalyst into your morning tea instead of the testing beaker..."
     tansy "...but look at the silver lining! The magic is delightfully stable!"
     # [MC]
     mc "Tansy! You transformed me into a woman! How is this stable?!"
     # Source [SPRITE: Tansy — Dismissive, Laughing]
+    show tansy teasing
     tansy "Details, details! An arch-mage never dwells on minor side effects."
     tansy "Besides, I already know the cure: the Alkahest of True Form."
     tansy "One swig of that golden brew, and you’ll be shifted back to your handsome old self in no time."
     "(She pulls a parchment roll from her leather coat and snaps it open with a flourish. A list of six complex ingredients is drawn in gold ink.)"
     # Source [SPRITE: Tansy — Informative, Proud]
+    show tansy talking
     tansy "Here’s the catch, little wizard: brewing the Alkahest requires six rare catalyst ingredients scattered across Mirthhaven's districts."
     tansy "And since my hands are tied stabilizing the lab warding..."
     tansy "...you get to go on a city-wide scavenger hunt!"
@@ -95,6 +97,7 @@ label chapter_1:
             tansy "Ooh, pragmatic! I knew I picked the right apprentice. Here’s your first destination, hotshot!"
     # [SCENE CONTINUES]
     # Source [SPRITE: Tansy — Direct, Pointing]
+    show tansy talking
     tansy "Your first stop is The Wanderlust Wheel in the central merchant district. Go find Clara Vane."
     tansy "She holds the first key to our brew: Sunstone Powder."
     tansy "Tell her Tansy sent you—and try not to trip over your new hemline on the way out!"
@@ -106,20 +109,20 @@ label chapter_1:
     # SFX: Sound Effect: Gentle merchant bells ringing, quiet chatter of traders, warm fireplace crackling
     "(You enter the cozy, oak-paneled headquarters of the merchant guild. Maps and velvet cases cover the walls. Clara Vane stands behind a large polished desk, carefully reviewing a ledger.)"
     # Source [SPRITE: Clara Vane — Warm, Welcoming]
-
-    show clara talking
+    show clara happy
     clara "Welcome to The Wanderlust Wheel! How can the guild help you today, young lady—"
-
-    show clara surprised
     "(Clara pauses, taking in your frantic expression, your oversized sorcerer robes, and the unmistakable Sanctum apprentice crest pinned to your cloak.)"
     # Source [SPRITE: Clara Vane — Surprised -> Amusement]
+    show clara surprised
     clara "Wait... those robes. That magic signature... Is that you, little apprentice?"
     # [MC]
     mc "Clara... please don't laugh. Tansy spiked my tea with an untested catalytic broth."
     # Source [SPRITE: Clara Vane — Laughing Softly, Chuckling]
+    show clara happy
     clara "Oh, my poor dear! Tansy strikes again!"
     "(Clara walks around her desk, gently taking your arm and guiding you to a plush velvet armchair by the hearth. She pours a steaming cup of spiced tea and places it in your hands.)"
     # Source [SPRITE: Clara Vane — Gentle, Comforting]
+    show clara talking
     clara "Drink this. It will settle your nerves."
     clara "That woman is a absolute force of nature, but she certainly keeps life in Mirthhaven entertaining."
     clara "Now, tell me—what did she send you here for?"
@@ -139,9 +142,11 @@ label chapter_1:
             clara "Patience, tea, and keeping a firm lock on my trade vaults! Mirthhaven is full of wild talents; you learn to roll with their tide."
     # [SCENE CONTINUES]
     # Source [SPRITE: Clara Vane — Helpful, Smiling]
+    show clara talking
     clara "Luckily for you, Sunstone Powder is something I can authorize directly. Consider it a gift from the guild to set right Tansy's chaos."
     "(Clara pulls a small iron key from her apron, unlocks a decorative wall safe, and retrieves a velvet pouch filled with shimmering, golden dust. She places it securely into your hands.)"
     # Source [SPRITE: Clara Vane — Reassuring]
+    show clara happy
     clara "Here you are. Ingredient number one: Sunstone Powder. One step closer to your true form."
     # SFX: Sound Effect: Door creaking open softly, light footsteps strolling in
 
@@ -151,6 +156,7 @@ label chapter_1:
     # Source [SPRITE: Tariq Vane — Sly, Mischievous, Smirking]
     tariq "Now what do we have here? Dear sister, since when did we start giving away vault catalysts to mysterious, pretty sorceresses?"
     # Source [SPRITE: Clara Vane — Sighing, Fond]
+    show clara teasing
     clara "Tariq... do behave. This is Tansy's apprentice. There was an... accidental potion mishap this morning."
     "(Tariq pushes off the doorframe, strolling closer with a slow, deliberate stride. His dark eyes sparkle with sharp amusement as he inspects you from head to toe.)"
     # Source [SPRITE: Tariq Vane — Teasing, Intrigued]
@@ -174,6 +180,7 @@ label chapter_1:
             "(Tariq steps back, executing a smooth, theatrical bow, catching his obsidian coin effortlessly.)"
             tariq "I do love a customer with backbone. Don't keep me waiting too long in the market, little wizard. I'll make sure to reserve a front-row stall just for you."
             # Source [SPRITE: Clara Vane — Warm Smile]
+            show clara happy
             clara "Good luck on your search, apprentice. Keep your chin up—and don't let my brother overcharge you!"
             "(With the Sunstone Powder secured in your pouch and Tariq’s curiosity piqued, you step out of The Wanderlust Wheel with newfound confidence, ready to brave the docks of Nautilus Point.)"
 
@@ -190,6 +197,7 @@ label chapter_1:
             "(Tariq chuckles softly, pocketing his obsidian coin as he looks at you with newfound respect.)"
             tariq "A principled sorcerer. Rare breed in Mirthhaven. Very well... bring that iron resolve with you when you visit my stalls. You'll need every drop of it."
             # Source [SPRITE: Clara Vane — Proud Nod]
+            show clara happy
             clara "You have a strong heart, apprentice. Take care down by the docks—Barek can be gruff, but he's a good soul."
             "(Holding the Sunstone Powder tightly, you march out of the guild hall with unwavering determination, ready to take on whatever challenges lie ahead at Nautilus Point.)"
 
@@ -206,6 +214,7 @@ label chapter_1:
             "(Tariq winks at you, leaning back against the wooden pillar with a low laugh.)"
             tariq "Getting under your skin is already turning out to be the highlight of my week. See you at the market, little wizard—bring your temper, it makes the bargaining far livelier!"
             # Source [SPRITE: Clara Vane — Sympathetic Smile]
+            show clara teasing
             clara "Ignore him, dear. Here's a spare cloak brooch to keep your robes tight while you walk down to Nautilus Point. Stay safe!"
             "(Flustered but holding ingredient number one—the Sunstone Powder—safely in hand, you hurry out of the office, eager to put distance between yourself and Tariq as you head toward the coastal breeze of Nautilus Point.)"
 

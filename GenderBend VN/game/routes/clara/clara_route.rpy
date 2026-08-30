@@ -19,11 +19,13 @@ label clara_chapter_1:
     "(Clara sits behind the mahogany desk, her copper-brown hair pinned up in an elegant yet slightly unraveling braid.)" 
     "(Dressed in a dark green velvet coat with silver embroidery, she rubs her temples with a tired sigh, letting out a soft groan as she reviews a disputed cargo tariff.)"
     # Source [SPRITE: Clara Vane — Weary, Overwhelmed, Rubbing Temples]
+    show clara sad
     clara "If one more spice merchant threatens to throw his shipment into the bay over a two-copper import tax... I might just throw him in after it." 
 
     show clara surprised
     "(She looks up as you enter, her exhausted expression immediately giving way to a warm, genuine smile that reaches her sharp, amber-hazel eyes.)"
     # Source [SPRITE: Clara Vane — Warm, Welcoming Smile]
+    show clara happy
     clara "Ah, little sorcerer. Come in, come in! Please tell me you brought quiet news from the Sanctum and not another official complaint about toxic alchemy runoff."
 
     menu:
@@ -31,11 +33,11 @@ label clara_chapter_1:
 
             "(You step up to her desk, taking the disputed permit and cross-referencing it with Sanctum trade codes.)"
 
+            "(You step up to her desk, taking the disputed permit and cross-referencing it with Sanctum trade codes.)"
 
             $ clara_affection += 20
             show clara surprised
             "(You quickly point out an obscure Sanctum trade exemption clause in section four. Clara blinks in surprise, a relieved, brilliant smile breaking across her face.)"
-
         "Take a breath, Clara. Hand me half those ledgers—let me take some weight off your desk.":
 
             "(You pull up a comfortable leather chair and sit across from her with a calm, grounding presence.)"
@@ -50,6 +52,7 @@ label clara_chapter_1:
             mc "Someone needs to look out for Mirthhaven's busiest woman."
 
     "(A faint, amused flush colors her cheeks)"
+    show clara flirty
     clara "Flattery from a handsome young scholar? Careful... I might start keeping you here on retainer."
     # [SCENE CONTINUES]
     "(Clara reaches for a silver teapot resting on a small stove in the corner, pouring two cups of dark, fragrant Earl Grey tea. She slides one porcelain cup across the mahogany desk to you, leaning back against her leather chair with a deep, contented sigh.)"
@@ -62,10 +65,12 @@ label clara_chapter_1:
     "(As you finish signing the reagent permits, Clara stands up and walks over to a side table. Resting beside her official guild seal is a neatly wrapped wooden lunch box, tied with a clean linen napkin and smelling of fresh crusty bread, roasted chicken, and sweet apples.)"
     "(Clara picks up the wooden parcel, looking at it with a blend of exasperated affection and maternal worry.)"
     # Source [SPRITE: Clara Vane — Exasperated, Fond Smile]
+    show clara talking
     clara "Before you head back up the hill to your quarters... I have a small personal favor to ask."
     # [MC]
     mc "Anything, Clara. What is it?"
     # Source [SPRITE: Clara Vane — Holding Parcel, Shaking Head]
+    show clara sad
     clara "That wild-haired lead alchemist up at the Sanctum—Tansy. She came down to the market two days ago to buy glass retorts, looking like she hadn't slept or eaten since Sunday. I know for a fact she hasn't left her laboratory since."
     "(She steps around her desk, holding out the warm wooden lunch parcel toward you.)"
     clara "She's going to starve herself into an alchemical explosion if someone doesn't force food down her neck. Would you be a dear and drop this off at her lab on your way through the Sanctum?"
@@ -78,6 +83,7 @@ label clara_chapter_1:
             $ tansy_route_triggered = True
             show clara happy
             "(Clara's face brightens with immense gratitude. She squeezes your forearm gently.)"
+            show clara happy
             clara "Thank you, sweet boy. Tell her if she doesn't finish the apples, I'm coming up there to drag her out by her ears myself."
             hide clara
             jump clara_chapter_1_tansy_scene
@@ -88,6 +94,7 @@ label clara_chapter_1:
             $ tansy_route_triggered = True
             show clara happy
             "(Clara's face brightens with immense gratitude. She squeezes your forearm gently.)"
+            show clara happy
             clara "Thank you, sweet boy. Tell her if she doesn't finish the apples, I'm coming up there to drag her out by her ears myself."
             hide clara
             jump clara_chapter_1_tansy_scene
@@ -97,6 +104,7 @@ label clara_chapter_1:
             $ clara_affection += 15
             show clara happy
             "(Sighs softly, setting the parcel back down)"
+            show clara normal
             clara "Fair enough. I'll have a guild courier run it up later. Stay and finish your tea with me instead."
             # [TANSY ROUTE SKIPPED — CLARA ONLY PATH CONTINUES]
             jump clara_chapter_1_clara_only
@@ -106,6 +114,7 @@ label clara_chapter_1_tansy_scene:
     hide clara
     # Scene 3: The Smoke-Filled Lab (Secret Tansy Scene)
     # Location: The Sanctum — Alchemy Wing (Afternoon)
+
     # [SCENE START]
     # SFX: Sound Effect: Distant bubbling cauldrons, quiet glass clinking, sudden harsh PFFFT-CLANK of an alchemical burner sputtering!
     "(The Sanctum's main alchemy laboratory is a chaotic labyrinth of towering brass pipes, glowing glass retorts, and floating parchment notes. The air smells strongly of dried lavender, sulfur, and copper.)"
@@ -154,6 +163,7 @@ label clara_chapter_1_tansy_scene:
     tansy "Fair point, wizard. Tell Clara her chicken saved my life... and tell yourself that you just earned priority status in my laboratory."
     "(She takes another enthusiastic bite of roasted apple, flashing you a bright, messy smile before turning back to her glowing calculations.)"
     show tansy happy
+
     "(You leave the alchemy lab as Tansy happily devours her meal, returning to the Sanctum hallways with the warm satisfaction of a job well done. You have earned Clara's deep gratitude while setting up a secret bond with Mirthhaven's most brilliant alchemist.)"
     # [EVENT 1 COMPLETE — BRANCH A: The Caretaker's Reward (Clara Relationship Tier 1 Unlocked — Secret Flag [TANSY_FED] Active! Tansy Route Unlocks in Chapter 3!)]
     hide tansy
@@ -162,6 +172,7 @@ label clara_chapter_1_tansy_scene:
 label clara_chapter_1_clara_only:
 
     show clara happy
+
     "(You remain in Clara's quiet, oak-paneled office, sharing hot tea and quiet conversation until the afternoon shadows lengthen over the Merchant Guildhall. Clara looks at you with deep, tranquil comfort, grateful for a rare hour of peace.)"
     # [EVENT 1 COMPLETE — BRANCH B: The Guildmaster's Tea (Clara Relationship Tier 1 Unlocked — Deep Professional & Emotional Rapport)]
     # [SCENE END]
@@ -182,6 +193,7 @@ label clara_chapter_2:
     # SFX: Sound Effect: Heavy iron strap slipping, muffled exhale of frustration
     "(Her copper-brown hair has slipped entirely from its formal braid, falling around her neck in soft, wavy strands. She looks exhausted—her shoulders drooping, her breath visible in the cool harbor air.)"
     # Source [SPRITE: Clara Vane — Alone, Weary, Struggling with Cargo]
+    show clara sad
     clara "Come on, stay locked... If this silk cargo sits in the sea damp overnight, the entire harbor shipment is ruined..."
 
     menu:
@@ -193,6 +205,7 @@ label clara_chapter_2:
             # SFX: Sound Effect: HEAVY METALLIC LATCH CLICK!
             "(Your hands cover hers on the cold iron, easily snapping the lever shut. Clara gasps softly, turning her head to find you standing close beside her.)"
             "(Exhales a long breath, her eyes softening)"
+            show clara surprised
             clara "You... you always show up right when my strength gives out, don't you?"
         "Working past midnight again, Clara?":
 
@@ -201,6 +214,7 @@ label clara_chapter_2:
             show clara talking
             mc "You know, normal people go home when the sun sets."
             "(Lets out a small, self-deprecating laugh, rubbing her sore wrist)"
+            show clara talking
             clara "Normal people don't have forty merchant vessels docking at dawn, little wizard."
         "That's enough. You're stepping away from these crates.":
 
@@ -209,6 +223,7 @@ label clara_chapter_2:
             show clara teasing
             mc "I'm relieving you of duty for the night, Clara."
             "(Blinks in surprise, a tired yet deeply touched smile breaking across her lips)"
+            show clara teasing
             clara "Relieving me? Careful... taking authority over the Guildmaster is a serious offense."
             # [SCENE CONTINUES]
             "(Clara attempts to take another step toward the next crate, but her knee buckles slightly from pure fatigue. She catches herself against the wooden bench of an empty spice stall, letting out a soft, defeated sigh.)"
@@ -253,6 +268,7 @@ label clara_chapter_2:
     # [SCENE START]
     "(The silence between you is peaceful and deep. The empty market feels miles away from the noise of Mirthhaven. Clara leans back against the wooden support pillar, looking at you with a mix of wonder and quiet emotion.)"
     # Source [SPRITE: Clara Vane — Soft, Vulnerable, Looking at You]
+    show clara sad
     clara "My whole life... ever since our parents passed and I took over the family debt... I've been the one holding the umbrella over everyone else's head."
     "(She looks down at her hands, a wistful, tender smile touching her lips.)"
     # Source [SPRITE: Clara Vane — Tender, Sincere Whispers]
@@ -266,8 +282,10 @@ label clara_chapter_2:
             "(You reach out and gently tuck a stray lock of hair behind her ear, holding her gaze.)"
             $ clara_affection += 20
             show clara surprised
+
             "(Your fingers lightly brush against her cheek as you tuck her hair back. Clara's breath hitches softly. She doesn't pull away—instead, she leans her face slightly into your palm, closing her eyes as a tear of relief slips down her cheek.)"
             # Source [SPRITE: Clara Vane — Deeply Moved, Restings Against Your Hand]
+            show clara surprised
             clara "I... I think I've waited my whole life to hear someone say that to me."
             "(She reaches up, covering your hand on her cheek with her own, holding you close in the quiet amber light of the market lantern.)"
             # [EVENT 2 COMPLETE — BRANCH A: The Caretaker's Sanctuary (Relationship Tier 2 Unlocked — Deep Emotional Sanctuary & Mutual Trust)]
@@ -278,11 +296,13 @@ label clara_chapter_2:
             "(You take her hand firmly, looking into her eyes with mature, unwavering devotion.)"
             $ clara_affection += 20
             show clara happy
+
             "(You squeeze her hand firmly, offering her a steady, grounded anchor that bridges any age gap between you.)"
             # [MC]
             mc "You're a human being before you're a Guildmaster, Clara. Let me look out for you."
             # Source [SPRITE: Clara Vane — Radiant, Sincere Emotion]
             "(Clara looks at you with profound, affectionate awe. She leans her shoulder against yours, resting her head softly against your shoulder under the cool night sky.)"
+            show clara happy
             clara "You carry yourself with more strength and grace than men twice your age, wizard. I'm... so glad you came into my life."
             # [EVENT 2 COMPLETE — BRANCH B: Unmasked Devotion (Relationship Tier 2 Unlocked — Unshakeable Maturity & Emotional Bonding)]
             hide clara
@@ -292,11 +312,13 @@ label clara_chapter_2:
             "(You offer a warm, reassuring smile, leaning in slightly.)"
             $ clara_affection += 15
             show clara flirty
+
             "(You offer a bright, gentle smile that breaks through years of her built-up stress.)"
             # [MC]
             mc "It's my official duty as your favorite scholar."
             # Source [SPRITE: Clara Vane — Flustered Flush, Soft Chuckle]
             "(A soft, beautiful crimson flush colors Clara's cheeks. She lets out a warm, musical laugh, shaking her head affectionately as she wraps her arm through yours.)"
+            show clara flirty
             clara "Favorite scholar, hmm? You're playing a dangerous game, little sorcerer... my heart isn't as tough as my ledgers."
             "(The physical closeness and sweet romance linger long after the market lanterns fade, cementing a deep, mutual romantic attraction.)"
             # [EVENT 2 COMPLETE — BRANCH C: Warmth Beneath the Ledgers (Relationship Tier 2 Unlocked — Sweet Romantic Chemistry)]
@@ -315,9 +337,11 @@ label clara_chapter_3:
     "(Tucked away in the quietest, shadow-draped corner of the tavern's upper terrace, Clara Vane sits in a high-backed booth overlooking the illuminated harbor. Dressed down out of her formal guild coat, she wears a simple, soft linen shirt unbuttoned slightly at the collar. Her copper-brown hair falls freely over her shoulders in rich waves.)"
     "(A half-empty bottle of deep red Valen wine rests on the table alongside a single glass. Clara swirly the dark liquid, staring out at the sea with a weary, distant gaze.)"
     # Source [SPRITE: Clara Vane — Unarmored, Exhausted, Sipping Wine]
+    show clara sad
     clara "Three hours... Three whole hours of listening to the Town Council argue about salt tariffs while the city's storehouses rot. Sometimes I wonder why I bother."
     "(She notices you standing at the curtained entryway, her posture instantly softening as she gestures toward the cushion across from her.)"
     # Source [SPRITE: Clara Vane — Soft, Weary Smile]
+    show clara happy
     clara "Ah, sorcerer. Thank gods. Sit down before my mind completely numbs itself."
 
     menu:
@@ -327,6 +351,7 @@ label clara_chapter_3:
             $ clara_affection += 20
             show clara happy
             "(Clara lets out a long, grateful sigh, setting her chin in her hand as she watches you handle the wine with calm composure.)"
+            show clara happy
             clara "Always so composed. You have no idea how refreshing that is after dealing with loud old men all day."
         "The council doesn't deserve you, Clara. I'm here to steal you away for the night.":
 
@@ -334,6 +359,7 @@ label clara_chapter_3:
             $ clara_affection += 15
             show clara flirty
             "(Clara's breath catches slightly as you sit close beside her. A faint, lovely color touches her cheeks.)"
+            show clara flirty
             clara "Steal me away, hmm? Careful... people might talk if the Guildmaster vanishes into the shadows with a sharp scholar."
         "Name the council members who annoyed you.":
 
@@ -349,10 +375,12 @@ label clara_chapter_3:
     # [SCENE START]
     "(The ambient noise of the tavern fades into the background. Clara sets her glass down, her amber-hazel eyes searching your face with a mix of deep fondness and sudden, nervous hesitation.)"
     # Source [SPRITE: Clara Vane — Flustered, Hesitant, Looking Down]
+    show clara talking
     clara "I need to be honest with you about something... something that's been keeping me up at night."
     # [MC]
     mc "You can tell me anything, Clara."
     # Source [SPRITE: Clara Vane — Chewing Lip, Vulnerable]
+    show clara sad
     clara "Look at us. You are young—brilliant, young, with your whole life and entire world stretching out ahead of you."
     clara "And me? I'm over thirty. I've spent my entire youth managing merchants, raising my brother, and carrying the weight of Mirthhaven."
     "(She traces the rim of her glass with a trembling finger, her voice dropping to a vulnerable, quiet whisper.)"
@@ -367,6 +395,7 @@ label clara_chapter_3:
             $ clara_affection += 25
             show clara happy
             "(Clara looks up, her eyes wide with emotional impact. Your calm, grounded devotion completely shatters her doubts. She lets out a trembling breath, squeezing your fingers tightly.)"
+            show clara surprised
             clara "You... you say things with such absolute certainty. You make me feel like I can finally stop overthinking."
             jump clara_chapter_3_romance_continue
         "If you're making a fool of yourself, then so am I.":
@@ -375,6 +404,7 @@ label clara_chapter_3:
             $ clara_affection += 20
             show clara happy
             "(Clara looks up, her eyes wide with emotional impact. Your calm, grounded devotion completely shatters her doubts. She lets out a trembling breath, squeezing your fingers tightly.)"
+            show clara surprised
             clara "You... you say things with such absolute certainty. You make me feel like I can finally stop overthinking."
             jump clara_chapter_3_romance_continue
         "Why do you keep bringing up my age? I'm not a kid!":
@@ -392,6 +422,7 @@ label clara_chapter_3_romance_continue:
 
     # Scene 3: Deepening Bonds
     # Location: The Laughing Anchor — Upper Terrace Balcony
+
     # [SCENE START]
     "(Clara stands up from the table, stepping out onto the small, secluded balcony overlooking the starry harbor. The cool night sea air gently stirs her hair. You step up right behind her.)"
     "(Without hesitation, Clara turns around and closes the distance between you. She rests her hands gently against your chest, leaning her forehead against yours in the quiet darkness.)"
@@ -399,13 +430,16 @@ label clara_chapter_3_romance_continue:
     "(Whispers softly)"
     clara "No one has looked at me the way you do in... I don't even know how long. Not as Guildmaster Vane. Not as Tariq's big sister. Just... Clara."
     "(Her breath is warm against your lips, her fingers clutching the front of your scholar's robes as she surrenders her guarded heart to you.)"
+    show clara flirty
     clara "If you'll have me... age, ledgers, and all... I'm yours, sorcerer."
     show clara flirty
 
     if clara_affection >= 100 and not clara_kid_warning:
+
         "(You wrap your arms firmly around Clara's waist, pulling her close against you. She lets out a contented, soft sigh, lifting her face to press a slow, deep, passionate kiss to your lips under the starlight—sealing her route for Chapter 4.)"
         # [EVENT 3 COMPLETE — BRANCH A: The Hearth's Embrace (Clara Relationship Tier 3 Unlocked — Full Romantic Lock! Ready for Chapter 4 Finale!)]
     else:
+
         "(You hold her hand firmly against your heart, letting her feel how rapidly it beats for her. Clara smiles radiantly, kissing your cheek softly before resting her head against your shoulder as you watch the harbor lights together.)"
         # [EVENT 3 COMPLETE — BRANCH B: Unmasked Devotion (Clara Relationship Tier 3 Unlocked — Deep Mutual Attraction! Ready for Chapter 4 Finale!)]
 
@@ -416,6 +450,7 @@ label clara_chapter_3_family:
 
     $ clara_romance_locked = True
     show clara happy
+
     "(The atmosphere becomes completely platonic. Clara smiles warmly, but the romantic boundary is firmly re-erected. She wraps a motherly arm around your shoulders, giving you an affectionate side-hug as if you were her younger brother.)"
     # Source [SPRITE: Clara Vane — Patronizing, Maternal Smile, Arm around Shoulder]
     clara "You're a good kid, sorcerer. Truly. Remind me to give you an extra allowance of reagent permits tomorrow—you and Tariq really are the little brothers I never knew I needed to keep me on my toes."
@@ -438,12 +473,15 @@ label clara_chapter_4:
     "(Clara stands at the edge of the wooden pier, looking out toward the horizon. She still wears her familiar dark green velvet coat with silver embroidery, though her coat is unbuttoned against the soft night air, and her long copper-brown hair flows loosely over her shoulders in the sea breeze.)"
     "(She turns as she hears your boots on the creaking dock planks. Her sharp, amber-hazel eyes catch the moonlight, softening into a look of profound, breathtaking tenderness.)"
     # Source [SPRITE: Clara Vane — Soft, Reflective, Moonlight on Face]
+    show clara happy
     clara "Listen to that... Silence. Real, unbroken silence. I can't remember the last time the docks were this peaceful at midnight."
     "(She steps closer to you, the hem of her dark green velvet coat brushing against your boots. She wraps her arms around herself, letting out a long, quiet breath.)"
+    show clara sad
     clara "Before you came into my life, sorcerer... I honestly believed my youth was completely behind me."
     clara "I used to look in the mirror every morning at thirty-two and see an old, tired woman whose whole existence was reduced to ink, tax ledgers, and trade manifests."
     "(She reaches out, her hand trembling slightly as her cold, soft fingers gently touch the side of your neck, feeling the warm pulse beneath your skin.)"
     # Source [SPRITE: Clara Vane — Vulnerable, Sincere, Eyes Glistening]
+    show clara sad
     clara "I convinced myself that love was something meant for other people—for the young, the carefree, people who had time for romance."
     clara "My schedule was my cage, and my age was my sentence."
     clara "But then... you looked at me. Not as Guildmaster Vane. Not as a weary bossy woman... but as Clara."
@@ -458,6 +496,7 @@ label clara_chapter_4:
             $ clara_affection += 20
             show clara happy
             "(Clara lets out a shaky breath, a brilliant crimson blush sweeping across her cheeks. She smiles with a pure, radiant joy that makes her look like a girl half her age.)"
+            show clara surprised
             clara "You... you always know exactly how to make my heart feel like it's nineteen again."
         "An old woman? I see a vibrant, stunning woman who steals my breath every day.":
 
@@ -465,6 +504,7 @@ label clara_chapter_4:
             $ clara_affection += 15
             show clara flirty
             "(She lets out a soft, musical laugh, resting her hands against your chest as she leans into your warm embrace.)"
+            show clara flirty
             clara "Flatterer. But gods help me... I love hearing you say it."
         "Hey, you're not old! You've got as much energy as Tariq.":
 
@@ -482,9 +522,11 @@ label clara_chapter_4:
     # SFX: Sound Effect: Quiet echoing footsteps on smooth cobblestones, soft rustle of midnight wind through empty vendor stalls
     "(You walk together back toward the central district. The city is asleep, the warm amber streetlamps casting long, intimate shadows across the stone paths. Clara walks close beside you, her hand entwined tightly with yours, her fingers interlocked with a steady, protective warmth.)"
     # Source [SPRITE: Clara Vane — Radiant, Holding Hands, Looking Up]
+    show clara happy
     clara "Look at these streets... I've walked down this exact path ten thousand times. Running to cargo emergency meetings, chasing down late shipments, worrying about gold and guild politics. I never once noticed how pretty the moonlight looks on the cobblestones."
     "(She stops beneath the warm glow of a streetlamp, turning her body to face you fully. Her green coat catches the amber light, her eyes sparkling with a playful, newfound lightness.)"
     # Source [SPRITE: Clara Vane — Playful Flush, Bicker-Flirting]
+    show clara teasing
     clara "Do you know what you've done to me, wizard? You've ruined my terrible work ethic. Yesterday, during the harbor council meeting, I spent twenty minutes staring out the window daydreaming about... well, about taking long walks with an eighteen-year-old scholar who turned my whole world upside down."
 
     menu:
@@ -494,6 +536,7 @@ label clara_chapter_4:
             $ clara_affection += 25
             show clara flirty
             "(Clara's breath catches. She steps into your space, her chest pressing against yours. All her former worries about her age, her position, and her heavy schedule vanish entirely in the warmth of your gaze.)"
+            show clara flirty
             clara "I'm done fighting it. I don't care about the age gap, I don't care about the city rumors... I just want you."
             jump clara_final_ending_check
         "I'm not going anywhere, Clara. I'll always be waiting at the end of your day.":
@@ -502,6 +545,7 @@ label clara_chapter_4:
             $ clara_affection += 20
             show clara flirty
             "(Clara's breath catches. She steps into your space, her chest pressing against yours. All her former worries about her age, her position, and her heavy schedule vanish entirely in the warmth of your gaze.)"
+            show clara flirty
             clara "I'm done fighting it. I don't care about the age gap, I don't care about the city rumors... I just want you."
             jump clara_final_ending_check
         "If Tariq heard that, he'd tease you for being a sappy big sister!":
@@ -534,8 +578,10 @@ label clara_ending_true:
     "(You return to where it all began: Clara's private office at the top of the Merchant Guildhall. The room smells of polished oak, warm wax, and familiar dried lavender. The heavy stacks of chaotic ledgers that once overwhelmed her desk have been neatly put away.)"
     "(Clara stands beside her mahogany desk, bathed in the soft, flickering orange light of the fireplace. She unclasps the silver chain at her throat, letting out a long, peaceful sigh as she looks around her domain—a room that used to feel like her personal prison, but now feels like home.)"
     show clara flirty
+
     "(Clara walks around her desk toward you. From her coat pocket, she pulls out a heavy, ornate brass key stamped with her personal Guildmaster seal. She takes your hand, pressing the cold key directly into your palm, before closing her warm fingers over yours.)"
     # Source [SPRITE: Clara Vane — Deeply In Love, Soft Tear of Happiness]
+    show clara flirty
     clara "This is the master key to my private residence... and to my heart."
     clara "For fifteen years, I gave every second of my life to Mirthhaven, believing I was destined to end up alone, buried under work and age."
     "(She reaches up, resting both her hands on your cheeks, her thumb softly tracing your cheekbone as a quiet, breathless tear of pure joy slips down her cheek.)"
@@ -556,8 +602,10 @@ label clara_ending_good:
     "(You return to where it all began: Clara's private office at the top of the Merchant Guildhall. The room smells of polished oak, warm wax, and familiar dried lavender. The heavy stacks of chaotic ledgers that once overwhelmed her desk have been neatly put away.)"
     "(Clara stands beside her mahogany desk, bathed in the soft, flickering orange light of the fireplace. She unclasps the silver chain at her throat, letting out a long, peaceful sigh as she looks around her domain—a room that used to feel like her personal prison, but now feels like home.)"
     show clara happy
+
     "(Clara sits beside you on the edge of her mahogany desk, resting her head against your shoulder as the fire crackles softly.)"
     # Source [SPRITE: Clara Vane — Content, Peaceful Smile]
+    show clara happy
     clara "I spent so long worrying about the years between us... but when I'm in your arms, time doesn't mean a thing. You are my anchor, wizard."
     "(She turns her face, pressing a tender, sweet kiss to your lips, holding your hand tightly as you spend the rest of the night sharing quiet wine and warm laughter in her office.)"
     # [STORY COMPLETE — SWEET ROMANCE ENDING: "Anchored in Devotion" — Clara Vane's Route Completed! A sweet, grounded romance built on mutual respect and everlasting warmth!]
@@ -575,11 +623,13 @@ label clara_chapter_4_family_path:
     "(You return to where it all began: Clara's private office at the top of the Merchant Guildhall. The room smells of polished oak, warm wax, and familiar dried lavender. The heavy stacks of chaotic ledgers that once overwhelmed her desk have been neatly put away.)"
     "(Clara stands beside her mahogany desk, bathed in the soft, flickering orange light of the fireplace. She unclasps the silver chain at her throat, letting out a long, peaceful sigh as she looks around her domain—a room that used to feel like her personal prison, but now feels like home.)"
     show clara happy
+
     "(Clara steps up to her desk and pulls out a polished wooden box. Inside rests a silver signet ring carrying the Merchant Guild seal. She hands it to you with a proud, deeply affectionate smile.)"
     # Source [SPRITE: Clara Vane — Proud, Sisterly / Maternal Smile]
     clara "I raised Tariq to be a man, but I never thought I'd find another younger brother to care about as much as him. You've brought so much life, energy, and trouble into this boring old Guildhall."
     "(She wraps her arms around you in a big, warm, motherly hug, patting your back heartily like a loving older sister.)"
     # Source [SPRITE: Clara Vane — Hearty Laugh, Patting Your Back]
+    show clara happy
     clara "You're family now, sorcerer. Official Guild family. If anyone in Mirthhaven ever gives you trouble, you come tell your big sister, and I'll handle them myself!"
     "(Though romantic love was not found, you earned an unshakeable, lifelong spot as a cherished younger brother in Clara and Tariq's family, gaining the absolute protection and fierce loyalty of Mirthhaven's Guildmaster forever.)"
     # [STORY COMPLETE — PLATONIC ENDING: "The Guildmaster's Family" — Clara Vane permanently sees you as a beloved younger brother/family member. Deep loyalty and lifelong family bond established!]
