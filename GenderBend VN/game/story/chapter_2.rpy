@@ -1,237 +1,165 @@
+# ============================================================
+# MAIN CHAPTER 2 — AQUA-VAULTS & MILITARY STEEL
+# Adjusted four-character version.
+# ============================================================
+
 label chapter_2:
 
-    call chapter_transition(2, "Muscle, Fire & The Docks")
-    # =========================
-    # SCENE 1 - Salt-Air & Strained Ropes
-    # =========================
+    call chapter_transition(2, "Aqua-Vaults & Military Steel")
 
-    #(Sound Effect: Seagulls squawking, heavy waves crashing against mossy wooden pilings, creaking ship timber)
-    
-    "(The salty breeze hits your face as you make your way down to the slippery cobblestones of Nautilus Point.)"
-
-    "(The air is thick with the scent of brine, tar, and fish.)"
-
-    "(Following Tansy's checklist, you search the lower piers until you spot a massive, muscular sharkfolk struggling near the water's edge.)"
-    
-    # (Sound Effect: Heavy splashing, straining wood, deep grunting)
-    # [SPRITE: Barek Tidejaw — Strained, Frustrated]
-
-    barek "Hnnrgh... Come on, you waterlogged piece of drift-oak... yield!"
-
-    "(Barek Tidejaw, covered in sea spray and damp leather, has his massive clawed hands wrapped around a thick, iron-weighted leviathan net. The net is wedged tightly beneath a rotting wooden piling, trapping a fresh catch below the rising tide.)"
-
-    mc "Need a hand down there?"
-
-    "(Barek glances up over his shoulder, his gilled neck twitching in surprise as he takes in your         transformed form and sorcerer robes.)"
-
-    # [SPRITE: Barek Tidejaw — Surprised, Gruff]
-    
-    barek "A Sanctum wizard? Down on the wet docks? Heh... Unless you've got three extra sets of arms under those long sleeves, little lady, magic won't lift three tons of snagged iron and oak!"
-
+    show elianna normal at elianna_size, char_center
+    # Scene 1: Bioluminescent Depths
+    # Location: The Solarium Sanctum — Aquatic Botanical Wing
+    # [SCENE START]
+    # SFX: Sound Effect: Gentle water splashing, hum of underwater filtration wards, soft bioluminescent glow echoing off wet glass
+    "(Following your checklist, you navigate down to the flooded glass arches of the Sanctum’s aquatic conservatories.)"
+    "(Water tanks line the walls, shimmering with deep-sea flora.)"
+    "(Near the central pool, Ellie Sylvane is struggling with a heavy iron aquatic mesh stuck beneath a submerged stone pedestal.)"
+    # SFX: Sound Effect: Heavy splashing, straining metal, soft grunting
+    # Source [SPRITE: Ellie — Strained, Flustered, Wet Sleeves]
+    show elianna normal
+    elianna "Hnnrgh... Oh dear... come on, yield you stubborn iron mesh...!"
+    "(Ellie has her sleeves rolled up, her pale arms wrapped around a heavy leviathan-net used to contain deep-sea specimens. The mesh is wedged tightly under a stone filter arch.)"
+    # [MC]
+    mc "Need a hand over there, Ellie?"
+    "(Ellie glances up over her shoulder, her cheeks flushing as she takes in your transformed form and sorcerer robes.)"
+    # Source [SPRITE: Ellie — Surprised, Embarrassed]
+    show elianna angry
+    elianna "Ah! Sorcerer! Oh goodness... I-I didn't expect anyone down here! This heavy specimen cage got snagged during the morning water siphon..."
+    # [MC]
     mc "Watch me."
 
-    # CHOICE 1
+    menu:
+        "Cast a kinetic lift spell while bracing yourself alongside her at the pool’s edge":
+            "(Cast a kinetic lift spell while bracing yourself alongside her at the pool’s edge.)"
+            show elianna happy
+            elianna "My goodness! Look at that strength! You're much sturdier than you look in those robes!"
+        "Channel a precise magic pulse directly into the snagged stone arch to shatter the obstruction":
+            "(Channel a precise magic pulse directly into the snagged stone arch to shatter the obstruction.)"
+            show elianna normal
+            elianna "Oh! A clean kinetic pulse! That saved me hours of struggling with the levers!"
+        "Use a levitation weave on the iron weights while instructing Ellie when to pull":
+            "(Use a levitation weave on the iron weights while instructing Ellie when to pull.)"
+            "(You weave a glowing blue harness around the sunken iron weights, lifting their mass as you call out the cadence for Ellie to hoist.)"
+            show elianna happy
+            elianna "Such smooth spellcraft! Working smart instead of straining—I really admire your focus!"
+
+
+    # SFX: Sound Effect: Heavy net splashing onto the stone deck
+    "(Ellie wipes sea-spray from her forehead, offering you a bright, relieved smile.)"
+    # Source [SPRITE: Ellie — Gentle, Grateful]
+    show elianna happy
+    elianna "Thank you so much! Most scholars avoid getting their robes wet down here. Now, what brings you to the aquatic wing?"
+    # [MC]
+    mc "I'm looking for a catalyst for Tansy's reversal brew. We need a Luminescent Sea-Gland."
+    # Source [SPRITE: Ellie — Smiling, Generous]
+    show elianna happy
+    elianna "Oh, Tansy's cure! Of course! The net we just freed contained a deep-sea angler specimen."
+    "(Ellie reaches into her velvet specimen pouch and pulls out a glowing, pearlescent orb that pulses with a calm, bioluminescent blue light. She presses it gently into your palm.)"
+    # Source [SPRITE: Ellie — Warm, Encouraging]
+    show elianna talking
+    elianna "Ingredient number two: Luminescent Sea-Gland, perfectly preserved. Be careful heading out—your next stop is the Garrison armory for forge ingredients!"
+    # Scene 2: Forge-Fire & Dragon Steel
+    hide elianna 
+    # Location: The Crestward Garrison — High Armory Forge (Dusk)
+    # [SCENE START]
+    # SFX: Sound Effect: Heavy hammer strikes echoing, roaring forge bellows, crackling white-hot flames
+    "(The Crestward Garrison armory is blazing with heat.)"
+    "(Commander Domitilla Bruni stands near the central draconic blast-furnace, her dark plate armor reflecting the intense golden embers as she works a massive ingot of metal.)"
+    # Source [SPRITE: Commander Bruni — Boisterous, Hammering]
+    show domitilla happy at domitilla_size, char_center
+    domitilla "HA! Put some muscle into those bellows, recruits! Steel doesn't temper itself!"
+    "(Domitilla turns her head, her sharp golden eyes catching sight of your sorcerer robes.)"
+    # Source [SPRITE: Commander Bruni — Intrigued, Smirking]
+    show domitilla surprised
+    domitilla "Well, well! A Sanctum scholar stepping right into my forge hall! What brings magic robes into the heat of military iron?"
+    # SFX: Sound Effect: Pop of magic smoke, light laughter
+    # Source [SPRITE: Tansy — Mischievous, Popping In]
+    show tansy teasing at char_left, tansy_size
+    tansy "I brought them, Commander! We need a spark of your legendary draconic furnace to harvest Draconic Cinder-Ash! But I told my apprentice your forge fire has gotten a bit tame lately~"
+    # Source [SPRITE: Commander Bruni — Booming Laugh, Fiery Eyes]
+    show domitilla happy
+    domitilla "TAME?! MY FORGE FLAME?! Ha! Them's fighting words, alchemist! My hearth burns hot enough to melt dragon-scale!"
+    "(Domitilla steps up to you, the intense heat radiating from her armor.)"
 
     menu:
+        "Join in their rowdy martial banter with a bold grin":
+            "(Join in their rowdy martial banter with a bold grin.)"
+            mc "Don't hold back on my account, Commander! Show my mentor what real heat looks like!\" Bruni: \"BHAHA! I like this kid! You've got real garrison spirit!"
+        "Use a small flame-shaping spell to dance sparks over your knuckles":
+            "(Use a small flame-shaping spell to dance sparks over your knuckles.)"
+            mc "Careful, Commander. If your forge slacks, I might just have to ignite the cinder-ash myself.\" Bruni: \"Oho! Showing off fire magic to a knight? Bold move, wizard! I respect it!"
+        "Keep your cool and gently nudge Tansy back from the furnace blast":
+            "(Keep your cool and gently nudge Tansy back from the furnace blast.)"
+            mc "Tansy, stop poking the Commander. Bruni, we just need a controlled spark for the Alkahest.\" Bruni: \"Ha! Controlled? Fair enough, but where's the fun without a little show?!"
 
-        "(Cast a kinetic lift spell while bracing yourself alongside him on the wet pier)":
-            "(You plant your boots on the slick timber, digging in beside the massive sharkfolk as blue kinetic energy coats your arms. With a synchronized grunt, you both heave.)"
+    # Source [SPRITE: Commander Bruni — Focused, Grinning]
+    show domitilla talking
+    domitilla "Alright, apprentice! Hold up your enchanted collection vial! Let's see if you can hold steady when the Garrison forge unleashes true heat!"
+    "(Domitilla yanks open the heavy iron blast-hatch of the main furnace.)"
+    # SFX: Sound Effect: Deep rumbling heat, roaring flame ignition
+    # Scene 3: Cinder & Steel
+    # Location: The Crestward Garrison — Furnace Hearth
+    # [SCENE START]
+    "(The air in the armory turns scorchingly hot as a concentrated, brilliant stream of white-hot draconic flame rushes out from the open forge.)"
+    "(The fire swaths directly toward the enchanted brass-lined flask in your hands.)"
+    # SFX: Sound Effect: Roaring draconic fire, crackling magic wards
+    # Source [SPRITE: Tansy — Excited, Watching Close]
+    show tansy worried
+    tansy "Hold it steady! Don't let the thermal shock crack the glass!"
+    "(The intense heat radiates against your face, turning your cheeks flushed red. Glowing, crystalline ash begins to settle at the bottom of the flask, burning with embers of pure magic.)"
 
-            barek "HA! Look at that grit! You're stronger than you look, wizard!"
-
-        "(Channel a precise magic pulse directly into the rotting piling to shatter the obstruction)":
-            "(You extend your staff, firing a concentrated magic shockwave into the trapped wood. The rotten piling shatters into splinters, instantly freeing the net ropes.)"
-
-            barek "Bwahaha! Clean shot! Saved me two hours of aching shoulders!"
-
-        "(Use a levitation weave on the iron weights while instructing Barek when to pull)":
-            "(You weave a glowing blue harness around the sunken iron weights, lifting their mass as you call out the cadence for Barek to hoist.)"
-
-            barek "Smooth call! Work smart, not hard—I like how your mind operates!"
- 
-    # (Sound Effect: Heavy net splashing onto the cobblestones, fish flopping)
-    
-    "(Barek wipes sea foam from his brow with a thick forearm, giving you a booming, appreciative laugh that echoes over the wharves.)"
-
-    # [SPRITE: Barek Tidejaw — Hearty, Grateful]
-
-    barek "Well, I'll be damned! Most soft-handed scholars from the Sanctum wouldn't even step on these wet boards, let alone help haul leviathan mesh! What brings a sharp sorcerer like you down to my docks?"
-    
-    mc "I'm looking for a catalyst for a... temporary body restoration potion. Tansy sent me for a Luminescent Sea-Gland."
-    # [SPRITE: Barek Tidejaw — Grinning, Generous]
-
-    barek "Tansy's student, huh? That explains the sheer nerve! Lucky for you, today's catch brought in a deep-sea angler."
-
-    "(Barek reaches into his belt pouch and pulls out a glowing, pearlescent orb that pulses with a calm, bioluminescent blue light. He presses it warmly into your palm.)"
-
-    # [SPRITE: Barek Tidejaw — Warm, Welcoming]
-
-    barek "Ingredient number two: Luminescent Sea-Gland, fresh from the depths. But you're not walking away just yet! You helped me save my haul—that means you're coming to The Laughing Anchor for a proper tavern toast!"
-
-    # =========================
-    # SCENE 2 - Foam & Dragon-Fire
-    # =========================
-
-    # Location: The Laughing Anchor — Main Taproom (Dusk)
-    # (Sound Effect: Roaring crowd chatter, clinking heavy mugs, lively fiddle music, crackling hearth)
-    
-    "(The Laughing Anchor is packed to the rafters. Barek leads you to a large oak table near the fireplace where a towering, copper-scaled dragon-kin is currently draining a wooden pitcher of dark ale in one long gulp.)"
-
-    # (Sound Effect: Slamming heavy pitcher on wood)
-    # [SPRITE: Bao Zhao — Boisterous, Merry]
-    bao "AHA! Outstanding brew! Hey, landlord! Bring another round for the house!"
-    
-    # [SPRITE: Barek Tidejaw — Laughing, Slapping Shoulder]
-    barek "Bao, meet our savior of the day! This little sorcerer helped me pull three hundred pounds of net out of the bay!"
-    
-    "(Bao turns around, his golden reptilian eyes lighting up with playful curiosity as he looks you up and down.)"
-
-    # [SPRITE: Bao Zhao — Intrigued, Smirking]
-    bao "Well, well! A Sanctum scholar with actual muscle! Sit down, sit down! Any friend of Barek's is getting a mug of Mirthhaven's finest dark draught!"
-
-    "(Before you can even take a seat, a familiar, chaotic voice pops up right over your shoulder.)"
-
-    # (Sound Effect: Pop of magic smoke, light laughter)
-    # [SPRITE: Tansy — Mischievous, Popping In]
-
-    show tansy happy at tansy_size, char_right
-    tansy "Did somebody say free drinks?! Don't mind if I do!"
-
-    mc "Tansy?! What are you doing here?! You said you were stabilizing the lab!"
-    # [SPRITE: Tansy — Carefree, Teasing]
-    
-    show tansy teasing
-    tansy "Oh, the lab's fine! Just a few glowing bubbles left. I came to make sure my star apprentice hadn't turned into sea kelp! And look at you—you brought the sea-gland!"
-    
-    "(Tansy swigs a glass of ale, turning her wicked smirk toward the big dragon-smith.)"
-    
-    # [SPRITE: Tansy — Challenging, Smirking]
-    show tansy teasing
-    tansy "So, Bao... my student here needs a spark of your legendary draconic flame to harvest some Draconic Cinder-Ash. But I told them your forge fire's gotten a bit dim in your old age~"
-
-    # [SPRITE: Bao Zhao — Roaring Laugh, Fiery Eyebrows]
-    bao "DIM?! MY FLAME?! Ha! Them's fighting words, witch! I could ignite the ocean if I felt like it!"
-    
-    "(Bao leans across the table toward you, small plumes of warm smoke drifting from his nostrils.)"
-    
-    #CHOICE 2
     menu:
-        "(Raise your mug and join in their rowdy tavern banter)":
-            mc "Don't hold back on my account, Bao! Show my mentor what real fire looks like!" 
-            bao "BHAHA! I like this kid! You've got real taproom spirit!"
-
-        "(Use a small flame-shaping spell to dance sparks over your knuckles)" :
-            mc "Careful, Bao. If your flame slacks, I might just have to ignite the cinder-ash myself." 
-            bao "Oho! Showing off little sparks to a dragon? Bold move, wizard! I respect it!"
-
-        "(Keep your cool and gently nudge Tansy back into her seat)" :
-            mc "Tansy, stop poking the dragon. Bao, ignore her—we just need a controlled spark for the Alkahest." 
-            bao "Ha! Controlled? Fair enough, but where's the fun without a little show?!"
-
-    # [SPRITE: Bao Zhao — Focused, Grinning]
-
-    bao "Alright, apprentice! Hold up your enchanted collection vial! Let's see if you can hold steady when a dragon breathes true heat!"
-
-    "(Bao takes a deep breath, his chest expanding as glowing golden light shines through the copper scales along his throat and jaw.)"
-    # (Sound Effect: Deep rumbling heat, roaring flame ignition)
-
-    # =========================
-    # SCENE 3 - Cinder & Steel
-    # =========================
-
-    # Location: The Laughing Anchor — Hearthside
-
-    "(The air around the table turns scorchingly hot as Bao opens his mouth, exhaling a concentrated, brilliant stream of white-hot draconic flame. The fire swaths directly toward the enchanted brass-lined flask in your hands.)"
-
-    # (Sound Effect: Roaring draconic fire, crackling magic wards)
-
-    # [SPRITE: Tansy — Excited, Watching Close]
-
-    tansy  "Hold it steady! Don't let the thermal shock crack the glass!"
-
-    "(The intense heat radiates against your face, turning your cheeks flushed red. Glowing, crystalline ash begins to settle at the bottom of the flask, burning with embers of pure draconic magic.)"
-
-    # Choice 3
-    menu:
-        "Hold the collection vial steady without flinching.":
-
-            "(You hold the glass dead steady right next to his jaws without flinching a single inch.)"
-
-            $ chapter_2_ending = "a_heart_of_the_forge"
-            jump chapter_2_ending_a
-
+        "Hold the vial steady without flinching.":
+            "(You hold the glass dead steady right next to the blast hatch without flinching a single inch.)"
+            # SFX: Sound Effect: Furnace hatch slamming shut
+            # Source [SPRITE: Commander Bruni — Ceasing Flame, Deeply Impressed]
+            show domitilla surprised
+            domitilla "BY THE ANCIENTS! Not a flinch! Not a single shake!"
+            "(Bruni slaps her massive armored hand onto the anvil, making the iron tools jump.)"
+            show domitilla happy
+            domitilla "You've got the heart of a true warrior, apprentice! Most scholars back away the second my forge glows! That Draconic Cinder-Ash in your flask is as pure as it gets!"
+            # Source [SPRITE: Tansy — Raising Flask, Cheering]
+            show tansy happy
+            tansy "To the bravest apprentice in Mirthhaven! Two ingredients down!"
+            "(You cork the glowing flask, holding two completed ingredients safely in hand.)"
+            hide domitilla
+            hide tansy
+            $ story_progress += 1
+            $ setup_free_time(2)
+            jump free_time
         "Channel the ash with a heat-deflection ward.":
-
             "(You weave an elegant heat-deflection ward around your fingers to channel the ash cleanly.)"
-
-            $ chapter_2_ending = "masterful_tempering"
-            jump chapter_2_ending_b
-
-        "Tease Bao about his dragon flame.":
-
-            "(You laugh through the heat, teasing Bao that his dragon flame feels like a cozy hearth fire.)"
-
-            $ chapter_2_ending = "wild_spark"
-            jump chapter_2_ending_c
-
-
-label chapter_2_ending_a:
-
-    "Bao cuts off the flame, wiping a speck of ember from his lip as he looks at your steady, unyielding hands with absolute awe."
-
-    bao "BY THE ANCIENTS! Not a flinch! Not a single shake!"
-
-    "(Bao slaps his massive hand onto the wooden table, making the ale mugs jump.)"
-
-    bao "You've got the heart of a master smith, apprentice!"
-
-    bao "Most wizards back away the second my scales glow!"
-
-    bao "That Draconic Cinder-Ash in your flask is as pure as it gets!"
-
-    barek "To the bravest wizard in Mirthhaven! To the apprentice who doesn't back down!"
-
-    "The whole table cheers as you cork the glowing flask, holding two completed ingredients while Barek and Bao toast to your fearlessness."
-
-    hide tansy
-
-    $ setup_free_time(2)
-    jump free_time
-
-label chapter_2_ending_b:
-
-    "Tansy watches as your blue magic ward flawlessly weaves around Bao's intense fire, cooling the air just enough to trap every grain of cinder-ash without losing a drop."
-
-    show tansy happy
-    tansy "Flawless heat distribution! See that, boys? That's Sanctum precision right there!"
-
-    bao "Heh... slick work, kid. You handled my fire like a seasoned spell-smith tempering rare steel. Clean, sharp, and smart."
-
-    bao "Take that Draconic Cinder-Ash with pride. You earned it with real skill."
-
-    "With your magic control praised by both your mentor and Mirthhaven's greatest smith, you secure your third ingredient with complete composure."
-
-    hide tansy
-
-    $ setup_free_time(2)
-    jump free_time
-
-
-label chapter_2_ending_c:
-
-    "Bao stops breathing fire, blinking in utter shock before letting out a laugh so loud it shakes the tavern rafters."
-
-    bao "A HEARTH CANDLE?! BHAHAHA!"
-
-    bao "Did you hear that, Barek?! This little wizard just called my dragon breath a candle!"
-
-    barek "You've met your match, Bao! You can't intimidate this one!"
-
-    bao "You've got some nerve, kid! I love it! Here—take your Draconic Cinder-Ash before you make fun of my forge tools next!"
-
-    "The taproom bursts into laughter as you cap the glowing vial, enjoying the wild, jovial energy of the docks as you prepare for the next leg of your quest."
-
-    hide tansy
-
-    $ setup_free_time(2)
-    jump free_time
+            # Source [SPRITE: Tansy — Proud, Beaming]
+            show tansy happy
+            tansy "Flawless heat distribution! See that, Commander? That's Sanctum precision right there!"
+            # Source [SPRITE: Commander Bruni — Nodding, Respectful]
+            show domitilla happy
+            domitilla "Heh... slick work, kid. You handled my forge fire like a seasoned spell-smith tempering rare steel. Clean, sharp, and smart."
+            "(Bruni pats your shoulder with a heavy, warm palm as you cap the shimmering flask.)"
+            show domitilla talking
+            domitilla "Take that Draconic Cinder-Ash with pride. You earned it with real skill."
+            "(With your magic control praised by both your mentor and the Garrison Commander, you secure your third ingredient with complete composure.)"
+            hide domitilla
+            hide tansy
+            $ story_progress += 1
+            $ setup_free_time(2)
+            jump free_time
+        "Tease Bruni about her furnace heat.":
+            "(You laugh through the heat, teasing Bruni that her furnace feels like a cozy hearth fire.)"
+            # Source [SPRITE: Commander Bruni — Thunderous Laugh, Flustered]
+            show domitilla happy
+            domitilla "A HEARTH CANDLE?! BHAHAHA! Did you hear that, recruits?! This little wizard just called my draconic blast-furnace a candle!"
+            # Source [SPRITE: Tansy — Grinning, Shaking Head]
+            show tansy happy
+            tansy "You've met your match, Commander! You can't intimidate this one!"
+            # Source [SPRITE: Commander Bruni — Chuckling, Handing Over Cinder]
+            show domitilla happy
+            domitilla "You've got some nerve, kid! I love it! Here—take your Draconic Cinder-Ash before you make fun of my anvils next!"
+            "(The armory fills with laughter as you cap the glowing vial, enjoying the lively energy of the Garrison as you prepare for the next leg of your quest.)"
+            # [SCENE END]
+            hide domitilla
+            hide tansy
+            $ story_progress += 1
+            $ setup_free_time(2)
+            jump free_time

@@ -172,34 +172,34 @@ screen mirthhaven_map():
     # TARIQ
     # =========================
 
-    use map_character_button(
-        "Tariq",
-        "tariq",
-        "Sun-Gilded Market",
-        tariq_route_progress,
-        tariq_route_unlocked,
-        tariq_route_locked,
-        "tariq_route_event",
-        520,
-        240
-    )
+    # use map_character_button(
+    #     "Tariq",
+    #     "tariq",
+    #     "Sun-Gilded Market",
+    #     tariq_route_progress,
+    #     tariq_route_unlocked,
+    #     tariq_route_locked,
+    #     "tariq_route_event",
+    #     520,
+    #     240
+    # )
 
 
     # =========================
     # BAO
     # =========================
 
-    use map_character_button(
-        "Bao",
-        "bao",
-        "The Laughing Anchor",
-        bao_route_progress,
-        bao_route_unlocked,
-        bao_route_locked,
-        "bao_route_event",
-        950,
-        280
-    )
+    # use map_character_button(
+    #     "Bao",
+    #     "bao",
+    #     "The Laughing Anchor",
+    #     bao_route_progress,
+    #     bao_route_unlocked,
+    #     bao_route_locked,
+    #     "bao_route_event",
+    #     950,
+    #     280
+    # )
 
 
     # =========================
@@ -240,17 +240,17 @@ screen mirthhaven_map():
     # BAREK
     # =========================
 
-    use map_character_button(
-        "Barek",
-        "barek",
-        "Nautilus Point",
-        barek_route_progress,
-        barek_route_unlocked,
-        barek_route_locked,
-        "barek_route_event",
-        1100,
-        520
-    )
+    # use map_character_button(
+    #     "Barek",
+    #     "barek",
+    #     "Nautilus Point",
+    #     barek_route_progress,
+    #     barek_route_unlocked,
+    #     barek_route_locked,
+    #     "barek_route_event",
+    #     1100,
+    #     520
+    # )
     # =========================
     # TANSY
     # Secret Route

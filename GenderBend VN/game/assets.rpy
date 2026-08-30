@@ -10,7 +10,7 @@ image tansy normal = "images/characters/tansy/idle.png"
 
 image tansy happy = "images/characters/tansy/laugh.png"
 
-image tansy sad = "images/characters/tansy/sad.png"
+image tansy frown = "images/characters/tansy/sad.png"
 
 image tansy surprised = "images/characters/tansy/surprised.png"
 
@@ -97,17 +97,19 @@ image elianna very_smug = "images/characters/elianna/smug2.png"
 # ============================================================
 
 transform char_left:
-    xalign 0.10
+    xanchor 0.5
+    xpos 0.18
     yalign 1.0
 
 transform char_center:
-    xalign 0.50
+    xanchor 0.5
+    xpos 0.50
     yalign 1.0
 
 transform char_right:
-    xalign 0.999
+    xanchor 0.5
+    xpos 0.82
     yalign 1.0
-
 # ============================================================
 # CHARACTER SIZES
 # ============================================================

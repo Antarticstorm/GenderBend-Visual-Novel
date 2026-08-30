@@ -1,204 +1,162 @@
+# ============================================================
+# MAIN CHAPTER 5 — REBIRTH, CHAOS & THE CORE FOUR VICTORY
+# Adjusted four-character finale.
+# ============================================================
+
 label chapter_5:
 
-    call chapter_transition(5, "Rebirth & A Master's Pride")
-    # =========================
-    # SCENE 1 - The Drinking of the Alkahest
-    # =========================
+    call chapter_transition(5, "Rebirth, Chaos & The Core Four Victory")
 
+    show tansy worried at tansy_size, char_left
+    show elianna happy at elianna_size, char_right
+    # Scene 1: The Gilded Transformation
     # Location: The Solarium Sanctum — Grand Alchemy Laboratory
-    # (Sound Effect: Swirling magical energy, golden liquid bubbling in a crystal goblet, deep thrumming spell resonance)
+    # [SCENE START]
+    # SFX: Sound Effect: Radiant choir-like hum, swirling golden wind, magical chiming bell, loud cork popping
+    "(You lift the crystal goblet containing the golden Alkahest of True Form to your lips.)"
+    "(Tansy, Ellie, Clara, and Domitilla—who just burst through the lab doors carrying a keg of armory mead—all stand in a hushed circle, holding their breath.)"
+    # Source [SPRITE: Tansy — Nervous, Holding Breath]
+    show tansy happy
+    tansy "Bottoms up, kiddo! Don't spill a single drop!"
+    "(You swallow the warm, golden brew in one big gulp.)"
+    "(Instantly, a wave of intense heat washes from your stomach to your toes.)"
+    "(Bright golden light erupts from your body, lifting you two feet off the floor as your magic channels flare!)"
+    # SFX: Sound Effect: WHOOSH! Bone snaps re-aligning, deep pitch drop in chest
+    "(Your hair shortens back to its familiar cut.)"
+    "(Your shoulders broaden, snapping your sorcerer robes tight across your chest.)"
+    "(Your height stretches back up, and when you let out a gasp, your deep, natural male voice returns!)"
+    # [MC]
+    mc "HAH! MY VOICE! MY SHOULDERS! I'M BACK!"
+    # SFX: Sound Effect: MAGICAL POP! Sparkles bursting
+    "(However, because of the wild mix of six legendary catalysts, a side effect triggers: every time you blink or speak with passion, a tiny burst of harmless, radiant golden glitter pops out of your hair and hovers in the air like a walking party spell.)"
+    # Source [SPRITE: Commander Bruni — Stunned -> Booming Laughter]
+    show domitilla happy at char_center, domitilla_size
+    domitilla "BWAHAHAHA! Look at him! You're built like a vanguard commander, but you're shedding fairy dust like a festival float!"
+    # Source [SPRITE: Ellie — Beaming, Clapping]
+    show elianna happy
+    elianna "Oh, it's wonderful! You look so handsome, and the sparkles are surprisingly flattering!"
+    # Source [SPRITE: Clara Vane — Smirking, Adjusting Glasses]
+    show clara happy
+    clara "I can already see the fashion trend. 'Sanctum Glitter-Bourbon'. We'll make a fortune."
 
-    "(The crystal goblet rests upon the polished stone altar, filled to the brim with the glowing, honey-gold Alkahest of True Form. The radiant potion emanates a blend of sea-spray cool, draconic heat, solar warmth, and starlight magic.)"
-
-    # [SPRITE: Tansy — Eager, Anticipatory]
-    tansy "This is it, my star apprentice! Six catalyst ingredients from all six districts of Mirthhaven, forged into a single elixir. Bottoms up!"
-
-    # [SPRITE: Ellie — Nervous, Hands Clasping]
-    ellie "Please be careful... Drink slowly so the reversal magic can flow through your mana channels evenly."
-
-    "(You pick up the heavy crystal goblet. The golden brew sparkles against your reflection, reflecting the female form you've inhabited throughout your arduous quest across Mirthhaven.)"
-
-    mc "Here goes everything..."
-
-    # CHOICE 1
     menu:
-        "(Raise the goblet high and drink with calm, steady focus, guiding the spell flow through your core)":
-            "(The golden liquid glides smoothly down your throat. A harmonious warmth spreads from your chest, aligning perfectly with your internal magic channels.)"
-            tansy "Flawless posture! Look at that spell synchronization!"
+        "Strike an absurdly heroic pose.":
+            "(Strike an absurdly heroic pose, striking a pose that sends glitter flying across the lab)"
+            mc "Behold! The Arch-Mage of Glamour has returned!\" Bruni: \"HA! That’s the spirit! A true warrior owns their glitter!"
+        "Sweep Tansy and Ellie into a massive bear hug.":
+            "(Laugh hysterically and sweep Tansy and Ellie into a massive bear hug)"
+            show elianna normal
+            elianna "Eek! Oh! You're so warm and strong again!\" Tansy: \"Aww! See? I told you my tea would make you unforgettable!"
+        "Try to brush the sparkles out of your hair.":
+            "(Try to brush the sparkles out of your hair, growing completely flustered)"
+            show clara happy
+            clara "Don't bother fighting it, dear. You look magnificent. Own the spotlight!"
 
-        "(Embrace the wild elemental surges with unyielding willpower, downing the potion in one gulped breath)":
-            "(You gulp down the brew in one bold motion! A violent rush of draconic fire and sea currents surges through your veins.)"
-            tansy "HA! That's how a real wizard drinks! Ride the wave!"
+    hide tansy
+    hide elianna
 
-        "(Hesitate nervously before taking a trembling sip)":
-            "(You take a small, hesitant sip, but as the magic touches your tongue, the Alkahest automatically ignites, washing over your mouth in a warm cascade.)"
-            ellie "Don't be afraid! Let the solar warmth guide you!"
+    # Scene 2: Revelry at The Laughing Anchor
+    # Location: The Laughing Anchor Tavern — Private Guild Suite (Night)
+    # [SCENE START]
+    # SFX: Sound Effect: Lute playing, tavern patrons cheering, heavy wooden mugs clanking, roaring fireplace
+    "(The entire central table of The Laughing Anchor is covered in roasted meats, glowing botanical pastries made by Ellie, and heavy iron flagons brought by Domitilla.)"
+    "(Clara has rented out the entire upper deck for the core four heroines and you.)"
+    # Source [SPRITE: Clara Vane — Raising Crystal Glass]
+    show clara happy
+    clara "A toast! To our favorite apprentice—who survived transfiguration, market fraud, military hazing, and double-witch chaos!"
+    # [ALL HEROINES]
+    tansy "TO THE SPARKLE WIZARD!"
+    elianna "TO THE SPARKLE WIZARD!"
+    domitilla "TO THE SPARKLE WIZARD!"
+    clara "TO THE SPARKLE WIZARD!"
+    # SFX: Sound Effect: Mugs clanking together violently
+    "(Domitilla slams her flagon onto the table, challenging you to an arm-wrestling match right on top of Clara’s expensive silk tablecloth.)"
+    "(Ellie is feeding you sweet-berry tarts, while Tansy uses your magical glitter aura to summon little glowing fireworks that dance over the tavern rafters.)"
+    # Source [SPRITE: Commander Bruni — Grinning, Gripping Your Hand]
+    show domitilla talking
+    domitilla "Come on, scholar! Let's see if that new male body can push back against three hundred pounds of Garrison power!"
 
-    # (Sound Effect: ROARING EXPANSION OF MAGIC! Divine solar light and draconic flame erupting!)
-    "(Blinding golden light bursts from your skin, illuminating the entire laboratory! A swirling aura of dragon-fire, ocean vapor, lotus shadow, and hardened marrow energy lifts you inches off the marble floor. The transfiguration curse burns away like dry leaves in a forge!)"
-
-    # (Sound Effect: Deep sigh of magical release, gentle thud of boots landing on stone)
-    "(The blinding light slowly fades into shimmering dust. You look down at your hands—they are broad, familiar, and calloused from years of staff training. Your voice drops back into its natural, resonant male register.)"
-
-    mc "My voice... my hands... I'm back. I'm finally back to myself!"
-
-    # [SPRITE: Tansy — Boisterous, Boasting Laughter]
-    tansy "BHAHAHAHA! IT WORKED! BY THE HIGHER MAGES, IT WORKED!"
-
-    "(Tansy leaps forward, slapping your shoulder with enough force to send you stumbling.)"
-
-    # [SPRITE: Tansy — Proud, Beaming]
-    tansy "Look at you! Restored, unscathed, and carrying the magic of six districts! I declare this the greatest practical exam the Solarium Sanctum has ever seen—and you passed with flying colors!"
-
-    # [SPRITE: Ellie — Tearful, Gentle Smile]
-    ellie "Welcome back, sorcerer. You were truly remarkable through it all."
-
-    # =========================
-    # SCENE 2 - The Gathering at The Laughing Anchor
-    # =========================
-
-    # Location: The Laughing Anchor — Main Taproom (Nightfall)
-    # (Sound Effect: Boisterous tavern crowd, clinking beer mugs, roaring hearth fire, lively acoustic fiddles)
-
-    "(Night has fallen over Mirthhaven. The grand taproom of The Laughing Anchor is decorated with guild banners and flower garlands. Gathered around the main high table is the entire cast: Clara Vane, Tariq Vane, Barek Tidejaw, Bao Zhao, Commander Domitilla Bruni, Ellie Sylvane, and Tansy.)"
-
-    # (Sound Effect: Door opening, tavern noise briefly quieting)
-    "(You step through the wooden entrance in your original male body, clad in a fresh, master-tier apprentice cloak.)"
-
-    # [SPRITE: Barek Tidejaw — Booming Voice, Grinning]
-    barek "HO! LOOK WHO IT IS! The hero of the docks has returned!"
-
-    # [SPRITE: Bao Zhao — Laughing, Raising Mug]
-    bao "BHAHA! So that's what you look like in your true form! Handsome kid! Come sit down and grab a dark draught!"
-
-    # [SPRITE: Clara Vane — Warm, Welcoming]
-    clara "Welcome back, young master. You look positively radiant tonight."
-
-    # [SPRITE: Tariq Vane — Sly, Smirking]
-    tariq "I must admit... you carry your true face just as sharply as you carried my market deal. Well done, wizard."
-
-    # [SPRITE: Commander Bruni — NDT Nod, Crossed Arms]
-    bruni "Hmph! Standing tall! Good to see you recovered from the Iron Ring!"
-
-    "(They clear a central seat for you at the head of the table. Tansy hands you an overflowing horn of spiced honey-mead.)"
-
-    # CHOICE 2
     menu:
-        "(Raise your mead horn high, giving a humble and heartfelt tribute to everyone who helped you)":
-            mc "To Mirthhaven! To the strength of the Bastion, the wisdom of the Guild, the fire of the Docks, and the healing of the Sanctum!"
-            "Everyone raises their glasses together."
-            "TO MIRTHHAVEN!"
+        "Challenge Domitilla at arm wrestling.":
+            "(Slam Domitilla's hand down onto the table with a surge of kinetic magic and raw muscle)"
+            "(The wooden table cracks as you pin Domitilla's arm! The entire tavern erupts in deafening cheers!)"
+            show domitilla happy
+            domitilla "BWAHAHA! YES! THAT'S WHAT I'M TALKING ABOUT!"
+        "Toast warmly to all four women.":
+            "(Toast warmly to all four women, giving a heartwarming speech about how much you trust them)"
+            mc "I couldn't have asked for a better master, partner, ally, or commander. To the four women who make Mirthhaven legendary!\" Ellie: (Tearing up) \"Oh goodness... that is the sweetest thing anyone has ever said!"
+        "Turn your glitter aura into a tavern-wide light show.":
+            "(Channel your glitter aura into a full tavern-wide magical light show)"
+            "(Golden sparks cascade over the tavern balcony like shimmering rain. Patrons downstairs break into wild applause!)"
+            show tansy happy
+            tansy "We're charging admission for this show next time!"
 
-        "(Playfully tease Tansy while boasting about out-smarting every trial in Mirthhaven)":
-            mc "I survived Tansy's potion, Barek's nets, Bao's fire, Tariq's shadow games, and Bruni's giant blade! Nothing in this city can stop me now!"
-            tansy "Ha! Don't get cocky, hotshot! I still have fifty untested potions in the vault!"
+    # Scene 3: A Destiny Forged in Magic & Steel
+    # Location: The Laughing Anchor — Balcony Overlooking Mirthhaven
+    # [SCENE START]
+    # SFX: Sound Effect: Night breeze blowing softly, distant ocean waves, stars twinkling overhead
+    "(You step out onto the tavern balcony overlooking the glowing harbor lights of Mirthhaven. One by one, Tansy, Ellie, Clara, and Domitilla join you at the railing, leaning beside you under the moonlight.)"
+    # Source [SPRITE: Tansy — Warm, Proud Smile]
+    show tansy talking
+    tansy "So... the brew is finished. Your body is restored. The Alkahest worked. What’s your next step, little wizard?"
+    # Source [SPRITE: Commander Bruni — Crossing Arms, Grinning]
+    show domitilla talking
+    domitilla "The Vanguard always has a high seat open for a mage who isn't afraid to fight in the dirt."
+    # Source [SPRITE: Clara Vane — Gentle Smile, Adjusting Ring]
+    show clara talking
+    clara "And the Merchant Guild could always use a sharp mind to co-rule the trade lanes."
+    # Source [SPRITE: Ellie — Blushing, Soft Tone]
+    show elianna talking
+    elianna "Or... you could stay right here in the Sanctum with us, researching new magic and tending the wards."
+    "(You look at the four extraordinary heroines who helped you reclaim your true self. The future of Mirthhaven stretches out before you.)"
 
-        "(Gaze warmly at Ellie and the guild masters, expressing your deep gratitude for their trust)":
-            mc "I couldn't have gathered a single catalyst without every one of you believing in me. Thank you."
-            ellie "It was an honor to stand by your side..."
-
-    "(The tavern celebration reaches its peak. Music fills the air, feast platters are emptied, and stories of your quest echo across the room. As midnight approaches, the guild leaders look toward you with deep expectation.)"
-
-    # [SPRITE: Clara Vane — Smiling]
-    clara "You began this day as a flustered apprentice hiding from a botched potion... but you end it as a spell-caster who unified all six districts."
-
-    # [SPRITE: Commander Bruni — Stern, Proud]
-    bruni "So state your intent, wizard. Where does your staff lead you next?"
-
-    # =========================
-    # SCENE 3 - The Path Ahead
-    # =========================
-
-    # Location: The Laughing Anchor — Hearthside (Midnight)
-    "(The room falls quiet as everyone listens. The hearth fire casts golden light across your face and your polished sorcerer staff.)"
-
-    # CHOICE 3
     menu:
-        "(Formally embrace your path as a true Arch-Mage in training—weaving all six district elements into a breathtaking, harmonious starlight illusion over the tavern)":
-            $ chapter_5_ending = "legacy_of_the_arch_mage"
-            jump chapter_5_ending_a
+        "The Arch-Mage of Mirthhaven — Remain at the Solarium Sanctum.":
+            $ main_ending = "sparkle_arch_mage"
+            "(Tansy pulls you into a playful headlock while Ellie beams with pure joy!)"
+            # Source [SPRITE: Tansy — Ecstatic, Laughing]
+            show tansy happy
+            tansy "YES! The Solarium Sanctum gets to keep its favorite disaster-apprentice!"
+            "(Together with Tansy and Ellie, you step into your new role as Grand Arch-Mage.)"
+            "(Over the coming years, your signature spell becomes legendary across the continent: a glorious, unstoppable golden burst of raw magic and sparkly light that strikes terror into monsters and brings endless laughter to Mirthhaven.)"
+            hide tansy
+            hide elianna
+            hide clara
+            hide domitilla
+            jump chapter_5_end
+        "The Vanguard Champion — Join Domitilla at the Crestward Garrison.":
+            $ main_ending = "gilded_champion"
+            "(Domitilla slams her hand onto your back so hard you almost knock over the balcony railing, roaring with pride!)"
+            # Source [SPRITE: Commander Bruni — Thunderous Joy]
+            show domitilla happy
+            domitilla "HA! WELCOME TO THE VANGUARD, CHAMPION!"
+            "(Dressed in custom-forged armor crafted by Domitilla that glimmers with eternal golden sparks, you become the most formidable warrior-mage in Mirthhaven’s history.)"
+            "(Leading the Garrison, you protect the realm with iron discipline, unstoppable magic, and a flair for theatrical combat that no enemy can breach!)"
+            hide tansy
+            hide elianna
+            hide clara
+            hide domitilla
+            jump chapter_5_end
+        "The Shadow Merchant Lord — Partner with Clara at the Wanderlust Guild.":
+            $ main_ending = "glamour_overlord"
+            "(Clara hands you a golden signet ring engraved with the Wanderlust Guild crest, winking with a clever smile.)"
+            # Source [SPRITE: Clara Vane — Sophisticated, Smirking]
+            show clara happy
+            clara "A brilliant choice, partner. Together, we'll buy and sell whole kingdoms."
+            "(Teaming up with Clara, you revolutionize trade across the realm.)"
+            "(Using your magic and her financial genius, you build a prosperous trade syndicate.)"
+            "(And yes—your eternal glitter aura becomes the single most sought-after luxury fashion spell in the high courts, making you both obscenely wealthy!)"
+            hide tansy
+            hide elianna
+            hide clara
+            hide domitilla
+            jump chapter_5_end
 
-        "(Pledge your staff directly to Mirthhaven's people—stepping beyond the Sanctum walls to become the city's official roaming Champion and protector)":
-            $ chapter_5_ending = "champion_of_mirthhaven"
-            jump chapter_5_ending_b
+label chapter_5_end:
 
-        "(Arrogantly attempt to show off your restored power by casting an unvetted, maximum-power multi-elemental spell blast inside the enclosed tavern to impress everyone)":
-            $ chapter_5_ending = "tavern_reckoning"
-            jump chapter_5_ending_c
+    scene black
+    with fade
 
-
-label chapter_5_ending_a:
-
-    # (Sound Effect: Melodious starlight chime, gentle glowing aura expanding, soft murmurs of awe)
-    "(You close your eyes and raise your staff. Instead of destruction, a breathtaking canopy of soft golden starlight, bioluminescent sea-waves, and glowing lotus petals sweeps across the ceiling of The Laughing Anchor. The six elements dance in perfect, serene harmony above the crowd.)"
-
-    # [SPRITE: Tansy — Wiping a Tear, Radiant Smile]
-    tansy "Look at that weave... Absolute elemental equilibrium."
-
-    "(Tansy steps forward, untying her own master arch-mage crest from her lapel and pinning it securely onto your chest.)"
-
-    tansy "You're no longer just my apprentice. As of tonight, you are a recognized Master Sorcerer of Mirthhaven."
-
-    # [SPRITE: Ellie & Clara — Clapping, Joyful]
-    clara "A magnificent achievement!"
-    ellie "I knew you were capable of greatness..."
-
-    "(The whole tavern erupts into deafening applause. Surrounded by your mentor, your loved ones, and the leaders of Mirthhaven, you stand as a true master of the arcane—ready to lead the city into a golden age of magic.)"
-
-    $ story_progress += 1
-    $ chapter = 5
-
-    return
-
-
-label chapter_5_ending_b:
-
-    # (Sound Effect: Resonant brass horn chime, firm stomp of boots)
-    mc "My place isn't tucked away in a library or restricted to Sanctum walls. I belong out there—protecting the docks, the markets, the bastion, and every citizen in need!"
-
-    # [SPRITE: Commander Bruni & Barek — Roaring Approval]
-    bruni "HA! SPOKEN LIKE A TRUE WARRIOR!"
-    barek "The docks will always have an open berth for you, Champion!"
-
-    # [SPRITE: Tariq Vane — Smirking, Nodding]
-    tariq "And the shadow markets will always keep an ear open for our favorite protector."
-
-    "(Bruni hands you an iron-embossed Vanguard badge, while Barek gifts you a sea-blessed amulet. You step into your future not as a reclusive scholar, but as Mirthhaven's legendary Champion—a hero beloved across every district.)"
-
-    $ story_progress += 1
-    $ chapter = 5
-
-    return
-
-
-label chapter_5_ending_c:
-
-    # (Sound Effect: VIOLENT ARCANA CRACKLE! UNCONTROLLED EXPLOSION! SHATTERING WOOD AND BEAMS!)
-    "(Overconfident in your restored form, you channel all six raw elemental forces into your staff at once without warding! The unstable magic instantly detonates in a blinding shockwave of fire, water, and shattered stone!)"
-
-    # (Sound Effect: Screams of horror, kegs exploding, roof beams collapsing, sizzle of fire)
-    "(When the smoke clears, half of The Laughing Anchor's wooden roof has been blasted into the sky. Bao's dark draught kegs have ruptured, soaking the floor in foam, and the grand feast table lies splintered in ruin. The entire cast is covered in soot, dark ale, and burnt fish.)"
-
-    # [SPRITE: Tansy — Furious, Coughing Smoke]
-    tansy "YOU ABSOLUTE IDIOT! RECKLESS MULTI-ELEMENTAL OVERCASTING IN A WOODEN BUILDING?!"
-
-    # [SPRITE: Commander Bruni — Veins Bulging, Furious]
-    bruni "MY ARMOR IS COATED IN FOAM! ARE YOU TRYING TO KILL US ALL, APPRENTICE?!"
-
-    # [SPRITE: Bao & Barek — Shaking Heads, Disappointed]
-    bao "My kegs... my beautiful dark draught..."
-
-    "(Tansy strides over, yanking your sorcerer staff directly out of your hands and snapping it over her knee with a deafening CRACK.)"
-
-    # [SPRITE: Tansy — Stern, Pointing Finger]
-    tansy "You have learned NOTHING about responsibility! Your master privileges are REVOKED. You are demoted back to Novice First-Year status!"
-
-    # [SPRITE: Clara Vane — Cold, Hands on Hips]
-    clara "And the guild will be garnishing your Sanctum allowance for the next five years to pay for rebuilding The Laughing Anchor."
-
-    "(You stand alone amidst the smoking ruins of the tavern—humiliated, demoted, stripped of your staff, and heavily in debt to every guild leader in Mirthhaven. Your arrogance transformed a night of triumph into a complete catastrophe.)"
-
-    $ story_progress += 1
-    $ chapter = 5
+    centered "{size=52}THE END{/size}"
 
     return

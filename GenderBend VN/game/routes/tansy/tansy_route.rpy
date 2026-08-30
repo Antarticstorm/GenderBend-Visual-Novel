@@ -303,7 +303,7 @@ label tansy_chapter_3:
 
             # Source sprite direction:
             # Tansy — Annoyed, Pointing at Door
-            show tansy sad
+            show tansy frown
             tansy "Boring! Absolute buzzkill! Go back to the main story if you can't handle a little ether-smoke! The door's behind you, scholar!"
 
             "(Tansy turns her back on you, diving back into her calculations. You leave the lab, permanently closing Tansy's secret route.)"
@@ -482,7 +482,7 @@ label tansy_chapter_4:
 
             "(Tansy blinks, her wild expression instantly flattening into a deadpan glare. She steps back, adjusting her goggles.)"
 
-            show tansy sad
+            show tansy frown
             tansy "Right. Quest-giver status maintained. Standard NPC dialogue unlocked. Thanks for playing the secret route, scholar. Door's on your left."
 
             jump tansy_ending_fail
@@ -549,7 +549,7 @@ label tansy_ending_fail:
 
     # Source sprite direction:
     # Tansy — Polite NPC Smile, Standard Posture
-    show tansy sad
+    show tansy frown
     tansy "Thank you for visiting the Sanctum Alchemy Wing, scholar! Health potions are twenty copper pieces each. Have a pleasant day in Mirthhaven!"
 
     "(You walk out of the quiet laboratory, leaving the secret route behind as Tansy fades back into the background of the Sanctum.)"

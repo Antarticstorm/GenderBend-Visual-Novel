@@ -146,55 +146,55 @@ label finish_tansy_chapter_4:
 # TARIQ EVENT RESOLVER
 # ============================================================
 
-label tariq_route_event:
+# label tariq_route_event:
 
-    if not tariq_route_unlocked or tariq_route_locked:
-        jump free_time
+#     if not tariq_route_unlocked or tariq_route_locked:
+#         jump free_time
 
-    # Chapter 4 commitment.
-    if chapter == 4:
-        $ commit_character("tariq")
+#     # Chapter 4 commitment.
+#     if chapter == 4:
+#         $ commit_character("tariq")
 
-    if tariq_route_progress == 0 and chapter >= 1:
-        jump tariq_chapter_1
+#     if tariq_route_progress == 0 and chapter >= 1:
+#         jump tariq_chapter_1
 
-    elif tariq_route_progress == 1 and chapter >= 2:
-        jump tariq_chapter_2
+#     elif tariq_route_progress == 1 and chapter >= 2:
+#         jump tariq_chapter_2
 
-    elif tariq_route_progress == 2 and chapter >= 3:
-        jump tariq_chapter_3
+#     elif tariq_route_progress == 2 and chapter >= 3:
+#         jump tariq_chapter_3
 
-    elif tariq_route_progress == 3 and chapter >= 4:
-        jump tariq_chapter_4
+#     elif tariq_route_progress == 3 and chapter >= 4:
+#         jump tariq_chapter_4
 
-    jump free_time
+#     jump free_time
 
 # ============================================================
 # BAO EVENT RESOLVER
 # ============================================================
 
-label bao_route_event:
+# label bao_route_event:
 
-    if not bao_route_unlocked or bao_route_locked:
-        jump free_time
+#     if not bao_route_unlocked or bao_route_locked:
+#         jump free_time
 
-    # Chapter 4 commitment.
-    if chapter == 4:
-        $ commit_character("bao")
+#     # Chapter 4 commitment.
+#     if chapter == 4:
+#         $ commit_character("bao")
 
-    if bao_route_progress == 0 and chapter >= 1:
-        jump bao_chapter_1
+#     if bao_route_progress == 0 and chapter >= 1:
+#         jump bao_chapter_1
 
-    elif bao_route_progress == 1 and chapter >= 2:
-        jump bao_chapter_2
+#     elif bao_route_progress == 1 and chapter >= 2:
+#         jump bao_chapter_2
 
-    elif bao_route_progress == 2 and chapter >= 3:
-        jump bao_chapter_3
+#     elif bao_route_progress == 2 and chapter >= 3:
+#         jump bao_chapter_3
 
-    elif bao_route_progress == 3 and chapter >= 4:
-        jump bao_chapter_4
+#     elif bao_route_progress == 3 and chapter >= 4:
+#         jump bao_chapter_4
 
-    jump free_time
+#     jump free_time
 
 # ============================================================
 # ELIANNA EVENT RESOLVER
@@ -254,28 +254,28 @@ label domitilla_route_event:
 # BAREK EVENT RESOLVER
 # ============================================================
 
-label barek_route_event:
+# label barek_route_event:
 
-    if not barek_route_unlocked or barek_route_locked:
-        jump free_time
+#     if not barek_route_unlocked or barek_route_locked:
+#         jump free_time
 
-    # Chapter 4 commitment.
-    if chapter == 4:
-        $ commit_character("barek")
+#     # Chapter 4 commitment.
+#     if chapter == 4:
+#         $ commit_character("barek")
 
-    if barek_route_progress == 0 and chapter >= 1:
-        jump barek_chapter_1
+#     if barek_route_progress == 0 and chapter >= 1:
+#         jump barek_chapter_1
 
-    elif barek_route_progress == 1 and chapter >= 2:
-        jump barek_chapter_2
+#     elif barek_route_progress == 1 and chapter >= 2:
+#         jump barek_chapter_2
 
-    elif barek_route_progress == 2 and chapter >= 3:
-        jump barek_chapter_3
+#     elif barek_route_progress == 2 and chapter >= 3:
+#         jump barek_chapter_3
 
-    elif barek_route_progress == 3 and chapter >= 4:
-        jump barek_chapter_4
+#     elif barek_route_progress == 3 and chapter >= 4:
+#         jump barek_chapter_4
 
-    jump free_time
+#     jump free_time
 # ============================================================
 # COMPLETION HELPER
 # ============================================================
@@ -292,27 +292,27 @@ label finish_clara_event:
     jump free_time
 
 
-label finish_tariq_event:
+# label finish_tariq_event:
 
-    hide tariq
+#     hide tariq
 
-    $ tariq_route_progress += 1
-    $ finish_character_action("tariq")
+#     $ tariq_route_progress += 1
+#     $ finish_character_action("tariq")
 
-    call route_end_transition("Tariq Vane")
+#     call route_end_transition("Tariq Vane")
 
-    jump free_time
+#     jump free_time
 
-label finish_bao_event:
+# label finish_bao_event:
 
-    hide bao
+#     hide bao
 
-    $ bao_route_progress += 1
-    $ finish_character_action("bao")
+#     $ bao_route_progress += 1
+#     $ finish_character_action("bao")
 
-    call route_end_transition("Bao Shen")
+#     call route_end_transition("Bao Shen")
 
-    jump free_time
+#     jump free_time
 
 label finish_elianna_event:
 
@@ -336,13 +336,13 @@ label finish_domitilla_event:
 
     jump free_time
     
-label finish_barek_event:
+# label finish_barek_event:
 
-    hide barek
+#     hide barek
 
-    $ barek_route_progress += 1
-    $ finish_character_action("barek")
+#     $ barek_route_progress += 1
+#     $ finish_character_action("barek")
 
-    call route_end_transition("Barek Tidejaw")
+#     call route_end_transition("Barek Tidejaw")
 
-    jump free_time
+#     jump free_time

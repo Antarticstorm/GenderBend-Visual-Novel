@@ -68,27 +68,27 @@ default tansy_route_offer_seen = False
 
 default tansy_ending = None
 
-# =========================
-# TARIQ ROUTE
-default tariq_route_unlocked = True
-default tariq_route_progress = 0
+# # =========================
+# # TARIQ ROUTE
+# default tariq_route_unlocked = True
+# default tariq_route_progress = 0
 
-default tariq_affection = 0
-default tariq_romance_locked = False
-default tariq_route_locked = False
+# default tariq_affection = 0
+# default tariq_romance_locked = False
+# default tariq_route_locked = False
 
-default tariq_ending = None
+# default tariq_ending = None
 
-# =========================
-# BAO ROUTE
-default bao_route_unlocked = True
-default bao_route_progress = 0
+# # =========================
+# # BAO ROUTE
+# default bao_route_unlocked = True
+# default bao_route_progress = 0
 
-default bao_affection = 0
-default bao_romance_locked = False
-default bao_route_locked = False
+# default bao_affection = 0
+# default bao_romance_locked = False
+# default bao_route_locked = False
 
-default bao_ending = None
+# default bao_ending = None
 
 # =========================
 # ELIANNA ROUTE
@@ -114,13 +114,13 @@ default domitilla_route_locked = False
 
 default domitilla_ending = None
 
-# =========================
-# BAREK ROUTE
-default barek_route_unlocked = True
-default barek_route_progress = 0
+# # =========================
+# # BAREK ROUTE
+# default barek_route_unlocked = True
+# default barek_route_progress = 0
 
-default barek_affection = 0
-default barek_romance_locked = False
-default barek_route_locked = False
+# default barek_affection = 0
+# default barek_romance_locked = False
+# default barek_route_locked = False
 
-default barek_ending = None
+# default barek_ending = None
