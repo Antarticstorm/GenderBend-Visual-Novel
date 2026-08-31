@@ -6,27 +6,26 @@
 label chapter_4:
 
     call chapter_transition(4, "The Double-Witch Lab Panic")
-
-
-    show elianna angry at elianna_size, char_left
-    show tansy teasing at tansy_size, char_right
+    show tansy teasing at tansy_size, char_right, enter_from_right
     # Scene 1: Sparks & Tripping Hazards
     # Location: The Solarium Sanctum — Sunlit Wards (Infirmary & Botanical Annex)
+    scene bg solarium_sanctum at bg_character_focus
+    with fade
     # [SCENE START]
     # SFX: Sound Effect: Distant glass shattering, bubbling liquid hiss, frantic scurrying footsteps, smoke alarms chiming softly
     "(You hurry down the arched white corridors of the Sunlit Wards, carrying the five rare ingredients secured from across Mirthhaven.)"
     "(As you push open the double oak doors to the infirmary annex, a cloud of pink and neon-green smoke billows past your face, smelling intensely of peppermint and sulfur.)"
     # Source [SPRITE: Ellie — Panicked, Flustered, Apron Smoldering]
-    show elianna angry
+    show elianna angry at elianna_size, char_left, enter_from_left
     elianna "Eeeeek! No, no, no! Please don't explode! Oh dear, where is the neutralizing agent?!"
     "(Through the haze, you see Ellie scrambling across the polished marble floor.)"
     "(A heavy brass rack holding dozens of volatile restorative potions has tipped over onto an enchanted heating brazier.)"
     "(To make matters exponentially worse, Tansy is standing right beside her, arms raised, enthusiastically waving her wooden wand.)"
     # Source [SPRITE: Tansy — Excited, Carefree, Smirking]
-    show tansy teasing
+    show tansy teasing at tansy_size, char_right, enter_from_right
     tansy "Don't worry, Ellie! A quick little Ignis-Expellior spell will burn off the excess vapor! Stand back!"
     # Source [SPRITE: Ellie — Terrified, Waving Hands]
-    show elianna talking
+    show elianna talking at elianna_size, char_left, expression_pop
     elianna "WAIT! TANSY, NO! THAT'S NITRATE-BASED—"
     # SFX: Sound Effect: LOUD ARCANA FIZZING! Sparks shooting toward ceiling, bubbling froth expanding rapidly
     # [MC]
@@ -39,24 +38,24 @@ label chapter_4:
         "Pull Ellie out of the line of fire.":
             "(Physically dash forward and pull Ellie out of the line of fire)"
             "(You spring across the room, wrapping your arm around Ellie’s waist and pulling her clear just as a splash of boiling green foam hits the tile where she stood.)"
-            show elianna happy
+            show elianna happy at elianna_size, char_left, expression_pop
             elianna "Ah! S-Sorcerer! Oh goodness... thank you! My apron almost caught fire!"
         "Stop Tansy's spellcasting.":
             "(Grasp Tansy's raised wrist to forcefully cut off her spell focus)"
             "(You grab Tansy's hand mid-incantation, redirecting her wand tip safely toward the stone hearth.)"
-            show tansy teasing
+            show tansy teasing at tansy_size, char_right
             tansy "Party pooper! I had that totally under control... mostly! Well, 40 percent under control!"
 
     # SFX: Sound Effect: Potion froth growing larger, deep rumbling arcana reaction
     # Source [SPRITE: Ellie — Distressed, Trembling]
-    show elianna angry
+    show elianna angry at elianna_size, char_left, expression_squish
     elianna "If those spilling potions reach the greenhouse bed, they'll destroy the Solar Bloom garden! That's where the final catalyst grows!"
     # Scene 2: Containing the Reaction
     # Location: The Solarium Sanctum — Sunlit Wards
     # [SCENE START]
     "(The pool of volatile potion sludge on the floor begins to swirl, forming a bubbling, multi-colored arcana vortex that creeps rapidly toward the glass greenhouse doors.)"
     # Source [SPRITE: Tansy — Grinning, Watching Intently]
-    show tansy happy
+    show tansy happy at tansy_size, char_right, expression_pop
     tansy "Well, look at that chemical feedback! Pure alchemy in action! What's your move, apprentice?"
     # [MC]
     mc "I'm not letting all our hard work go up in smoke!"
@@ -65,27 +64,27 @@ label chapter_4:
         "Freeze the sludge with a Glacial Containment Field.":
             "(Weave a multi-layered Glacial Containment Field to instantly freeze the boiling sludge solid)"
             "(Frost spreads across the marble floor in glowing geometric circles, flash-freezing the boiling sludge into harmless blue ice crystals.)"
-            show elianna happy
+            show elianna happy at elianna_size, char_left, expression_pop
             elianna "Incredible! The temperature drop completely stabilized the volatile compounds!"
         "Neutralize the sludge with herbal counter-agents.":
             "(Use precise herbal counter-agents from your pouch to alter the chemical pH directly)"
             "(You hurl a handful of powdered salt-bark into the center of the vortex, causing the acidic froth to instantly neutralize into plain water.)"
-            show tansy happy
+            show tansy happy at tansy_size, char_right
             tansy "A textbook chemical inversion! Look at you remembering your First-Year Theory!"
         "Absorb the volatile energy with a Siphon Ward.":
             "(Channel a Siphon Ward through your body to absorb the excess volatile energy)"
             "(You draw the raw magical heat into your palms, channeling it harmlessly down into the stone floorings. The sludge goes completely inert.)"
-            show tansy talking
+            show tansy talking at tansy_size, char_right, expression_pop
             tansy "Oho! Commander Bruni's fire training really taught you how to handle raw energy!"
 
     # SFX: Sound Effect: Hissing steam fading, quiet room restored, gentle dripping
     "(Ellie lets out a massive sigh of relief, slumping against the counter before hurriedly wiping her soot-stained cheeks.)"
     # Source [SPRITE: Ellie — Tearful, Extremely Grateful]
-    show elianna talking
+    show elianna talking at elianna_size, char_left, expression_pop
     elianna "You saved the ward... and the flowers! Oh, sorcerer, I don't know what we would have done if you hadn't taken charge!"
     "(Ellie turns to the pristine golden bed of glowing flowers near the window. She carefully prunes a single, radiant blossom that emanates pure solar warmth, placing it into a silver crystal vial.)"
     # Source [SPRITE: Ellie — Soft Smile, Handing Item]
-    show elianna happy
+    show elianna happy at elianna_size, char_left, expression_pop
     elianna "Here... ingredient number six: Solar Bloom Essence. All six catalyst components are finally gathered!"
     # Scene 3: The Grand Alembic Ritual
     # Location: The Solarium Sanctum — Grand Alchemy Laboratory
@@ -95,16 +94,16 @@ label chapter_4:
     "(In the center of the room stands the Grand Alembic—a massive, ancient bronze and glass apparatus mounted over a glowing mana-furnace.)"
     "(The base liquid of the Alkahest of True Form boils gently.)"
     # Source [SPRITE: Tansy — Proud, Masterful Tone]
-    show tansy talking
+    show tansy talking at tansy_size, char_right
     tansy "Alright, apprentice. This is it. Sunstone Powder, Luminescent Sea-Gland, Draconic Cinder-Ash, Midnight Lotus Petal, Steel-Core Marrow, and Solar Bloom Essence."
     "(Tansy steps back, placing her hands on her hips while Ellie nervously checks the temperature gauges.)"
     # Source [SPRITE: Ellie — Focused, Watching Gauges]
-    show elianna angry
+    show elianna angry at elianna_size, char_left, expression_squish
     elianna "The Alkahest requires exact magical resonance."
     elianna "Combining six wildly opposing elemental forces—fire, water, solar, dark, earth, and light—is extremely delicate."
     elianna "One wrong move during the infusion will destroy the batch!"
     # Source [SPRITE: Tansy — Smirking, Encouraging]
-    show tansy talking
+    show tansy talking at tansy_size, char_right
     tansy "You brought us this far, kiddo. I'm stepping back. You weave the catalyst infusion. How are you balancing the six elements into the brew?"
 
     menu:
@@ -114,10 +113,10 @@ label chapter_4:
             "(As you feed the ingredients in perfect opposing pairs, the violent magic reactions cancel each other out seamlessly.)"
             "(The liquid inside the Grand Alembic turns into a pristine, shimmering liquid gold that glows like a miniature sun.)"
             # Source [SPRITE: Tansy — Stunned, Deeply Impressed]
-            show tansy happy
+            show tansy happy at tansy_size, char_right, expression_pop
             tansy "By the Higher Mages... Perfect elemental balance on the first attempt! That is Grandmaster-level alchemy control!"
             # Source [SPRITE: Ellie — Beaming, Clapping Hands]
-            show elianna happy
+            show elianna happy at elianna_size, char_left, expression_pop
             elianna "It's flawless! Look at the clarity of the Alkahest! Not a single impurity!"
             "(The golden potion settles into a crystal goblet, radiating pure reversal magic. You stand over the completed cure with total mastery.)"
             hide elianna
@@ -132,10 +131,10 @@ label chapter_4:
             "(You extend your hands, weaving your personal magic aura around the six catalysts.)"
             "(As they dissolve into the alembic, the brew pulses in exact rhythm with your own heartbeat, turning into a rich, honey-golden nectar attuned specifically to your body.)"
             # Source [SPRITE: Tansy — Laughing Proudly]
-            show tansy happy
+            show tansy happy at tansy_size, char_right
             tansy "A living soul-bind infusion! You attuned the cure directly to your own mana signature! Brilliant thinking!"
             # Source [SPRITE: Ellie — Warm Smile]
-            show elianna sad
+            show elianna sad at elianna_size, char_left, expression_pop
             elianna "It’s so warm and gentle... The transformation back to your true self will be completely painless now."
             "(The glowing potion fills the goblet, perfectly matched to your personal spell-weave.)"
             hide elianna
@@ -154,15 +153,15 @@ label chapter_4:
             mc "AAAAGH! IT BURNS!"
             # SFX: Sound Effect: Sizzling arcana burn, glass crunching underfoot
             # Source [SPRITE: Ellie — Screaming, Running Forward]
-            show elianna angry
+            show elianna angry at elianna_size, char_left, expression_squish
             elianna "SORCERER! NO!"
             "(Ellie rushes over, desperately applying cooling salve to your severely scorched hands as you collapse to your knees. The ruined alembic smokes darkly, coated in a thick, muddy brown sludge.)"
             # Source [SPRITE: Tansy — Furious, Scolding]
-            show tansy surprised
+            show tansy surprised at char_right, expression_squish
             tansy "WHAT WERE YOU THINKING?! Forcing maximum pressure on six unstable catalysts?! Alchemy isn't a battering ram!"
             "(Tansy spends ten grueling minutes using her own high-tier mana to manually salvage whatever degraded residue remains at the bottom of the shattered furnace.)"
             # Source [SPRITE: Tansy — Sighing, Handing Corrupted Potion]
-            show tansy frown
+            show tansy frown at char_right, expression_pop
             tansy "The main batch is completely ruined."
             tansy "I managed to condense a degraded, bitter sludge tincture from the residue... but because of the magic burn on your hands and the corrupted brew, the transformation back is going to be incredibly painful."
             "(You hold the dark, foul-smelling goblet with bandaged, throbbing hands. The cure is barely usable, leaving you injured and forced to drink an agonizingly flawed potion.)"

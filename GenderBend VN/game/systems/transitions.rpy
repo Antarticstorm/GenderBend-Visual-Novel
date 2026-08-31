@@ -209,3 +209,90 @@ transform route_available_glow:
     linear 1.1 alpha 1.0
 
     repeat
+
+# ============================================================
+# END CREDITS
+# ============================================================
+
+screen end_credits():
+
+    add Solid("#000")
+
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        spacing 14
+
+        text "MIRTHHAVEN":
+            xalign 0.5
+            size 52
+            color "#F4E8D0"
+
+        text "━━━━━━━━━━━━━━━━━━━━":
+            xalign 0.5
+            size 16
+            color "#8A713E"
+
+        null height 15
+
+
+        text "GAME JAM LEADER":
+            xalign 0.5
+            size 20
+            color "#D7B56D"
+
+        text "CrematetedLiver":
+            xalign 0.5
+            size 26
+
+
+        null height 10
+
+
+        text "CHARACTER ARTISTS":
+            xalign 0.5
+            size 20
+            color "#D7B56D"
+
+        text "Crematedliver  •  Evening":
+            xalign 0.5
+            size 26
+
+
+        null height 10
+
+
+        text "BACKGROUND ARTIST":
+            xalign 0.5
+            size 20
+            color "#D7B56D"
+
+        text "Ashy":
+            xalign 0.5
+            size 26
+
+
+        null height 10
+
+
+        text "WRITER":
+            xalign 0.5
+            size 20
+            color "#D7B56D"
+
+        text "Yubelier":
+            xalign 0.5
+            size 26
+
+
+        null height 10
+
+
+        text "PROGRAMMER":
+            xalign 0.5
+            size 20
+            color "#D7B56D"
+
+        text "Arctix":
+            xalign 0.5
+            size 26

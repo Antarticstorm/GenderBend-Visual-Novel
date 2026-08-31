@@ -159,15 +159,12 @@ transform char_far_right:
 
 transform tansy_size:
     zoom 0.42
-    yalign 1.0
 
 transform elianna_size:
     zoom 0.16
-    yalign 1.0
 
 transform domitilla_size:
     zoom 0.28
-    yalign 1.0
 
 # ============================================================
 # CHARACTER ENTRANCE ANIMATIONS
@@ -179,19 +176,17 @@ transform enter_from_left:
 
     easeout 0.35 xoffset 0 alpha 1.0
 
-
 transform enter_from_right:
     xoffset 300
     alpha 0.0
 
     easeout 0.35 xoffset 0 alpha 1.0
 
-
 transform enter_from_bottom:
-    yoffset 100
+    yoffset 300
     alpha 0.0
 
-    easeout 0.30 yoffset 0 alpha 1.0
+    easeout 0.45 yoffset 0 alpha 1.0
 
 transform expression_pop:
 

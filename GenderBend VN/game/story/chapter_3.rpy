@@ -7,9 +7,13 @@ label chapter_3:
 
     call chapter_transition(3, "Shadow Markets & The Crucible")
 
-    show clara normal at char_center, clara_size
+    scene bg market at bg_character_focus
+    with fade
+
+    show clara normal at clara_size, char_center, enter_from_right
     # Scene 1: Shaded Silk & Cursed Trinkets
     # Location: The Sun-Gilded Market — Shade Alleys
+
     # [SCENE START]
     # SFX: Sound Effect: Distant market shouting, exotic sitar music, rustling silk curtains, scent of burning incense and cloves
     "(Holding Clara’s Guild Seal scroll, you navigate through the dense crowds of the Sun-Gilded Market, pushing past canopy stalls laden with spice mounds and embroidered tapestries.)"
@@ -17,7 +21,7 @@ label chapter_3:
     # SFX: Sound Effect: Soft footsteps on cobblestone
     "(Clara Vane steps up beside you under the shade of a velvet canopy, watching the merchant with a sharp, stern glare.)"
     # Source [SPRITE: Clara Vane — Serious, Observant]
-    show clara teasing
+    show clara teasing at clara_size, char_center, expression_pop
     clara "There he is."
     clara "He’s selling 'Blessed Sun-Gems' that supposedly cure blood-fever."
     clara "In truth, it’s a cursed leech-stone that drains mana from unsuspecting buyers."
@@ -28,15 +32,15 @@ label chapter_3:
     menu:
         "Expose the curse with Aura-Sight.":
             "(Cast Aura-Sight to project the hidden dark curse as a visible black smoke above the gem)"
-            show clara happy
+            show clara happy at clara_size, char_center, expression_pop
             clara "Magnificent! A public revelation—nothing exposes a liar faster than visual evidence!"
         "Trick the merchant into exposing his own fraud.":
             "(Publicly challenge the merchant, tricking him into touching the gem's core spell himself)"
-            show clara happy
+            show clara happy at clara_size, char_center
             clara "Ha! Out-witted by his own greed! Brilliant psychology, apprentice!"
         "Disrupt the merchant's containment rune.":
             "(Use a subtle kinetic flick to disrupt his containment rune, causing the gem to flare harmlessly)"
-            show clara normal
+            show clara normal at clara_size, char_center, expression_pop
             clara "Clean, quiet, and decisive. You cut the spell right out from under him!"
 
     hide clara
@@ -44,61 +48,65 @@ label chapter_3:
     # SFX: Sound Effect: Gasps from the market crowd, scammer fleeing in panic
     "(Clara walks over with a smooth, approving stride. From beneath her cloak, she pulls a velvet box containing a dark purple flower petal that glimmers like a starlit night sky.)"
     # Source [SPRITE: Clara Vane — Respectful, Handing Over Item]
-    show clara happy at clara_size, char_center
+    show clara happy at clara_size, char_center, expression_pop
     clara "A deal’s a deal, sorcerer. Ingredient number four: Midnight Lotus Petal. You’ve earned my deep respect... now go give Commander Bruni at the fortress a run for her money!"
 
     hide clara
     # Scene 2: The Iron Ring
     # Location: The Crestward Bastion — Training Grounds
+    scene bg crestward_bastion at bg_character_focus
+    with fade
     # [SCENE START]
     # SFX: Sound Effect: Heavy iron boots stomping, clashing steel, booming shouts, dust kicking up
     "(You enter the formidable stone fortress of The Crestward Bastion.)"
     "(In the center of the dusty parade grounds stands Commander Domitilla Bruni—draped in black iron plate armor, resting a giant wooden practice greatsword against her shoulder.)"
     # Source [SPRITE: Commander Bruni — Intimidating, Stern]
-    show domitilla angry at domitilla_size, char_right
+    show domitilla angry at domitilla_size, char_right, enter_from_right
     domitilla "LIFT THOSE SHIELDS, RECRUITS! IF YOUR ARMS ARE BLEEDING, IT MEANS YOU’RE STILL ALIVE!"
     "(Bruni turns her gaze toward you. Her fierce golden eyes lock onto your sorcerer robes.)"
     # Source [SPRITE: Commander Bruni — Unimpressed, Gruff]
-    show domitilla angry
+    show domitilla angry at domitilla_size, char_center, enter_from_right
     domitilla "Halt right there, scholar! This is a military stronghold, not the academe library. State your business before I put a wooden blade in your hands!"
     # [MC]
     mc "Commander Bruni. I require Steel-Core Marrow from your armory vault to complete an essential reversal brew."
     # Source [SPRITE: Commander Bruni — Booming Laughter]
-    show domitilla happy
+    show domitilla happy at domitilla_size, char_center, expression_pop
     domitilla "BWAHAHA! Military-grade Steel-Core Marrow?! That metal is reserved for knight armor, not soft wizard alchemy! I don't give Bastion iron to students who hide behind parchment!"
     "(Bruni slams the tip of her massive wooden greatsword into the dirt, causing a small shockwave to rumble through the ground.)"
     # Source [SPRITE: Commander Bruni — Challenging, Fierce]
-    show domitilla angry
+    show domitilla angry at domitilla_size, char_center, expression_squish
     domitilla "If you want that marrow, step into The Iron Ring! Survive three minutes against my blade without running away, and you'll earn your prize. Refuse, and walk home empty-handed!"
 
     menu:
         "Step directly into the Iron Ring.":
             "(Step directly into the dirt ring, drawing your staff with absolute combat readiness)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, char_center, expression_pop
             domitilla "HA! No hesitation! You've got blood in your veins after all, wizard!"
         "Study Domitilla's armor and footwork first.":
             "(Analyze her heavy plate armor and footwork to calculate her attack angles first)"
-            show domitilla talking
+            show domitilla talking at domitilla_size, char_center, expression_pop
             domitilla "Studying your opponent? Good! But vision won't save you when three hundred pounds of oak comes swinging!"
         "Try to negotiate a magical duel.":
             "(Try to negotiate a magical duel instead of a martial sparring match)"
-            show domitilla talking
+            show domitilla talking at domitilla_size, char_center
             domitilla "Negotiate?! This is a battlefield, scholar! Steel doesn't negotiate!"
 
     # SFX: Sound Effect: Heavy iron bell ringing, roaring recruits surrounding the ring
     # Source [SPRITE: Commander Bruni — Fierce, Charging]
-    show domitilla talking
+    show domitilla talking at domitilla_size, char_center
     domitilla "TIME STARTS NOW! SHOW ME YOUR GRIT!"
     "(Bruni lunges forward with terrifying speed, sweeping her massive wooden sword around in a crushing arc aimed directly at your torso!)"
     # Scene 3: The Crucible of Steel
     # Location: The Crestward Bastion — The Iron Ring Arena
+    scene bg iron_ring at bg_character_focus
+    with fade
     # [SCENE START]
     # SFX: Sound Effect: Whooshing wind from giant sword swing, crackling mana barriers, dust cloud billowing
     "(You leap backward, barely dodging her first two heavy thrusts.)"
     "(The wooden blade whistles through the air like a catapult projectile.)"
     "(Two minutes tick by as you dodge and deflect her relentless onslaught with defensive wards.)"
     # Source [SPRITE: Commander Bruni — Grinning, Preparing Finisher]
-    show domitilla talking
+    show domitilla talking at domitilla_size, char_center, enter_from_bottom
     domitilla "FINAL TEN SECONDS! LET'S SEE IF YOUR MAGIC CAN HOLD UP TO REAL POWER!"
     "(Bruni leaps high into the air, raising her giant greatsword above her head with both hands.)"
     "(She descends like a falling anvil, bringing her full weight down in her signature finisher: the Granite-Breaker Overhead Crush!)"
@@ -112,13 +120,13 @@ label chapter_3:
             "(Her momentum pulls her forward, leaving her completely open as the timer bell rings.)"
             # SFX: Sound Effect: Loud iron bell ringing thrice
             # Source [SPRITE: Commander Bruni — Stunned -> Booming Approval]
-            show domitilla surprised
+            show domitilla surprised at domitilla_size, char_center, expression_squish
             domitilla "WHAT?! Deflected my Granite-Breaker with a sloped ward?!"
             "(Bruni pulls her blade from the dirt and throws her head back in a thunderous roar of laughter.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, char_center, expression_pop
             domitilla "OUTSTANDING! Brilliant combat tactics! You didn't just survive—you completely outmaneuvered me!"
             "(Bruni reaches into her armor belt and tosses a heavy, gleaming ingot of black metal to you.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, char_center
             domitilla "Ingredient number five: Steel-Core Marrow! You earned it, sorcerer! Any time you want a real commission in the Vanguard, my doors are open!"
             hide domitilla
             call chapter_end(3, "Shadow Markets & The Crucible")
@@ -133,10 +141,10 @@ label chapter_3:
             "(The timer bell rings just as her strike dissipates.)"
             # SFX: Sound Effect: Loud iron bell ringing thrice
             # Source [SPRITE: Commander Bruni — Deeply Impressed, NDT Nod]
-            show domitilla surprised
+            show domitilla surprised at domitilla_size, char_center, expression_squish
             domitilla "BY THE GODS! You absorbed my full overhead blow and stayed standing?!"
             "(Bruni lowers her sword, wiping sweat from her brow with a grin of genuine military respect.)"
-            show domitilla talking
+            show domitilla talking at domitilla_size, char_center, expression_pop
             domitilla "You’ve got raw iron in your core, scholar! Few recruits can take a hit like that without breaking a shoulder. Here is your Steel-Core Marrow—use it well!"
             hide domitilla
             call chapter_end(3, "Shadow Markets & The Crucible")
@@ -154,13 +162,13 @@ label chapter_3:
             mc "Ghhk—! Aaggh!"
             "(You collapse onto the dirt, clutching your bruised ribs and gasping for air. Your staff lies shattered in two pieces beside you, and your mana channels throb with severe magic backlash.)"
             # Source [SPRITE: Commander Bruni — Disappointed, Frowning]
-            show domitilla angry
+            show domitilla angry at domitilla_size, char_center, expression_squish
             domitilla "FOOLISH! A flat shield against an overhead crush?! Did they teach you nothing in the academe about force distribution?!"
             "(Bruni walks over, looking down at you with a scowl as recruits whisper in the background.)"
-            show domitilla talking
+            show domitilla talking at domitilla_size, char_center, expression_pop
             domitilla "You survived the three minutes only because I pulled my blow at the last fraction of a second. A real monster would have crushed your skull."
             "(She reaches into her belt and carelessly drops a chipped piece of Steel-Core Marrow into the dirt beside your bleeding hand.)"
-            show domitilla talking
+            show domitilla talking at domitilla_size, char_center
             domitilla "Take your marrow and get out of my ring."
             domitilla "You have the ingredient, but you leave here with broken gear, bruised ribs, and zero honor."
             domitilla "Learn how to fight properly before you get yourself killed."

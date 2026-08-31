@@ -190,7 +190,7 @@ screen map_character_button(
                         xalign 0.5
                         yoffset 170
                         size 20
-                        color "#888888"
+                        color "#292929"
 
 
             # ========================================================
@@ -276,7 +276,7 @@ screen map_character_button(
                         xalign 0.5
                         yoffset 170
                         size 25
-                        color "#888888"
+                        color "#292929"
                         
 # ============================================================
 # MIRTHHAVEN MAP
@@ -497,7 +497,7 @@ screen mirthhaven_map():
                         text "UNAVAILABLE":
                             xalign 0.5
                             size 20
-                            color "#888888"
+                            color "#292929"
 
 
     # ============================================================
