@@ -7,7 +7,7 @@
 
 label clara_chapter_1:
 
-    call route_transition("Clara Vane", 1, "The Hearth, the Ledger, and the Parcel")
+    call route_transition("Clara Vane", 1, "The Hearth, the Ledger, and the Parcel") from _call_route_transition
 
     show clara sad at clara_size, enter_from_right
     # Scene 1: Ledgers and Earl Grey
@@ -187,7 +187,7 @@ label clara_chapter_1_clara_only:
 
 label clara_chapter_2:
 
-    call route_transition("Clara Vane", 2, "Caretaker's Burden")
+    call route_transition("Clara Vane", 2, "Caretaker's Burden") from _call_route_transition_1
 
     # Scene 1: Lanterns in the Quiet Market
     # Location: The Market District — Guild Supply Stall (Late Evening)
@@ -335,7 +335,7 @@ label clara_chapter_2:
 
 label clara_chapter_3:
 
-    call route_transition("Clara Vane", 3, "Unmasked Warmth")
+    call route_transition("Clara Vane", 3, "Unmasked Warmth") from _call_route_transition_2
 
    
     # Scene 1: Wine at The Laughing Anchor
@@ -473,7 +473,7 @@ label clara_chapter_3_family:
 
 label clara_chapter_4:
 
-    call route_transition("Clara Vane", 4, "Where the Anchor Rests")
+    call route_transition("Clara Vane", 4, "Where the Anchor Rests") from _call_route_transition_3
 
     # Scene 1: Midnight on the Harbor Docks
     # Location: The Seadocks (Midnight)

@@ -31,7 +31,7 @@ transform char_far_right:
 
 label chapter_5:
 
-    call chapter_transition(5, "Rebirth, Chaos & The Core Four Victory")
+    call chapter_transition(5, "Rebirth, Chaos & The Core Four Victory") from _call_chapter_transition_4
 
     # Scene 1: The Gilded Transformation
     # Location: The Solarium Sanctum — Grand Alchemy Laboratory

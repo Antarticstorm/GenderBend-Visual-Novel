@@ -5,7 +5,7 @@
 
 label chapter_4:
 
-    call chapter_transition(4, "The Double-Witch Lab Panic")
+    call chapter_transition(4, "The Double-Witch Lab Panic") from _call_chapter_transition_3
     show tansy teasing at tansy_size, char_right, enter_from_right
     # Scene 1: Sparks & Tripping Hazards
     # Location: The Solarium Sanctum — Sunlit Wards (Infirmary & Botanical Annex)
@@ -87,8 +87,8 @@ label chapter_4:
     show elianna happy at elianna_size, char_left, expression_pop
     elianna "Here... ingredient number six: Solar Bloom Essence. All six catalyst components are finally gathered!"
     
-    $ has_solar_bloom = true
-    call item_acquired("item solar_bloom", "Solar Bloom Essence")
+    $ has_solar_bloom = True
+    call item_acquired("item solar_bloom", "Solar Bloom Essence") from _call_item_acquired_9
     # Scene 3: The Grand Alembic Ritual
     # Location: The Solarium Sanctum — Grand Alchemy Laboratory
     # [SCENE START]
@@ -124,7 +124,7 @@ label chapter_4:
             "(The golden potion settles into a crystal goblet, radiating pure reversal magic. You stand over the completed cure with total mastery.)"
             hide elianna
             hide tansy
-            call chapter_end(4, "The Double-Witch Lab Panic")
+            call chapter_end(4, "The Double-Witch Lab Panic") from _call_chapter_end_9
             $ story_progress += 1
             $ setup_free_time(4)
             jump free_time
@@ -142,7 +142,7 @@ label chapter_4:
             "(The glowing potion fills the goblet, perfectly matched to your personal spell-weave.)"
             hide elianna
             hide tansy
-            call chapter_end(4, "The Double-Witch Lab Panic")
+            call chapter_end(4, "The Double-Witch Lab Panic") from _call_chapter_end_10
             $ story_progress += 1
             $ setup_free_time(4)
             jump free_time
@@ -171,7 +171,7 @@ label chapter_4:
             # [SCENE END]
             hide elianna
             hide tansy
-            call chapter_end(4, "The Double-Witch Lab Panic")
+            call chapter_end(4, "The Double-Witch Lab Panic") from _call_chapter_end_11
             $ story_progress += 1
             $ setup_free_time(4)
             jump free_time

@@ -26,7 +26,7 @@ label tariq_chapter_1:
     "Tariq Vane",
     1,
     "A Shrewd Appraisal"
-)
+) from _call_route_transition_14
 
     "Hidden behind the main thoroughfare of the Sun-Gilded Market lies Tariq's silk-draped backroom stall."
 
@@ -143,7 +143,7 @@ label tariq_chapter_2:
     "Tariq Vane",
     2,
     "Sleight of Hand and Silk"
-)
+) from _call_route_transition_15
 
     "The Sun-Gilded Market takes on a more dangerous energy after dark."
 
@@ -258,7 +258,7 @@ label tariq_chapter_3:
     "Tariq Vane",
     3,
     "The Untradeable Asset"
-)
+) from _call_route_transition_16
 
     "Tariq has booked a private VIP alcove at The Laughing Anchor under the guise of a formal business negotiation."
 
@@ -387,7 +387,7 @@ label tariq_chapter_4:
     "Tariq Vane",
     4,
     "A Contract Without Conditions"
-)
+) from _call_route_transition_17
 
 
     "At sunset, you enter Tariq's secluded private vault beneath the Sun-Gilded Market."

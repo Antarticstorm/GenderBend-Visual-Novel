@@ -4,7 +4,7 @@
 
 label elianna_chapter_1:
 
-    call route_transition("Elianna Sylvane", 1, "Bandages & Broken Vials")
+    call route_transition("Elianna Sylvane", 1, "Bandages & Broken Vials") from _call_route_transition_8
 
     # Location: The Solarium Sanctum — Sunlit Wards
     scene bg solarium_sanctum at bg_character_focus
@@ -119,7 +119,7 @@ label elianna_chapter_1:
 
 label elianna_chapter_2:
 
-    call route_transition("Elianna Sylvane", 2, "The Weight of Centuries")
+    call route_transition("Elianna Sylvane", 2, "The Weight of Centuries") from _call_route_transition_9
 
     show elianna sad at elianna_size, char_center, expression_pop
     # Location: The Solarium Sanctum — Botanical Conservatory (Midnight)
@@ -213,7 +213,7 @@ label elianna_chapter_2:
 
 label elianna_chapter_3:
 
-    call route_transition("Elianna Sylvane", 3, "A Healing Touch")
+    call route_transition("Elianna Sylvane", 3, "A Healing Touch") from _call_route_transition_10
 
     show elianna talking at elianna_size, char_center
     # Location: The Crestward Bastion — Garrison Field Clinic
@@ -294,7 +294,7 @@ label elianna_chapter_3:
 
 label elianna_chapter_4:
 
-    call route_transition("Elianna Sylvane", 4, "Eternal Bloom")
+    call route_transition("Elianna Sylvane", 4, "Eternal Bloom") from _call_route_transition_11
 
     
     # Location: The Solarium Sanctum — Sunlit Wards Balcony (Dusk)

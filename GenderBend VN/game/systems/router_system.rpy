@@ -111,7 +111,7 @@ label finish_tansy_chapter_3:
     $ tansy_route_progress = 4
     $ finish_character_action("tansy")
 
-    call route_end_transition("Tansy")
+    call route_end_transition("Tansy") from _call_route_end_transition
 
     jump free_time
 
@@ -137,7 +137,7 @@ label finish_tansy_chapter_4:
     $ tansy_route_progress = 5
     $ finish_character_action("tansy")
 
-    call route_end_transition("Tansy")
+    call route_end_transition("Tansy") from _call_route_end_transition_1
 
     jump free_time
 
@@ -287,7 +287,7 @@ label finish_clara_event:
     $ clara_route_progress += 1
     $ finish_character_action("clara")
 
-    call route_end_transition("Clara Vane")
+    call route_end_transition("Clara Vane") from _call_route_end_transition_2
 
     jump free_time
 
@@ -321,7 +321,7 @@ label finish_elianna_event:
     $ elianna_route_progress += 1
     $ finish_character_action("elianna")
 
-    call route_end_transition("Elianna Sylvane")
+    call route_end_transition("Elianna Sylvane") from _call_route_end_transition_3
 
     jump free_time
 
@@ -332,7 +332,7 @@ label finish_domitilla_event:
     $ domitilla_route_progress += 1
     $ finish_character_action("domitilla")
 
-    call route_end_transition("Domitilla Bruni")
+    call route_end_transition("Domitilla Bruni") from _call_route_end_transition_4
 
     jump free_time
     

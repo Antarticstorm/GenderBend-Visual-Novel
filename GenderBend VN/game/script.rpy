@@ -26,7 +26,10 @@ default characters_visited_this_period = []
 
 default day = 1
 
+
 label start:
+
+    play ambient "audio/ambience.ogg" loop fadein 2.0
 
     # Chapter 1 begins
     jump chapter_1

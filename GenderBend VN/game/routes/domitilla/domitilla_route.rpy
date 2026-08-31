@@ -7,7 +7,7 @@
 
 label domitilla_chapter_1:
 
-    call route_transition("Domitilla Bruni", 1, "Discipline and Iron")
+    call route_transition("Domitilla Bruni", 1, "Discipline and Iron") from _call_route_transition_4
 
 
     # Scene 1: The Ring of Sweat and Steel
@@ -137,7 +137,7 @@ label domitilla_chapter_1:
 
 label domitilla_chapter_2:
 
-    call route_transition("Domitilla Bruni", 2, "Scars and Heavy Armor")
+    call route_transition("Domitilla Bruni", 2, "Scars and Heavy Armor") from _call_route_transition_5
 
     # Scene 1: After-Hours in the Armory
     # Location: The Crestward Bastion — The Central Armory (Night)
@@ -277,7 +277,7 @@ label domitilla_chapter_2:
 
 label domitilla_chapter_3:
 
-    call route_transition("Domitilla Bruni", 3, "Off-Duty Fire")
+    call route_transition("Domitilla Bruni", 3, "Off-Duty Fire") from _call_route_transition_6
 
     # Scene 1: Mead and Unbuttoned Collars
     # Location: The Laughing Anchor — Private Corner Booth (Night)
@@ -432,7 +432,7 @@ label domitilla_chapter_3_dishonorable:
 
 label domitilla_chapter_4:
 
-    call route_transition("Domitilla Bruni", 4, "The Sentinel's Vow")
+    call route_transition("Domitilla Bruni", 4, "The Sentinel's Vow") from _call_route_transition_7
 
     # Scene 1: Above the City of Sails
     # Location: The Crestward Bastion — Rooftop Ramparts at Dusk

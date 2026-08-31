@@ -5,7 +5,7 @@
 
 label chapter_2:
 
-    call chapter_transition(2, "Aqua-Vaults & Military Steel")
+    call chapter_transition(2, "Aqua-Vaults & Military Steel") from _call_chapter_transition_1
 
     # Scene 1: Bioluminescent Depths
     # Location: The Solarium Sanctum — Aquatic Botanical Wing
@@ -62,7 +62,7 @@ label chapter_2:
     elianna "Ingredient number two: Luminescent Sea-Gland, perfectly preserved. Be careful heading out—your next stop is the Garrison armory for forge ingredients!"
 
     $ has_sea_gland = True
-    call item_acquired("item sea_gland", "Luminescent Sea-Gland")
+    call item_acquired("item sea_gland", "Luminescent Sea-Gland") from _call_item_acquired_1
 
     # Scene 2: Forge-Fire & Dragon Steel
     hide elianna
@@ -132,7 +132,7 @@ label chapter_2:
             "(You cork the glowing flask, holding two completed ingredients safely in hand.)"
             hide domitilla
             hide tansy
-            call chapter_end(2, "Aqua-Vaults & Military Steel")
+            call chapter_end(2, "Aqua-Vaults & Military Steel") from _call_chapter_end_3
             $ story_progress += 1
             $ setup_free_time(2)
             jump free_time
@@ -147,15 +147,15 @@ label chapter_2:
             "(Bruni pats your shoulder with a heavy, warm palm as you cap the shimmering flask.)"
             show domitilla talking at domitilla_size, char_center, expression_pop
             domitilla "Take that Draconic Cinder-Ash with pride. You earned it with real skill."
-            $ has_cinder_ash = true
-            call item_acquired("item cinder_ash", "Draconic Cinder-Ash")
+            $ has_cinder_ash = True
+            call item_acquired("item cinder_ash", "Draconic Cinder-Ash") from _call_item_acquired_2
             "(With your magic control praised by both your mentor and the Garrison Commander, you secure your third ingredient with complete composure.)"
             
-            $ has_cinder_ash = true
-            call item_acquired("item cinder_ash", "Draconic Cinder-Ash")
+            $ has_cinder_ash = True
+            call item_acquired("item cinder_ash", "Draconic Cinder-Ash") from _call_item_acquired_3
             hide domitilla
             hide tansy
-            call chapter_end(2, "Aqua-Vaults & Military Steel")
+            call chapter_end(2, "Aqua-Vaults & Military Steel") from _call_chapter_end_4
             $ story_progress += 1
             $ setup_free_time(2)
             jump free_time
@@ -170,13 +170,13 @@ label chapter_2:
             # Source [SPRITE: Commander Bruni — Chuckling, Handing Over Cinder]
             domitilla "You've got some nerve, kid! I love it! Here—take your Draconic Cinder-Ash before you make fun of my anvils next!"
 
-            $ has_cinder_ash = true
-            call item_acquired("item cinder_ash", "Draconic Cinder-Ash")
+            $ has_cinder_ash = True
+            call item_acquired("item cinder_ash", "Draconic Cinder-Ash") from _call_item_acquired_4
             "(The armory fills with laughter as you cap the glowing vial, enjoying the lively energy of the Garrison as you prepare for the next leg of your quest.)"
             # [SCENE END]
             hide domitilla
             hide tansy
-            call chapter_end(2, "Aqua-Vaults & Military Steel")
+            call chapter_end(2, "Aqua-Vaults & Military Steel") from _call_chapter_end_5
             $ story_progress += 1
             $ setup_free_time(2)
             jump free_time

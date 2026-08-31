@@ -57,7 +57,7 @@ label tansy_chapter_3:
         "Tansy",
         3,
         "The Gremlin's Catalyst"
-    )
+    ) from _call_route_transition_12
 
 
     # ========================================================
@@ -323,7 +323,7 @@ label tansy_chapter_4:
         "Tansy",
         4,
         "Formula for Two Chaos-Goblins"
-    )
+    ) from _call_route_transition_13
 
 
     # ========================================================

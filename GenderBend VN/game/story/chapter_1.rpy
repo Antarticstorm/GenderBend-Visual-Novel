@@ -5,7 +5,7 @@
 
 label chapter_1:
 
-    call chapter_transition(1, "The Mishap & The Merchant's Trust")
+    call chapter_transition(1, "The Mishap & The Merchant's Trust") from _call_chapter_transition
 
     show tansy happy at tansy_size, char_center, enter_from_bottom
     tansy "Record check, one two, three... Alright! Let's talk about my favorite star apprentice—the one currently running around Mirthhaven trying not to trip over their own spell-robe!"
@@ -158,7 +158,7 @@ label chapter_1:
     clara "Here you are. Ingredient number one: Sunstone Powder. One step closer to your true form."
 
     $ has_sunstone = True
-    call item_acquired("item sunstone", "Sunstone Powder")
+    call item_acquired("item sunstone", "Sunstone Powder") from _call_item_acquired
     # Scene 3: The Merchant's Trust
     # Location: The Wanderlust Wheel — Office Desk
     # [SCENE START]
@@ -192,7 +192,7 @@ label chapter_1:
             clara "Good luck on your search, apprentice. Keep your chin up—and don't let those market traders overcharge you!"
             "(With the Sunstone Powder secured in your pouch and Clara's backing confirmed, you step out of The Wanderlust Wheel with newfound confidence, ready to brave the Sanctum's flooded botanical wings and Garrison armory.)"
             hide clara
-            call chapter_end(1, "The Mishap & The Merchant's Trust")
+            call chapter_end(1, "The Mishap & The Merchant's Trust") from _call_chapter_end
             $ story_progress += 1
             $ setup_free_time(1)
             jump free_time
@@ -209,7 +209,7 @@ label chapter_1:
             clara "You have a strong heart, apprentice. Take care on your path—the trials ahead will test your spirit, but I know you'll stand firm."
             "(Holding the Sunstone Powder tightly, you march out of the guild hall with unwavering determination, ready to tackle the challenges ahead.)"
             hide clara
-            call chapter_end(1, "The Mishap & The Merchant's Trust")
+            call chapter_end(1, "The Mishap & The Merchant's Trust") from _call_chapter_end_1
             $ story_progress += 1
             $ setup_free_time(1)
             jump free_time
@@ -227,7 +227,7 @@ label chapter_1:
             "(Flustered but holding ingredient number one—the Sunstone Powder—safely in hand, you hurry out of the office, eager to tackle the next step of your quest.)"
             # [SCENE END]
             hide clara
-            call chapter_end(1, "The Mishap & The Merchant's Trust")
+            call chapter_end(1, "The Mishap & The Merchant's Trust") from _call_chapter_end_2
             $ story_progress += 1
             $ chapter = 1
             $ setup_free_time(1)

@@ -254,7 +254,7 @@ screen end_credits():
             size 20
             color "#D7B56D"
 
-        text "Marby Blum  •  Evening":
+        text "Marby Blum":
             xalign 0.5
             size 26
 
@@ -295,4 +295,15 @@ screen end_credits():
 
         text "Arctix":
             xalign 0.5
-            size 26
+            size 20
+            
+        null height 10
+
+        text "Musiced Used:":
+            xalign 0.5
+            size 20
+            color "#D7B56D"
+        
+        text "Mountain Roads  ASKII":
+            xalign 0.5
+            size 20
