@@ -184,6 +184,7 @@ label chapter_1:
             clara "Good luck on your search, apprentice. Keep your chin up—and don't let those market traders overcharge you!"
             "(With the Sunstone Powder secured in your pouch and Clara's backing confirmed, you step out of The Wanderlust Wheel with newfound confidence, ready to brave the Sanctum's flooded botanical wings and Garrison armory.)"
             hide clara
+            call chapter_end(1, "The Mishap & The Merchant's Trust")
             $ story_progress += 1
             $ setup_free_time(1)
             jump free_time
@@ -200,6 +201,7 @@ label chapter_1:
             clara "You have a strong heart, apprentice. Take care on your path—the trials ahead will test your spirit, but I know you'll stand firm."
             "(Holding the Sunstone Powder tightly, you march out of the guild hall with unwavering determination, ready to tackle the challenges ahead.)"
             hide clara
+            call chapter_end(1, "The Mishap & The Merchant's Trust")
             $ story_progress += 1
             $ setup_free_time(1)
             jump free_time
@@ -217,6 +219,7 @@ label chapter_1:
             "(Flustered but holding ingredient number one—the Sunstone Powder—safely in hand, you hurry out of the office, eager to tackle the next step of your quest.)"
             # [SCENE END]
             hide clara
+            call chapter_end(1, "The Mishap & The Merchant's Trust")
             $ story_progress += 1
             $ chapter = 1
             $ setup_free_time(1)

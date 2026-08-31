@@ -1,4 +1,27 @@
 # =========================
+# BACKGROUND ASSETS
+# =========================
+
+image bg crestward_bastion = "images/backgrounds/Crestward_Bastion.PNG"
+image bg iron_ring = "images/backgrounds/Iron_Ring.PNG"
+image bg laughing_anchor = "images/backgrounds/Laughing_Anchor.PNG"
+image bg market = "images/backgrounds/Market.PNG"
+image bg nautilus_point = "images/backgrounds/Nautilus_Point.PNG"
+image bg solarium_sanctum = "images/backgrounds/Solarium_Sanctum.PNG"
+image bg furnace_pier = "images/backgrounds/The_Furnace_Pier.PNG"
+
+# ============================================================
+# BACKGROUND PRESENTATION
+# ============================================================
+
+transform bg_normal:
+    blur 1.0
+
+transform bg_character_focus:
+    blur 3.0
+    matrixcolor BrightnessMatrix(-0.08)
+
+# =========================
 # CHARACTER ASSETS
 # =========================
 
@@ -110,6 +133,26 @@ transform char_right:
     xanchor 0.5
     xpos 0.82
     yalign 1.0
+
+transform char_far_left:
+    xanchor 0.5
+    xpos 0.12
+    yalign 1.0
+
+transform char_mid_left:
+    xanchor 0.5
+    xpos 0.37
+    yalign 1.0
+
+transform char_mid_right:
+    xanchor 0.5
+    xpos 0.63
+    yalign 1.0
+
+transform char_far_right:
+    xanchor 0.5
+    xpos 0.88
+    yalign 1.0
 # ============================================================
 # CHARACTER SIZES
 # ============================================================
@@ -125,3 +168,44 @@ transform elianna_size:
 transform domitilla_size:
     zoom 0.28
     yalign 1.0
+
+# ============================================================
+# CHARACTER ENTRANCE ANIMATIONS
+# ============================================================
+
+transform enter_from_left:
+    xoffset -300
+    alpha 0.0
+
+    easeout 0.35 xoffset 0 alpha 1.0
+
+
+transform enter_from_right:
+    xoffset 300
+    alpha 0.0
+
+    easeout 0.35 xoffset 0 alpha 1.0
+
+
+transform enter_from_bottom:
+    yoffset 100
+    alpha 0.0
+
+    easeout 0.30 yoffset 0 alpha 1.0
+
+transform expression_pop:
+
+    zoom 1.0
+
+    linear 0.06 zoom 1.04
+    linear 0.08 zoom 0.98
+    easeout 0.08 zoom 1.0
+
+transform expression_squish:
+
+    xzoom 1.0
+    yzoom 1.0
+
+    linear 0.06 xzoom 1.05 yzoom 0.94
+    linear 0.08 xzoom 0.97 yzoom 1.04
+    easeout 0.08 xzoom 1.0 yzoom 1.0

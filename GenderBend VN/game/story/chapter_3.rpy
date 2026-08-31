@@ -121,6 +121,7 @@ label chapter_3:
             show domitilla happy
             domitilla "Ingredient number five: Steel-Core Marrow! You earned it, sorcerer! Any time you want a real commission in the Vanguard, my doors are open!"
             hide domitilla
+            call chapter_end(3, "Shadow Markets & The Crucible")
             $ story_progress += 1
             $ setup_free_time(3)
             jump free_time
@@ -138,6 +139,7 @@ label chapter_3:
             show domitilla talking
             domitilla "You’ve got raw iron in your core, scholar! Few recruits can take a hit like that without breaking a shoulder. Here is your Steel-Core Marrow—use it well!"
             hide domitilla
+            call chapter_end(3, "Shadow Markets & The Crucible")
             $ story_progress += 1
             $ setup_free_time(3)
             jump free_time
@@ -164,6 +166,7 @@ label chapter_3:
             domitilla "Learn how to fight properly before you get yourself killed."
             # [SCENE END]
             hide domitilla
+            call chapter_end(3, "Shadow Markets & The Crucible")
             $ story_progress += 1
             $ setup_free_time(3)
             jump free_time

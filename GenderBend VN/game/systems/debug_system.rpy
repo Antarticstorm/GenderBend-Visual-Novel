@@ -218,26 +218,26 @@ screen debug_menu():
                 null height 20
 
 
-                use debug_route_controls(
-                    "TARIQ",
-                    "tariq_route_progress",
-                    "tariq_affection",
-                    "tariq_romance_locked",
-                    "tariq_route_locked"
-                )
+                # use debug_route_controls(
+                #     "TARIQ",
+                #     "tariq_route_progress",
+                #     "tariq_affection",
+                #     "tariq_romance_locked",
+                #     "tariq_route_locked"
+                # )
 
-                null height 20
+                # null height 20
 
 
-                use debug_route_controls(
-                    "BAO",
-                    "bao_route_progress",
-                    "bao_affection",
-                    "bao_romance_locked",
-                    "bao_route_locked"
-                )
+                # use debug_route_controls(
+                #     "BAO",
+                #     "bao_route_progress",
+                #     "bao_affection",
+                #     "bao_romance_locked",
+                #     "bao_route_locked"
+                # )
 
-                null height 20
+                #null height 20
 
 
                 use debug_route_controls(
@@ -262,15 +262,15 @@ screen debug_menu():
                 null height 20
 
 
-                use debug_route_controls(
-                    "BAREK",
-                    "barek_route_progress",
-                    "barek_affection",
-                    "barek_romance_locked",
-                    "barek_route_locked"
-                )
+                # use debug_route_controls(
+                #     "BAREK",
+                #     "barek_route_progress",
+                #     "barek_affection",
+                #     "barek_romance_locked",
+                #     "barek_route_locked"
+                # )
 
-                null height 25
+                # null height 25
 
 
                 # ====================================================
@@ -352,11 +352,11 @@ screen debug_menu():
                     textbutton "Clara":
                         action Function(commit_character, "clara")
 
-                    textbutton "Tariq":
-                        action Function(commit_character, "tariq")
+                    # textbutton "Tariq":
+                    #     action Function(commit_character, "tariq")
 
-                    textbutton "Bao":
-                        action Function(commit_character, "bao")
+                    # textbutton "Bao":
+                    #     action Function(commit_character, "bao")
 
                     textbutton "Elianna":
                         action Function(commit_character, "elianna")
@@ -367,8 +367,8 @@ screen debug_menu():
                     textbutton "Domitilla":
                         action Function(commit_character, "domitilla")
 
-                    textbutton "Barek":
-                        action Function(commit_character, "barek")
+                    # textbutton "Barek":
+                    #     action Function(commit_character, "barek")
 
                     textbutton "Tansy":
                         action Function(commit_character, "tansy")

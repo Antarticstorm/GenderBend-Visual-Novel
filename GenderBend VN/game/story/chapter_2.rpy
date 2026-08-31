@@ -125,6 +125,7 @@ label chapter_2:
             "(You cork the glowing flask, holding two completed ingredients safely in hand.)"
             hide domitilla
             hide tansy
+            call chapter_end(2, "Aqua-Vaults & Military Steel")
             $ story_progress += 1
             $ setup_free_time(2)
             jump free_time
@@ -142,6 +143,7 @@ label chapter_2:
             "(With your magic control praised by both your mentor and the Garrison Commander, you secure your third ingredient with complete composure.)"
             hide domitilla
             hide tansy
+            call chapter_end(2, "Aqua-Vaults & Military Steel")
             $ story_progress += 1
             $ setup_free_time(2)
             jump free_time
@@ -160,6 +162,7 @@ label chapter_2:
             # [SCENE END]
             hide domitilla
             hide tansy
+            call chapter_end(2, "Aqua-Vaults & Military Steel")
             $ story_progress += 1
             $ setup_free_time(2)
             jump free_time

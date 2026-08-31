@@ -105,3 +105,40 @@ label route_end_transition(character_name):
     with fade
 
     return
+
+screen chapter_end_card(number, title):
+
+    add Solid("#000")
+
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        spacing 20
+
+        text "CHAPTER [number] COMPLETE":
+            xalign 0.5
+            size 38
+
+        text title:
+            xalign 0.5
+            size 54
+
+        null height 20
+
+        text "MIRTHHAVEN":
+            xalign 0.5
+            size 24
+            
+label chapter_end(number, title):
+
+scene black
+with fade
+
+show screen chapter_end_card(number, title)
+
+$ renpy.pause(3.0, hard=True)
+
+hide screen chapter_end_card
+with fade
+
+return

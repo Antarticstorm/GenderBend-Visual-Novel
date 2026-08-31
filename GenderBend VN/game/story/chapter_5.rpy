@@ -1,4 +1,30 @@
 # ============================================================
+# FOUR CHARACTER POSITION PRESETS
+# Keep these in your shared character asset/transform file if preferred.
+# ============================================================
+
+transform char_far_left:
+    xanchor 0.5
+    xpos 0.12
+    yalign 1.0
+
+transform char_mid_left:
+    xanchor 0.5
+    xpos 0.37
+    yalign 1.0
+
+transform char_mid_right:
+    xanchor 0.5
+    xpos 0.63
+    yalign 1.0
+
+transform char_far_right:
+    xanchor 0.5
+    xpos 0.88
+    yalign 1.0
+
+
+# ============================================================
 # MAIN CHAPTER 5 — REBIRTH, CHAOS & THE CORE FOUR VICTORY
 # Adjusted four-character finale.
 # ============================================================
@@ -7,8 +33,11 @@ label chapter_5:
 
     call chapter_transition(5, "Rebirth, Chaos & The Core Four Victory")
 
-    show tansy worried at tansy_size, char_left
-    show elianna happy at elianna_size, char_right
+    # Core Four staging.
+    show tansy worried at tansy_size, char_far_left
+    show clara normal at clara_size, char_mid_left
+    show domitilla normal at domitilla_size, char_mid_right
+    show elianna happy at elianna_size, char_far_right
     # Scene 1: The Gilded Transformation
     # Location: The Solarium Sanctum — Grand Alchemy Laboratory
     # [SCENE START]
@@ -16,7 +45,7 @@ label chapter_5:
     "(You lift the crystal goblet containing the golden Alkahest of True Form to your lips.)"
     "(Tansy, Ellie, Clara, and Domitilla—who just burst through the lab doors carrying a keg of armory mead—all stand in a hushed circle, holding their breath.)"
     # Source [SPRITE: Tansy — Nervous, Holding Breath]
-    show tansy happy
+    show tansy happy at tansy_size, char_far_left
     tansy "Bottoms up, kiddo! Don't spill a single drop!"
     "(You swallow the warm, golden brew in one big gulp.)"
     "(Instantly, a wave of intense heat washes from your stomach to your toes.)"
@@ -30,13 +59,13 @@ label chapter_5:
     # SFX: Sound Effect: MAGICAL POP! Sparkles bursting
     "(However, because of the wild mix of six legendary catalysts, a side effect triggers: every time you blink or speak with passion, a tiny burst of harmless, radiant golden glitter pops out of your hair and hovers in the air like a walking party spell.)"
     # Source [SPRITE: Commander Bruni — Stunned -> Booming Laughter]
-    show domitilla happy at char_center, domitilla_size
+    show domitilla happy at domitilla_size, char_mid_right
     domitilla "BWAHAHAHA! Look at him! You're built like a vanguard commander, but you're shedding fairy dust like a festival float!"
     # Source [SPRITE: Ellie — Beaming, Clapping]
-    show elianna happy
+    show elianna happy at elianna_size, char_far_right
     elianna "Oh, it's wonderful! You look so handsome, and the sparkles are surprisingly flattering!"
     # Source [SPRITE: Clara Vane — Smirking, Adjusting Glasses]
-    show clara happy
+    show clara happy at clara_size, char_mid_left
     clara "I can already see the fashion trend. 'Sanctum Glitter-Bourbon'. We'll make a fortune."
 
     menu:
@@ -45,15 +74,18 @@ label chapter_5:
             mc "Behold! The Arch-Mage of Glamour has returned!\" Bruni: \"HA! That’s the spirit! A true warrior owns their glitter!"
         "Sweep Tansy and Ellie into a massive bear hug.":
             "(Laugh hysterically and sweep Tansy and Ellie into a massive bear hug)"
-            show elianna normal
+            show elianna normal at elianna_size, char_far_right
             elianna "Eek! Oh! You're so warm and strong again!\" Tansy: \"Aww! See? I told you my tea would make you unforgettable!"
         "Try to brush the sparkles out of your hair.":
             "(Try to brush the sparkles out of your hair, growing completely flustered)"
-            show clara happy
+            show clara happy at clara_size, char_mid_left
             clara "Don't bother fighting it, dear. You look magnificent. Own the spotlight!"
 
-    hide tansy
-    hide elianna
+    # Re-establish the Core Four for the tavern group shot.
+    show tansy happy at tansy_size, char_far_left
+    show clara happy at clara_size, char_mid_left
+    show domitilla happy at domitilla_size, char_mid_right
+    show elianna happy at elianna_size, char_far_right
 
     # Scene 2: Revelry at The Laughing Anchor
     # Location: The Laughing Anchor Tavern — Private Guild Suite (Night)
@@ -62,7 +94,7 @@ label chapter_5:
     "(The entire central table of The Laughing Anchor is covered in roasted meats, glowing botanical pastries made by Ellie, and heavy iron flagons brought by Domitilla.)"
     "(Clara has rented out the entire upper deck for the core four heroines and you.)"
     # Source [SPRITE: Clara Vane — Raising Crystal Glass]
-    show clara happy
+    show clara happy at clara_size, char_mid_left
     clara "A toast! To our favorite apprentice—who survived transfiguration, market fraud, military hazing, and double-witch chaos!"
     # [ALL HEROINES]
     tansy "TO THE SPARKLE WIZARD!"
@@ -73,14 +105,14 @@ label chapter_5:
     "(Domitilla slams her flagon onto the table, challenging you to an arm-wrestling match right on top of Clara’s expensive silk tablecloth.)"
     "(Ellie is feeding you sweet-berry tarts, while Tansy uses your magical glitter aura to summon little glowing fireworks that dance over the tavern rafters.)"
     # Source [SPRITE: Commander Bruni — Grinning, Gripping Your Hand]
-    show domitilla talking
+    show domitilla talking at domitilla_size, char_mid_right
     domitilla "Come on, scholar! Let's see if that new male body can push back against three hundred pounds of Garrison power!"
 
     menu:
         "Challenge Domitilla at arm wrestling.":
             "(Slam Domitilla's hand down onto the table with a surge of kinetic magic and raw muscle)"
             "(The wooden table cracks as you pin Domitilla's arm! The entire tavern erupts in deafening cheers!)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, char_mid_right
             domitilla "BWAHAHA! YES! THAT'S WHAT I'M TALKING ABOUT!"
         "Toast warmly to all four women.":
             "(Toast warmly to all four women, giving a heartwarming speech about how much you trust them)"
@@ -88,25 +120,29 @@ label chapter_5:
         "Turn your glitter aura into a tavern-wide light show.":
             "(Channel your glitter aura into a full tavern-wide magical light show)"
             "(Golden sparks cascade over the tavern balcony like shimmering rain. Patrons downstairs break into wild applause!)"
-            show tansy happy
+            show tansy happy at tansy_size, char_far_left
             tansy "We're charging admission for this show next time!"
 
     # Scene 3: A Destiny Forged in Magic & Steel
     # Location: The Laughing Anchor — Balcony Overlooking Mirthhaven
+    show tansy normal at tansy_size, char_far_left
+    show clara normal at clara_size, char_mid_left
+    show domitilla normal at domitilla_size, char_mid_right
+    show elianna normal at elianna_size, char_far_right
     # [SCENE START]
     # SFX: Sound Effect: Night breeze blowing softly, distant ocean waves, stars twinkling overhead
     "(You step out onto the tavern balcony overlooking the glowing harbor lights of Mirthhaven. One by one, Tansy, Ellie, Clara, and Domitilla join you at the railing, leaning beside you under the moonlight.)"
     # Source [SPRITE: Tansy — Warm, Proud Smile]
-    show tansy talking
+    show tansy talking at tansy_size, char_far_left
     tansy "So... the brew is finished. Your body is restored. The Alkahest worked. What’s your next step, little wizard?"
     # Source [SPRITE: Commander Bruni — Crossing Arms, Grinning]
-    show domitilla talking
+    show domitilla talking at domitilla_size, char_mid_right
     domitilla "The Vanguard always has a high seat open for a mage who isn't afraid to fight in the dirt."
     # Source [SPRITE: Clara Vane — Gentle Smile, Adjusting Ring]
-    show clara talking
+    show clara talking at clara_size, char_mid_left
     clara "And the Merchant Guild could always use a sharp mind to co-rule the trade lanes."
     # Source [SPRITE: Ellie — Blushing, Soft Tone]
-    show elianna talking
+    show elianna talking at elianna_size, char_far_right
     elianna "Or... you could stay right here in the Sanctum with us, researching new magic and tending the wards."
     "(You look at the four extraordinary heroines who helped you reclaim your true self. The future of Mirthhaven stretches out before you.)"
 
@@ -115,7 +151,7 @@ label chapter_5:
             $ main_ending = "sparkle_arch_mage"
             "(Tansy pulls you into a playful headlock while Ellie beams with pure joy!)"
             # Source [SPRITE: Tansy — Ecstatic, Laughing]
-            show tansy happy
+            show tansy happy at tansy_size, char_far_left
             tansy "YES! The Solarium Sanctum gets to keep its favorite disaster-apprentice!"
             "(Together with Tansy and Ellie, you step into your new role as Grand Arch-Mage.)"
             "(Over the coming years, your signature spell becomes legendary across the continent: a glorious, unstoppable golden burst of raw magic and sparkly light that strikes terror into monsters and brings endless laughter to Mirthhaven.)"
@@ -128,7 +164,7 @@ label chapter_5:
             $ main_ending = "gilded_champion"
             "(Domitilla slams her hand onto your back so hard you almost knock over the balcony railing, roaring with pride!)"
             # Source [SPRITE: Commander Bruni — Thunderous Joy]
-            show domitilla happy
+            show domitilla happy at domitilla_size, char_mid_right
             domitilla "HA! WELCOME TO THE VANGUARD, CHAMPION!"
             "(Dressed in custom-forged armor crafted by Domitilla that glimmers with eternal golden sparks, you become the most formidable warrior-mage in Mirthhaven’s history.)"
             "(Leading the Garrison, you protect the realm with iron discipline, unstoppable magic, and a flair for theatrical combat that no enemy can breach!)"
@@ -141,7 +177,7 @@ label chapter_5:
             $ main_ending = "glamour_overlord"
             "(Clara hands you a golden signet ring engraved with the Wanderlust Guild crest, winking with a clever smile.)"
             # Source [SPRITE: Clara Vane — Sophisticated, Smirking]
-            show clara happy
+            show clara happy at clara_size, char_mid_left
             clara "A brilliant choice, partner. Together, we'll buy and sell whole kingdoms."
             "(Teaming up with Clara, you revolutionize trade across the realm.)"
             "(Using your magic and her financial genius, you build a prosperous trade syndicate.)"

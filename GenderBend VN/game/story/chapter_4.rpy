@@ -7,6 +7,7 @@ label chapter_4:
 
     call chapter_transition(4, "The Double-Witch Lab Panic")
 
+
     show elianna angry at elianna_size, char_left
     show tansy teasing at tansy_size, char_right
     # Scene 1: Sparks & Tripping Hazards
@@ -121,6 +122,7 @@ label chapter_4:
             "(The golden potion settles into a crystal goblet, radiating pure reversal magic. You stand over the completed cure with total mastery.)"
             hide elianna
             hide tansy
+            call chapter_end(4, "The Double-Witch Lab Panic")
             $ story_progress += 1
             jump finish_chapter_4_free_time
         "Use your mana as a living bridge between all six catalysts.":
@@ -137,6 +139,7 @@ label chapter_4:
             "(The glowing potion fills the goblet, perfectly matched to your personal spell-weave.)"
             hide elianna
             hide tansy
+            call chapter_end(4, "The Double-Witch Lab Panic")
             $ story_progress += 1
             jump finish_chapter_4_free_time
         "Force all six catalysts into the alembic at maximum pressure.":
@@ -164,5 +167,6 @@ label chapter_4:
             # [SCENE END]
             hide elianna
             hide tansy
+            call chapter_end(4, "The Double-Witch Lab Panic")
             $ story_progress += 1
             jump finish_chapter_4_free_time
