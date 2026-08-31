@@ -9,7 +9,7 @@ label chapter_2:
 
     # Scene 1: Bioluminescent Depths
     # Location: The Solarium Sanctum — Aquatic Botanical Wing
-    scene bg solarium_sanctum at bg_character_focus
+    scene bg nurse at bg_character_focus
     with fade
     # [SCENE START]
     # SFX: Sound Effect: Gentle water splashing, hum of underwater filtration wards, soft bioluminescent glow echoing off wet glass
@@ -60,6 +60,10 @@ label chapter_2:
     # Source [SPRITE: Ellie — Warm, Encouraging]
     show elianna talking at elianna_size, char_center, expression_pop
     elianna "Ingredient number two: Luminescent Sea-Gland, perfectly preserved. Be careful heading out—your next stop is the Garrison armory for forge ingredients!"
+
+    $ has_sea_gland = True
+    call item_acquired("item sea_gland", "Luminescent Sea-Gland")
+
     # Scene 2: Forge-Fire & Dragon Steel
     hide elianna
     # Location: The Crestward Garrison — High Armory Forge (Dusk)
@@ -143,7 +147,12 @@ label chapter_2:
             "(Bruni pats your shoulder with a heavy, warm palm as you cap the shimmering flask.)"
             show domitilla talking at domitilla_size, char_center, expression_pop
             domitilla "Take that Draconic Cinder-Ash with pride. You earned it with real skill."
+            $ has_cinder_ash = true
+            call item_acquired("item cinder_ash", "Draconic Cinder-Ash")
             "(With your magic control praised by both your mentor and the Garrison Commander, you secure your third ingredient with complete composure.)"
+            
+            $ has_cinder_ash = true
+            call item_acquired("item cinder_ash", "Draconic Cinder-Ash")
             hide domitilla
             hide tansy
             call chapter_end(2, "Aqua-Vaults & Military Steel")
@@ -160,6 +169,9 @@ label chapter_2:
             tansy "You've met your match, Commander! You can't intimidate this one!"
             # Source [SPRITE: Commander Bruni — Chuckling, Handing Over Cinder]
             domitilla "You've got some nerve, kid! I love it! Here—take your Draconic Cinder-Ash before you make fun of my anvils next!"
+
+            $ has_cinder_ash = true
+            call item_acquired("item cinder_ash", "Draconic Cinder-Ash")
             "(The armory fills with laughter as you cap the glowing vial, enjoying the lively energy of the Garrison as you prepare for the next leg of your quest.)"
             # [SCENE END]
             hide domitilla

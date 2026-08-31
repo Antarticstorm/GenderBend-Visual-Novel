@@ -63,6 +63,8 @@ label tansy_chapter_3:
     # ========================================================
     # SCENE 1 — CAFFEINATED ETHER-SMOKE
     # Location: The Sanctum — Alchemy Wing (Late Night)
+    scene bg solarium_sanctum at bg_character_focus
+    with fade
     # ========================================================
 
     # SFX: Loud hiss of steam, glass retorts clinking wildly,
@@ -76,9 +78,7 @@ label tansy_chapter_3:
 
     # Source sprite direction:
     # Tansy — Disheveled Gremlin, Caffeinated Twitch, Goggles Crooked
-    show tansy surprised at tansy_size, char_center
-
-    show tansy surprised
+    show tansy surprised at tansy_size, char_center, enter_from_right
     tansy "HOLD YOUR BREATH, WIZARD! Unless you want your lungs to taste like bubblegum and wild magic for three business days!"
 
     "(She grabs a brass lever and yanks it down. An overhead exhaust pipe rattles violently, sucking the purple smoke up into the rafters.)"
@@ -87,7 +87,7 @@ label tansy_chapter_3:
 
     # Source sprite direction:
     # Tansy — Pointing Stirring Rod, Suspicious 4th-Wall Glare
-    show tansy confused
+    show tansy confused at tansy_size, expression_pop
     tansy "Wait... hold on. Pause the scene! Why are you here?!"
     tansy "Isn't it late Chapter 3 right now?"
     tansy "Aren't you supposed to be at the harbor flirt-fighting with the Garrison Commander or doing adult paperwork with Clara?!"
@@ -107,7 +107,7 @@ label tansy_chapter_3:
 
             "(Tansy lets out a sharp, delighted cackle, slapping her knee.)"
 
-            show tansy happy
+            show tansy happy at tansy_size, expression_pop
             tansy "OSHA?! In the Sanctum?! We don't have health codes here, scholar! We have raw ambition and exploding glassware!"
 
 
@@ -119,7 +119,7 @@ label tansy_chapter_3:
 
             "(Tansy blinks, her amber eyes widening in shock as she looks up at the sky.)"
 
-            show tansy surprised
+            show tansy surprised at tansy_size, expression_squish
             tansy "Wait—the UI gave you a glowing choice?! You bypassed the main story content for me?! Do you know what kind of route-flags we just broke?!"
 
 
@@ -129,7 +129,7 @@ label tansy_chapter_3:
 
             $ tansy_affection += 15
 
-            show tansy teasing
+            show tansy teasing at tansy_size, expression_pop
             tansy "(Hisses like a startled feral cat as you take her coffee) Hey! Give that back! That brewed potion is forty percent caffeine and sixty percent pure magic! It's the only reason my heart is still beating!"
 
 
@@ -137,7 +137,7 @@ label tansy_chapter_3:
 
     # Source sprite direction:
     # Tansy — Sitting Cross-Legged, Wild Smirk
-    show tansy teasing
+    show tansy teasing at tansy_size
 
     tansy "Okay, look. If you're staying in here, you're helping me."
     tansy "I'm trying to synthesize the secondary catalyst for your curse cure."
@@ -158,7 +158,7 @@ label tansy_chapter_3:
 
     # Source sprite direction:
     # Tansy — Flustered Scramble, Grabbing Reagents
-    show tansy worried
+    show tansy worried at tansy_size, expression_squish
     tansy "Ngh! It's critical! Quick! Hand me the stabilizing salt! No, the blue jar! Not the green one unless you want to turn us both into frogs!"
 
 
@@ -178,7 +178,7 @@ label tansy_chapter_3:
 
             "(Your kinetic frost instantly cools the boiling mixture. The pink liquid calms down, shifting into a serene, glowing crystalline blue.)"
 
-            show tansy surprised
+            show tansy surprised at tansy_size, expression_squish
 
             tansy "(Gasps, staring at the crucible in awe) Woah... Perfect thermal stabilization! You... you actually know what you're doing!"
 
@@ -191,7 +191,7 @@ label tansy_chapter_3:
 
             "(You scoop her up off the table. Tansy squeaks in surprise as the potion pops harmlessly under the heavy fireproof blanket.)"
 
-            show tansy surprised
+            show tansy surprised at tansy_size, expression_squish
 
             tansy "(Blushing wildly, dangling in your arms) O-Oh. Physical intervention! That's... surprisingly effective. You can put me down now, wizard! Before my sprite gets any more flustered!"
 
@@ -206,7 +206,7 @@ label tansy_chapter_3:
 
             "(A puff of green smoke erupts. Both of your robes sprout tiny, harmless green toadstool mushrooms.)"
 
-            show tansy teasing
+            show tansy teasing at tansy_size, expression_pop
 
             tansy "(Stares at the mushroom on her shoulder, then looks at you) You did that on purpose. You're an absolute goblin. I love it."
 
@@ -222,9 +222,8 @@ label tansy_chapter_3:
 
     # Source sprite direction:
     # Tansy — Cheeky Smirk, Soot-Covered, Looking Up
-    show tansy teasing
 
-    show tansy talking
+    show tansy talking at tansy_size, expression_pop
     tansy "You know... I skipped Chapters 1 and 2 of my own romance arc."
     tansy "I was supposed to just be the background alchemist NPC who gives you quest items and complains about grant funding."
 
@@ -232,13 +231,13 @@ label tansy_chapter_3:
 
     # Source sprite direction:
     # Tansy — Leaning Close, Wild Sparkle in Eyes
-    show tansy teasing
+    show tansy teasing at tansy_size, expression_pop
 
     tansy "But then you brought me Clara's lunch box. And then you kicked open my door tonight. You ruined my entire character script, wizard."
 
     mc "Are you complaining, Tansy?"
 
-    show tansy happy
+    show tansy happy at tansy_size, expression_pop
 
     tansy "(Grins, her cheeks turning a bright pink beneath her soot marks) Complaining?! I'm ecstatic! I get the sharpest, most reckless scholar in the Sanctum all to myself!"
 
@@ -259,7 +258,7 @@ label tansy_chapter_3:
 
             # Source sprite direction:
             # Tansy — Cheeks Bright Red, Overjoyed Gremlin
-            show tansy happy
+            show tansy happy at tansy_size, expression_pop
             tansy "Deal! But if the narrative crashes because we fell in love before Chapter 4... I'm blaming you!"
 
             "(She grabs your scholar's collar and pulls you down into a wild, messy, incredibly sweet kiss—nearly knocking over another rack of glass retorts in the process.)"
@@ -280,9 +279,9 @@ label tansy_chapter_3:
 
             # Source sprite direction:
             # Tansy — Laughing, Arm Around Waist
-            show tansy happy
+            show tansy happy at tansy_size
 
-            show tansy teasing
+            show tansy teasing at tansy_size, expression_pop
             tansy "Your favorite mess?! I'm framing that quote on the wall! Now come on, wizard—we have three more unstable potions to brew before dawn!"
 
 
@@ -303,7 +302,7 @@ label tansy_chapter_3:
 
             # Source sprite direction:
             # Tansy — Annoyed, Pointing at Door
-            show tansy frown
+            show tansy sad at tansy_size, expression_pop
             tansy "Boring! Absolute buzzkill! Go back to the main story if you can't handle a little ether-smoke! The door's behind you, scholar!"
 
             "(Tansy turns her back on you, diving back into her calculations. You leave the lab, permanently closing Tansy's secret route.)"
@@ -330,6 +329,8 @@ label tansy_chapter_4:
     # ========================================================
     # SCENE 1 — THE RAINBOW EXPLOSION
     # Location: The Sanctum — Alchemy Wing (Dawn)
+    scene bg solarium_sanctum at bg_character_focus
+    with fade
     # ========================================================
 
     # SFX: Loud fizzing pop, sparkling corks flying,
@@ -343,18 +344,18 @@ label tansy_chapter_4:
 
     # Source sprite direction:
     # Tansy — Triumphant Gremlin, Wild Eyes, Holding Glowing Flask
-    show tansy happy at tansy_size, char_center
+    show tansy happy at tansy_size, char_center, expression_pop
 
-    show tansy happy
+    show tansy happy at tansy_size, char_center
     tansy "BEHOLD! THE ALKAHEST OF TRUE FORM! IT IS COMPLETE! EAT YOUR HEART OUT, SANCTUM ARCHMAGI!"
 
     "(She turns around on her stool so fast she nearly loses her balance, pointing the glowing crystal flask dramatically at your chest.)"
 
     # Source sprite direction:
     # Tansy — Pointing Flask, Unhinged Grin
-    show tansy teasing
+    show tansy teasing at tansy_size, char_center, expression_pop
 
-    show tansy talking
+    show tansy talking at tansy_size, char_center, expression_pop
     tansy "Ninety-six hours of continuous brewing, four near-fatal explosions, and sixty-two cups of black mana-espresso!"
     tansy "We did it, wizard! Your curse cure is officially synthesized!"
 
@@ -373,7 +374,7 @@ label tansy_chapter_4:
 
             "(Tansy squeaks loudly as you lift her off her feet, her arms flailing before she wraps them tightly around your neck, cackling with pure, unfiltered joy.)"
 
-            show tansy surprised
+            show tansy surprised at tansy_size, char_center, expression_squish
             tansy "Whoa! Unexpected physical trajectory! But I'm too excited to file a safety complaint!"
 
 
@@ -387,7 +388,7 @@ label tansy_chapter_4:
 
             "(Tansy clinks her beaker against yours so hard it almost shatters, chugging the fizzy liquid in one go.)"
 
-            show tansy happy
+            show tansy happy at tansy_size, char_center, expression_pop
             tansy "To alchemy! To breaking health codes! And to us!"
 
 
@@ -397,7 +398,7 @@ label tansy_chapter_4:
 
             $ tansy_affection += 15
 
-            show tansy teasing
+            show tansy teasing at tansy_size, char_center, expression_pop
             tansy "(Gasp!) Ninety-four percent sure! The remaining six percent is just minor aesthetic sparkles! You're welcome!"
 
 
@@ -418,21 +419,21 @@ label tansy_chapter_4:
 
     # Source sprite direction:
     # Tansy — Fiddling with Goggles, Uncharacteristically Quiet
-    show tansy worried
+    show tansy worried at tansy_size, char_center, expression_squish
     tansy "So... the quest item is delivered. The curse is broken. The main story flag is officially cleared."
 
     "(She looks up at you through her messy, soot-stained bangs, her amber eyes reflecting an unexpected, genuine vulnerability.)"
 
     # Source sprite direction:
     # Tansy — Chewing Lip, Looking Up
-    show tansy worried
+    show tansy worried at tansy_size, char_center
     tansy "Normally... this is the part where the quest-giver NPC goes back to standing behind her desk."
     tansy "Repeating the same three lines of background dialogue while the main character moves on..."
     tansy "...to the grand romance finales with the cool Guildmaster or the tough Commander."
 
     "(She steps right up to you, her calloused, ink-stained fingers reaching out to lightly clutch the front of your scholar's robes.)"
 
-    show tansy worried
+    show tansy worried at tansy_size, char_center
     tansy "Be honest with me, wizard."
     tansy "Did you only stay in my messy lab because you needed a potion..."
     tansy "...or do you actually want a chaotic goblin like me in your life after the credits roll?"
@@ -453,7 +454,7 @@ label tansy_chapter_4:
 
             "(Tansy's wide amber eyes go completely wide. A bright, blazing crimson flush erupts across her cheeks, spreading all the way to the tips of her ears.)"
 
-            show tansy surprised
+            show tansy surprised at tansy_size, char_center, expression_squish
             tansy "(Short-circuiting) Error 404... Heart rate exceeding maximum parameters... You... you actually mean that?!"
 
             jump tansy_ending_true
@@ -466,7 +467,7 @@ label tansy_chapter_4:
             $ tansy_affection += 20
             $ tansy_ending = "partners_in_perpetual_chaos"
 
-            show tansy happy
+            show tansy happy at tansy_size, char_center, expression_pop
             tansy "(Grins wildly, leaning her head against your arm) A safety hazard?! I'll have you know I'm a certified threat to public infrastructure! And I'm keeping you forever!"
 
             jump tansy_ending_partners
@@ -482,7 +483,7 @@ label tansy_chapter_4:
 
             "(Tansy blinks, her wild expression instantly flattening into a deadpan glare. She steps back, adjusting her goggles.)"
 
-            show tansy frown
+            show tansy sad at tansy_size, char_center, expression_pop
             tansy "Right. Quest-giver status maintained. Standard NPC dialogue unlocked. Thanks for playing the secret route, scholar. Door's on your left."
 
             jump tansy_ending_fail
@@ -501,7 +502,7 @@ label tansy_ending_true:
 
     # Source sprite direction:
     # Tansy — Eyes Wide -> Melted Happiness, Bright Red Blush
-    show tansy surprised
+    show tansy surprised at tansy_size, char_center, expression_squish
 
     "(Tansy lets out a muffled, squeaky gasp before throwing both her arms wildly around your neck, kissing you back with every ounce of unhinged, fierce passion in her soul. In her excitement, her foot accidentally kicks a nearby shelf—sending a box of sparkling glitter-bombs popping off into the air behind you like indoor fireworks.)"
 
@@ -509,12 +510,12 @@ label tansy_ending_true:
 
     # Source sprite direction:
     # Tansy — Radiant, Cheeks Crimson, Devoted Smirk
-    show tansy happy
+    show tansy happy at tansy_size, char_center, expression_pop
     tansy "Okay... yep! Best secret route ending in visual novel history! Official statement!"
 
     mc "No more scripts, Tansy. Just you and me."
 
-    show tansy teasing
+    show tansy teasing at tansy_size, char_center, expression_pop
 
     tansy "(Smirks triumphantly, lacing her ink-stained fingers tightly with yours) You and me, wizard. Now come on—we have a whole lifetime of illegal alchemy and chaotic experiments to run together!"
 
@@ -532,7 +533,7 @@ label tansy_ending_partners:
 
     # Source sprite direction:
     # Tansy — Wild Laugh, Raising Beaker
-    show tansy happy
+    show tansy happy at tansy_size, char_center, expression_pop
     tansy "Mirthhaven isn't ready for the two of us! We're going to revolutionize magic, blow up half the council's storage sheds, and rewrite every textbook in the Sanctum!"
 
     "(She jumps off the railing right into your arms, wrapping her legs around your waist as you both laugh loudly under the sunrise—an unstoppable, chaotic power couple bound by magic, science, and absolute anarchy.)"
@@ -549,7 +550,7 @@ label tansy_ending_fail:
 
     # Source sprite direction:
     # Tansy — Polite NPC Smile, Standard Posture
-    show tansy frown
+    show tansy sad at tansy_size, char_center, expression_pop
     tansy "Thank you for visiting the Sanctum Alchemy Wing, scholar! Health potions are twenty copper pieces each. Have a pleasant day in Mirthhaven!"
 
     "(You walk out of the quiet laboratory, leaving the secret route behind as Tansy fades back into the background of the Sanctum.)"

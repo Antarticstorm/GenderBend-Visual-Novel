@@ -6,8 +6,9 @@ label elianna_chapter_1:
 
     call route_transition("Elianna Sylvane", 1, "Bandages & Broken Vials")
 
-    show elianna angry at elianna_size, char_center
     # Location: The Solarium Sanctum — Sunlit Wards
+    scene bg solarium_sanctum at bg_character_focus
+    with fade
     # Characters Present: The MC (Sorcerer Apprentice), Elianna "Ellie" Sylvane (Head Nurse)
     # [SCENE START]
     # SFX: Sound Effect: Clattering glass, rustling parchment, frantic footsteps echoing against marble tiles
@@ -15,11 +16,13 @@ label elianna_chapter_1:
     "(Rows of pristine white cots line the hall, filled with the aroma of dried lavender, crushed eucalyptus, and burning sage.)"
     "(Near a tall oak apothecary cabinet at the far end of the ward, a frantic blur of white robes and golden hair is scurrying across the floor.)"
     # [SPRITE: Ellie — Panicked, Flustered]
-    show elianna angry
+    show elianna angry at elianna_size, char_center, enter_from_right
     elianna "Eek—! Wait, wait, come back! Ah, nononono, don't roll under the cabinet!"
     "(Ellie lunges forward on all fours, her fingers just barely scraping against a small glass vial of shimmering blue salve as it bounces across the stone floor.)"
     "(In her panic, her foot catches the heavy wool hem of her own long white nurse’s gown.)"
     # SFX: Sound Effect: Heavy fabric rustle, sharp gasp
+
+    show elianna normal at elianna_size, expression_pop
     elianna "Whoa—ah! Oh no!"
     "(Ellie trips over her feet with a soft gasp.)"
     "(A neatly stacked armful of clean cotton bandages, wooden splints, and rolls of medical linen flies from her arms, cascading into the air straight toward the hard cobblestone floor.)"
@@ -31,16 +34,19 @@ label elianna_chapter_1:
     "(With a gentle flick of your wrist, you guide the floating stack safely into your arms and catch the stray blue vial with your free hand.)"
     mc "Got them. Easy there, Nurse Ellie."
     # [SPRITE: Ellie — Shocked, Blushing]
+    show elianna smug at elianna_size, expression_pop
     elianna "Wh-Whah—?! Oh! The bandages! They didn't hit the floor!"
     "(Ellie scrambles up from the tiles, her knees knocking slightly.)"
     "(She frantically dusts off her pristine white apron, trying to straighten her lopsided nurse's cap, though her cheeks burn a bright, furious crimson.)"
+    show elianna happy_talking at elianna_size, expression_pop
     elianna "Oh goodness, I'm so, so sorry! I was just trying to catch the Salve of Aloe before it smashed, and then my feet got tangled... I swear my robes grow three inches longer whenever I'm in a hurry!"
     "(She takes a breathless step toward you to retrieve the supplies, but as you hand them over, her bright blue eyes instantly lock onto your exposed forearm.)"
     # [SPRITE: Ellie — Worried, Disappointed]
+    show elianna sad at elianna_size, expression_pop
     elianna "Ah, wait! Look at you! Those singe marks and blisters on your arms—was that Tansy’s practical casting drill again?!"
     mc "Yeah. A stray flame-burst caught me off guard during the target rotation."
     # [SPRITE: Ellie — Agonized, Gentle]
-    show elianna talking
+    show elianna talking at elianna_size, expression_pop
     elianna "That woman... I keep telling her that novice sorcerers shouldn't be casting volatile fire spells indoors without dampening wards! Sit down, please! Right here on the edge of the cot!"
     "(She gently takes your uninjured hand and guides you to sit on a nearby padded cot.)"
     "(She sets the retrieved supplies on a rolling tray and pulls out a small porcelain jar of soothing mint-green paste along with wooden applicators.)"
@@ -50,7 +56,7 @@ label elianna_chapter_1:
     "(However, as the herb makes contact with a fresh burn, you reflexively flinch and wince.)"
     # SFX: Sound Effect: Sharp intake of breath
     # [SPRITE: Ellie — Pained, Tearful]
-    show elianna sad
+    show elianna sad at elianna_size, expression_pop
     elianna "Ah! S-Sorry! Did that hurt?! Oh dear, I applied too much pressure, didn't I? I'm so bad at this..."
     "(She pulls her hands back, clutching the applicator tightly to her chest. Her bright blue eyes fill with genuine tears, glistening under the sunlight as her brow furrows in deep, sympathetic distress.)"
     elianna "Whenever I see someone in pain, my heart hurts just as much as their injury... I can't stand seeing people suffer. That's why I became a nurse, even if my hands are clumsy and I trip over air..."
@@ -62,16 +68,19 @@ label elianna_chapter_1:
             # [MC]: "You're not bad at this at all, Ellie. Your heart is what makes you a great healer."
             # [SPRITE: Ellie — Surprised -> Deep Blush, Soft Smile]
             "(Ellie blinks rapidly, a tear spilling over her lashes as her eyes widen in utter surprise. A deep, rose-pink flush spreads from the tips of her pointed elven ears down to her neck.)"
+            show elianna smug at elianna_size, expression_pop
             elianna "Y-You really think so...? You're not just saying that to make me feel better?"
             mc "I mean it. Anyone can apply salve, Ellie, but not everyone actually cares about the person hurting."
+            show elianna very_smug at elianna_size, expression_pop
             elianna "I... Oh..."
+            show elianna normal at elianna_size, expression_pop
             "(She wipes her cheek with the back of her sleeve and lets out a soft, breathy laugh.)"
             "(The tension drains from her shoulders completely.)"
             "(She steps back in close, her movements suddenly becoming steady, careful, and remarkably delicate as she wraps the soft linen gauze over your burn.)"
-            show elianna happy
+            show elianna happy at elianna_size, expression_pop
             elianna "Most people just laugh at me... or tell me to stay out of the way so I don't break something expensive. But you..."
             "(She ties off the bandage with a perfect, neat knot, her soft fingers lingering against your palm for a few extra seconds before she slowly lets go.)"
-            show elianna sad
+            show elianna happy_talking at elianna_size, expression_pop
             elianna "Thank you, sorcerer. You have no idea how much those words mean to me... Please, come back anytime you're hurt. I'll always be here to fix you up."
             hide elianna
             jump finish_elianna_event
@@ -79,14 +88,16 @@ label elianna_chapter_1:
             $ elianna_affection += 10
             # [MC]: "It stings a bit, but I can handle it. Just focus on wrapping it up."
             # [SPRITE: Ellie — Relieved, Apologetic]
+            show elianna normal at elianna_size, expression_pop
             "(Ellie gives a quick, flustered nod, wiping her eyes with the corner of her apron as she takes a deep breath.)"
             elianna "O-Oh! Right! Of course! S-Sorry, I'm wasting time rambling when you're the one sitting here in pain!"
             "(She quickly dips the applicator back into the jar and works on spreading the rest of the green paste over your arm.)"
             "(Her hands are a little shaky, making the application slightly uneven, but she works diligently to wrap the white linen gauze over your burns.)"
             # SFX: Sound Effect: Fabric wrapping
+            show elianna happy_talking at elianna_size, expression_pop
             elianna "There... all patched up! I wrapped it a tiny bit tight to keep the salve from leaking, but it should stop the burning in a few minutes."
             "(She steps back, handing you a small paper pouch with extra ointment.)"
-            show elianna angry
+            show elianna angry at elianna_size, expression_squish
             elianna "Take this with you. And please, try to avoid Tansy's fire drills for the rest of the week if you can! I'd hate to see you back on this cot so soon."
             hide elianna
             jump finish_elianna_event
@@ -99,6 +110,7 @@ label elianna_chapter_1:
             "(She lowers her head, her golden bangs falling forward to hide her expression.)"
             elianna "I... I see. You're... you're right, of course."
             "(She hastily wraps the remaining gauze around your arm without looking at you, her fingers cold and stiff. The bandage is tied off clumsily, slightly lopsided against your wrist.)"
+            show elianna normal at elianna_size, expression_pop
             elianna "I'm just a liability in here... I know the other healers say the same thing behind my back. I just thought... if I tried hard enough..."
             "(She steps back, pulling her hands into her sleeves and clutching them tightly against her chest. She turns her face away, staring down at the stone floor.)"
             elianna "You're all patched up now. You're free to go back to your dorms... I'll try not to bother you next time you visit the Wards."
@@ -109,8 +121,10 @@ label elianna_chapter_2:
 
     call route_transition("Elianna Sylvane", 2, "The Weight of Centuries")
 
-    show elianna sad at elianna_size, char_center
+    show elianna sad at elianna_size, char_center, expression_pop
     # Location: The Solarium Sanctum — Botanical Conservatory (Midnight)
+    scene bg solarium_sanctum at bg_character_focus
+    with fade
     # [SCENE START]
     "(The scene opens inside the grand glass conservatory of the Solarium Sanctum late at night.)"
     "(Pale moonlight streams through arched glass panes, illuminating silver-leafed ferns, luminescent mosses, and sprawling vines.)"
@@ -120,7 +134,7 @@ label elianna_chapter_2:
     "(She kneels beside a bed of rare silver blooms, her small watering can resting by her feet.)"
     "(Her golden hair hangs loosely over her shoulders, and her long elven ears droop slightly.)"
     # [SPRITE: Ellie - Melancholy, Wistful]
-    show elianna talking
+    show elianna talking at elianna_size, char_center, expression_pop
     "(Sighs softly, reaching out to gently touch a shimmering petal)"
     elianna "...Another decade gone... and the flowers bloom just the same."
     "(You step off the gravel pathway onto the smooth marble terrace.)"
@@ -143,7 +157,7 @@ label elianna_chapter_2:
     "(Her voice quietens to a fragile murmur as she looks down at her hands.)"
     elianna "...And then they age, leave, and eventually pass away. While I just... stay. Unchanging."
     "(She takes a slow breath, her shoulders rising and falling heavily.)"
-    show elianna sad
+    show elianna sad at elianna_size, char_center, expression_pop
     elianna "Because I live so long, I usually try to keep my distance to save my heart."
     elianna "It hurts too much to get close when everyone leaves eventually..."
     elianna "Combine that with my clumsiness, and I feel like an alien in my own home."
@@ -162,7 +176,7 @@ label elianna_chapter_2:
             "(Her small, warm hand glides across the marble bench, closing over yours with gentle conviction.)"
             elianna "Two hundred years... and no one has ever said that to me..."
             "(She closes her eyes, letting out a long, contented breath as the tension drains completely from her frame.)"
-            show elianna sad
+            show elianna sad at elianna_size, char_center
             elianna "When you're around... the solitude doesn't feel so heavy anymore. Thank you for staying by my side, my brave sorcerer."
             hide elianna
             jump finish_elianna_event
@@ -172,7 +186,7 @@ label elianna_chapter_2:
             mc "Living a long time must be tough, but at least you get to help so many generations."
             # [SPRITE: Ellie - Pensive, Soft Smile]
             "(Ellie blinks, pausing for a moment before letting out a light, melodious chuckle.)"
-            show elianna happy
+            show elianna happy at elianna_size, char_center, expression_pop
             elianna "Fufu... That's a very practical way to look at it, sorcerer. You sound just like the old Headmaster when I first joined the Sanctum."
             "(She pulls out a handkerchief, delicately wiping away the stray moisture from her eyelashes before sitting up straight.)"
             elianna "I suppose seeing it as a noble duty helps ease the ache a bit. Every potion I brew and every bandage I wrap is a small mark left on the world, isn't it?"
@@ -190,7 +204,7 @@ label elianna_chapter_2:
             "(She gazes down at the stone tiles, her voice dropping into a cold, flat whisper that hurts worse than a scolding.)"
             elianna "Distance is safer... It’s foolish of me to expect anything different after all these centuries."
             "(She stands up abruptly from the bench, her robes rustling as she brushes off her skirt without looking at you.)"
-            show elianna talking
+            show elianna talking at elianna_size, char_center, expression_pop
             elianna "It's far past midnight. You have early casting classes tomorrow, and you shouldn't be wandering the gardens out of bounds. Please get back to your dorms."
             "(She turns her back to you, picking up her tools in complete silence as the chill of the night settles between you.)"
             # [SCENE END]
@@ -203,20 +217,22 @@ label elianna_chapter_3:
 
     show elianna talking at elianna_size, char_center
     # Location: The Crestward Bastion — Garrison Field Clinic
+    scene bg crestward_bastion at bg_character_focus
+    with fade
     # [SCENE START]
     "(The scene opens inside a sprawling canvas medical tent erected at the edge of the Crestward Bastion’s outdoor training grounds.)"
     "(Dust kicks up in clouds outside as heavy boots stomp across the gravel.)"
     "(Inside, the clinic is packed with groaning recruits, smell of ozone, medicinal salve, and sweat hanging thick in the air.)"
     # SFX: Sound Effect: Clashing steel in distance, shouting recruits, rustling canvas tents, frantic footsteps
     # [SPRITE: Ellie - Focused, Sweating]
-    show elianna talking
+    show elianna talking at elianna_size, char_center, enter_from_right
     elianna "Hold still, Sir Knight! Apply pressure to the shoulder with your left hand—yes, right there! I need three more vials of Burn-Salve right now!"
     "(Ellie rushes between cot after cot, her usual timid demeanor replaced by sharp, practiced focus. Sweat beads along her forehead, pinning several stray golden locks across her flushed face.)"
     # SFX: Sound Effect: Loud creaking wood, snapping ropes from overhead scaffolding
     "Knight Recruit: \"LOOK OUT! THE CEILING BEAM IS GIVING WAY!\""
     "(Directly above the main treatment table where Ellie is standing, a massive wooden support timber—overloaded by heavy iron supply crates stored on the upper staging—cracks under the weight with a deafening split.)"
     # SFX: Sound Effect: THUNDEROUS CRACK! Scaffolding groans, ropes snap
-    show elianna angry
+    show elianna angry at elianna_size, expression_squish
     elianna "E-Eek—?!"
     "(Ellie freezes in shock, looking up just as the splintered oak beam breaks completely free, hurtling down directly toward her head.)"
     # [MC (Sorcerer Apprentice)] (Lunging forward, thrusting your staff upward while channeling mana into a dense, solid dome) (Sound Effect: Deep, booming resonance of barrier spell expanding)
@@ -228,7 +244,7 @@ label elianna_chapter_3:
     # [SPRITE: Ellie - Panicked, Terrified]
     elianna "A-AHHH! Sorcerer?!"
     "(Ellie completely forgets the wounded knights around her. She rushes toward you, her hands frantically grabbing your wrists, face, and shoulders, her eyes wide with unadulterated terror.)"
-    show elianna sad
+    show elianna sad at elianna_size, expression_pop
     elianna "Are you hurt?! Did the impact crush your arms?! Is your head bleeding?! Speak to me, please!"
     # [MC]
     mc "Ellie, calm down! I used a barrier spell—I'm completely fine! Not a scratch!"
@@ -247,7 +263,7 @@ label elianna_chapter_3:
             # [SPRITE: Ellie - Deeply Moved, Loving Look] (Ellie's trembling slowly stops. She tilts her head up to look at you, her face flushing crimson as tears trail down her cheeks. She gently reaches up, cradling your cheek with her warm, soft palm.)
             elianna "S-Sorcerer..."
             "(She rests her forehead against yours, her bright blue eyes glowing with undeniable tenderness.)"
-            show elianna talking
+            show elianna talking at elianna_size, expression_pop
             elianna "I'm supposed to be the one taking care of you... but having you hold me like this... makes me feel so safe. I never want to let go..."
             hide elianna
             jump finish_elianna_event
@@ -259,7 +275,7 @@ label elianna_chapter_3:
             # [SPRITE: Ellie - Sniffling, Relieved] (Ellie takes a shaky breath, slowly pulling back and wiping her cheeks with the back of her sleeve.)
             elianna "I know, I know... you're very brave and skilled with your barrier magic..."
             "(She steps back, tucking her stray hair behind her ears with a shy, self-conscious nod.)"
-            show elianna talking
+            show elianna talking at elianna_size, char_center
             elianna "Just... please don't take risks like that without thinking first. My heart simply can't take the shock!"
             hide elianna
             jump finish_elianna_event
@@ -280,13 +296,16 @@ label elianna_chapter_4:
 
     call route_transition("Elianna Sylvane", 4, "Eternal Bloom")
 
-    show elianna happy at elianna_size, char_center
+    
     # Location: The Solarium Sanctum — Sunlit Wards Balcony (Dusk)
+    scene bg solarium_sanctum at bg_character_focus
+    with fade
     # [SCENE START]
     "(The scene opens on the grand arched balcony overlooking the vast estate of the Solarium Sanctum.)"
     "(The sky is painted in hues of violet, fiery rose, and shimmering gold as the sun slowly sinks behind the horizon.)"
     "(A soft, fragrant breeze blows across the terrace, carrying the subtle sweet scent of blooming flora from the gardens below.)"
     # SFX: Sound Effect: Gentle evening wind, rustling leaves, distant church bells tolling dusk
+    show elianna happy at elianna_size, expression_pop, char_center
     "(Ellie stands near the stone balustrade, bathed in the warm, golden twilight.)"
     "(She wears her finest light-colored gown, and resting upon her head is a beautifully woven crown of glowing, star-shaped medicinal blooms.)"
     # [SPRITE: Ellie - Nervous, Eager]
@@ -294,21 +313,21 @@ label elianna_chapter_4:
     "(Ellie turns around rapidly to face you, but in her excitement, her foot catches slightly on her hem.)"
     "(The sudden movement causes the delicate flower crown to tilt wildly, sliding lopsided over her right pointed ear.)"
     # SFX: Sound Effect: Soft gasp
-    show elianna angry
+    show elianna angry at elianna_size, expression_squish
     elianna "Eek—! Oh no, not again!"
     "(She flushes furiously, reaching up with both hands in a panic to try to save the crown, only to tangle her fingers in her blonde hair.)"
     # [MC (Sorcerer Apprentice)] (Stepping forward with a soft, affectionate laugh, reaching out gently to untangle her fingers and adjust the crown back to the center of her head)
     mc "Hold still, Ellie. There... perfectly centered."
     # [SPRITE: Ellie - Blushing, Adoring]
-    show elianna happy
+    show elianna happy at elianna_size, expression_pop
     elianna "Ehehe... thank you. Even when I try so hard to look nice for you, my clumsiness always finds a way to get the best of me..."
     "(She lowers her hands, slowly reaching out to take both of your hands in hers. Her fingers are soft and warm, trembling ever so slightly as she looks up into your eyes.)"
-    show elianna sad
+    show elianna sad at elianna_size, expression_pop
     elianna "I used to think my long life was a curse of solitude... meant for watching people come and go while I tripped through the centuries all alone in the infirmary."
     # [SPRITE: Ellie - Radiant, Deeply In Love]
     elianna "But you looked past my awkwardness. You shared my pain, protected me when I was weak, and gave me a reason to look forward to every single new day."
     "(Ellie slips one hand free and pulls a glowing, pristine white blossom from her apron pocket—a rare, everlasting Moon-Lily—and gently presses it into your open palm.)"
-    show elianna talking
+    show elianna talking at elianna_size, expression_pop
     elianna "This flower blooms forever... never wilting, never fading... just like what I feel for you."
     elianna "I don't care how many years I have left in this world—I want to spend every single moment of my life by your side."
 
@@ -357,7 +376,7 @@ label elianna_chapter_4:
             # [SPRITE: Ellie - Heartbroken, Trying to Smile] (Ellie's glowing smile freezes. The light in her eyes dims, and a single, heavy tear slips down her cheek. She slowly pulls her hands back, clutching the Moon-Lily tightly to her chest.)
             elianna "Oh... I... I see..."
             "(She forces a brave, heartbreakingly gentle smile, bowing her head so her golden bangs hide her tear-stained eyes.)"
-            show elianna talking
+            show elianna talking at elianna_size, expression_pop
             elianna "It's okay... thank you for being honest with me. You've been so kind to me, and... I'll always keep this flower to remember the warmth you brought into my quiet life."
             # [ENDING CG: BITTERSWEET PETALS]
             "Ellie stands alone on the balcony as you quietly step away."

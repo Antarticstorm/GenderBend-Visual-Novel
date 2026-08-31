@@ -23,11 +23,11 @@ label chapter_1:
 
     show tansy surprised at tansy_size, char_center, expression_squish
 
-    tansy "'Bo' Shen & Barek Tidejaw: Met 'em down at Nautilus Point while hunting for bioluminescent fish-scales." 
-    tansy "Bo almost mistook my apprentice for a forge-bellows assistant, and Barek threatened to throw them into the harbor if they didn't stop levitating the dock crates. Standard greeting!"
+    # tansy "'Bo' Shen & Barek Tidejaw: Met 'em down at Nautilus Point while hunting for bioluminescent fish-scales." 
+    # tansy "Bo almost mistook my apprentice for a forge-bellows assistant, and Barek threatened to throw them into the harbor if they didn't stop levitating the dock crates. Standard greeting!"
 
-    tansy "Clara & Tariq Vane: Bumps into them in the trade square. Tariq tried to sell them 'genuine dragon teeth'"
-    tansy "(spoiler: painted shark teeth from Barek), while Clara took one look at their ragged apprentice cloak and offered a quick lesson on proper district diplomacy."
+    tansy "Clara: Bumps into them in the trade square. Tariq tried to sell them 'genuine dragon teeth'"
+    # tansy "(spoiler: painted shark teeth from Barek), while Clara took one look at their ragged apprentice cloak and offered a quick lesson on proper district diplomacy."
     
     show tansy talking at tansy_size, char_center, expression_pop
 
@@ -156,6 +156,9 @@ label chapter_1:
     # Source [SPRITE: Clara Vane — Reassuring]
     show clara talking at clara_size, char_center
     clara "Here you are. Ingredient number one: Sunstone Powder. One step closer to your true form."
+
+    $ has_sunstone = True
+    call item_acquired("item sunstone", "Sunstone Powder")
     # Scene 3: The Merchant's Trust
     # Location: The Wanderlust Wheel — Office Desk
     # [SCENE START]

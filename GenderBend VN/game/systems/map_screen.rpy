@@ -22,7 +22,7 @@ style map_visit_button_text:
 
 
 transform map_card_unavailable:
-    alpha 0.45
+    alpha 0.80
 
 transform map_card_enter(delay=0.0):
 
@@ -48,6 +48,19 @@ transform map_bottom_hover:
 
     on hover:
         ease 0.12 zoom 1.04 yoffset -5
+
+# ============================================================
+# OBTAINED ITEM GLOW
+# ============================================================
+
+transform item_obtained_glow:
+
+    alpha 1.0
+
+    linear 0.8 matrixcolor BrightnessMatrix(0.30)
+    linear 0.8 matrixcolor BrightnessMatrix(0.10)
+
+    repeat
 # ============================================================
 # REUSABLE MAP CHARACTER CARD
 # ============================================================
@@ -61,6 +74,7 @@ screen map_character_button(
     locked,
     route_label,
     accent_color,
+    character_token,
     entrance_delay=0.0
 ):
 
@@ -84,27 +98,41 @@ screen map_character_button(
         at map_card_enter(entrance_delay)
 
         xsize 380
-        ysize 250
+        ysize 350
 
         background Solid(accent_color)
         padding (2, 2)
 
         frame:
-
-            if not card_available:
-                at map_card_unavailable
-
             xfill True
             yfill True
 
-            background Solid("#111318E8")
-
-            padding (25, 20)
+            background Solid("#111318F5")
+            padding (20, 20)
 
             vbox:
+
+                if not card_available:
+                    at map_card_unavailable
+
                 xalign 0.5
                 yalign 0.5
                 spacing 10
+
+
+                # ====================================================
+                # TOKEN
+                # ====================================================
+
+                add character_token:
+                    xalign 0.5
+                    xsize 90
+                    ysize 90
+
+
+                # ====================================================
+                # CHARACTER
+                # ====================================================
 
                 text character_name:
                     xalign 0.5
@@ -115,6 +143,11 @@ screen map_character_button(
                     xalign 0.5
                     size 21
                     color "#C8B99B"
+
+
+                # ====================================================
+                # PROGRESS
+                # ====================================================
 
                 hbox:
                     xalign 0.5
@@ -133,151 +166,237 @@ screen map_character_button(
                             text "◇":
                                 color "#555555"
                                 size 18
+                                
+                # ====================================================
+                # CHAPTERS 1–3
+                # ====================================================
 
-                null height 10
+                if chapter < 4:
 
+                    if character_id in characters_visited_this_period:
 
-            # ========================================================
-            # CHAPTERS 1–3
-            # ========================================================
-
-            if chapter < 4:
-
-                if character_id in characters_visited_this_period:
-
-                    text "VISITED":
-                        xalign 0.5
-                        size 25
-                        yoffset 170
-                        color "#7FD18B"
+                        text "VISITED":
+                            xalign 0.5
+                            size 25
+                            color "#7FD18B"
 
 
-                elif normal_route_event_available(
-                    progress,
-                    unlocked,
-                    locked
-                ):
+                    elif normal_route_event_available(
+                        progress,
+                        unlocked,
+                        locked
+                    ):
 
-                    textbutton "◆  VISIT  ◆":
-                        xalign 0.5
-                        yoffset 170
+                        textbutton "◆  VISIT  ◆":
+                            xalign 0.5
 
-                        at map_card_hover
+                            at map_card_hover
 
-                        text_color "#D7B56D"
-                        text_hover_color "#FFF0B3"
-                        text_size 22
+                            text_color accent_color
+                            text_hover_color "#FFFFFF"
+                            text_size 22
 
-                        background Solid("#322817CC")
-                        hover_background Solid("#6A5124EE")
+                            background Solid("#322817CC")
+                            hover_background Solid("#6A5124EE")
 
-                        padding (30, 10)
+                            padding (30, 10)
 
-                        action Jump(route_label)
-
-
-                elif locked:
-
-                    text "LOCKED":
-                        xalign 0.5
-                        size 21
-                        color "#777777"
+                            action Jump(route_label)
 
 
-                else:
+                    elif locked:
 
-                    text "UNAVAILABLE":
-                        xalign 0.5
-                        yoffset 170
-                        size 20
-                        color "#292929"
-
-
-            # ========================================================
-            # CHAPTER 4
-            # ========================================================
-
-            else:
-
-                if progress >= 4:
-
-                    text "ROUTE COMPLETE":
-                        xalign 0.5
-                        yoffset 170
-                        size 25
-                        color "#7FD18B"
+                        text "LOCKED":
+                            xalign 0.5
+                            size 25
+                            color "#777777"
 
 
-                elif route_is_committed(character_id):
+                    else:
 
-                    text "COMMITTED":
-                        xalign 0.5
-                        size 25
-                        color "#D7B56D"
-
-                    textbutton "CONTINUE ROUTE":
-                        xalign 0.5
-                        yoffset 170
-                        text_size 25
-
-                        text_color "#D7B56D"
-                        text_hover_color "#FFF0B3"
-
-                        background Solid("#322817CC")
-                        hover_background Solid("#6A5124EE")
-
-                        padding (10, 8)
-
-                        action Jump(route_label)
+                        text "UNAVAILABLE":
+                            xalign 0.5
+                            size 25
+                            color "#555555"
 
 
-                elif (
-                    progress >= 1
-                    and not locked
-                    and can_commit_character(character_id)
-                ):
-
-                    text "FINAL ROUTE AVAILABLE":
-                        xalign 0.5
-                        size 20
-                        color "#D7B56D"
-
-                        at route_available_glow
-
-                    textbutton "◆  COMMIT  ◆":
-                        xalign 0.5
-                        yoffset 170
-
-                        at map_card_hover
-                        
-                        text_color "#D7B56D"
-                        text_hover_color "#FFF0B3"
-                        text_size 22
-
-                        background Solid("#322817CC")
-                        hover_background Solid("#6A5124EE")
-
-                        padding (25, 8)
-
-                        action Jump(route_label)
-
-
-                elif progress >= 1 and not locked:
-
-                    text "NOT CHOSEN":
-                        xalign 0.5
-                        yoffset 170
-                        size 25
-                        color "#888888"
+                # ====================================================
+                # CHAPTER 4
+                # ====================================================
 
                 else:
 
-                    text "UNAVAILABLE":
-                        xalign 0.5
-                        yoffset 170
-                        size 25
-                        color "#292929"
-                        
+                    if progress >= 4:
+
+                        text "ROUTE COMPLETE":
+                            xalign 0.5
+                            size 25
+                            color "#7FD18B"
+
+
+                    elif route_is_committed(character_id):
+
+                        text "COMMITTED":
+                            xalign 0.5
+                            size 20
+                            color accent_color
+
+                        textbutton "◆  CONTINUE ROUTE  ◆":
+                            xalign 0.5
+
+                            at map_card_hover
+
+                            text_size 21
+                            text_color accent_color
+                            text_hover_color "#FFFFFF"
+
+                            background Solid("#322817CC")
+                            hover_background Solid("#6A5124EE")
+
+                            padding (20, 8)
+
+                            action Jump(route_label)
+
+
+                    elif (
+                        progress >= 1
+                        and not locked
+                        and can_commit_character(character_id)
+                    ):
+
+                        text "FINAL ROUTE AVAILABLE":
+                            xalign 0.5
+                            size 17
+                            color accent_color
+
+
+
+                        textbutton "◆  COMMIT  ◆":
+                            xalign 0.5
+
+                            at map_card_hover
+
+                            text_color accent_color
+                            text_hover_color "#FFFFFF"
+                            text_size 22
+
+                            background Solid("#322817CC")
+                            hover_background Solid("#6A5124EE")
+
+                            padding (25, 8)
+
+                            action Jump(route_label)
+
+
+                    elif progress >= 1 and not locked:
+
+                        text "NOT CHOSEN":
+                            xalign 0.5
+                            size 25
+                            color "#888888"
+
+
+                    else:
+
+                        text "UNAVAILABLE":
+                            xalign 0.5
+                            size 25
+                            color "#555555"
+# ============================================================
+# INGREDIENT TRACKER
+# ============================================================
+
+screen ingredient_tracker():
+
+    frame:
+        xalign 0.98
+        yalign 0.03
+
+        background Solid("#111318DD")
+        padding (15, 12)
+
+        vbox:
+            spacing 8
+
+            text "ALKAHEST INGREDIENTS":
+                xalign 0.5
+                size 16
+                color "#D7B56D"
+
+            hbox:
+                spacing 8
+
+                # SUNSTONE POWDER
+                if has_sunstone:
+                    add "item sunstone":
+                        xsize 50
+                        ysize 50
+                        at item_obtained_glow
+                else:
+                    add "item sunstone":
+                        xsize 50
+                        ysize 50
+                        alpha 0.18
+
+                # SEA-GLAND
+                if has_sea_gland:
+                    add "item sea_gland":
+                        xsize 50
+                        ysize 50
+                        at item_obtained_glow
+                else:
+                    add "item sea_gland":
+                        xsize 50
+                        ysize 50
+                        alpha 0.18
+
+                # CINDER-ASH
+                if has_cinder_ash:
+                    add "item cinder_ash":
+                        xsize 50
+                        ysize 50
+                        at item_obtained_glow
+                else:
+                    add "item cinder_ash":
+                        xsize 50
+                        ysize 50
+                        alpha 0.18
+
+                # MIDNIGHT LOTUS
+                if has_midnight_lotus:
+                    add "item midnight_lotus":
+                        xsize 50
+                        ysize 50
+                        at item_obtained_glow
+                else:
+                    add "item midnight_lotus":
+                        xsize 50
+                        ysize 50
+                        alpha 0.18
+
+                # STEEL-CORE MARROW
+                if has_steel_core:
+                    add "item steel_core":
+                        xsize 50
+                        ysize 50
+                        at item_obtained_glow
+                else:
+                    add "item steel_core":
+                        xsize 50
+                        ysize 50
+                        alpha 0.18
+
+                # SOLAR BLOOM
+                if has_solar_bloom:
+                    add "item solar_bloom":
+                        xsize 50
+                        ysize 50
+                        at item_obtained_glow
+                else:
+                    add "item solar_bloom":
+                        xsize 50
+                        ysize 50
+                        alpha 0.18
 # ============================================================
 # MIRTHHAVEN MAP
 # ============================================================
@@ -286,10 +405,12 @@ screen mirthhaven_map():
 
     tag menu
 
-    add "images/backgrounds/Market.PNG":
+    add "images/backgrounds/Crestward_Bastion.PNG":
         blur 15.0
         
     add Solid("#00000055")
+
+    use ingredient_tracker
 
 # ============================================================
 # HEADER
@@ -386,12 +507,13 @@ screen mirthhaven_map():
         use map_character_button(
             "Clara",
             "clara",
-            "Wanderlust Wheel",
+            "Meet up with Clara",
             clara_route_progress,
             clara_route_unlocked,
             clara_route_locked,
             "clara_route_event",
             "#E5BC68",
+            "token clara",
             0.20
         )
 
@@ -403,12 +525,13 @@ screen mirthhaven_map():
         use map_character_button(
             "Elianna",
             "elianna",
-            "Solarium Sanctum",
+            "Meet up with Elianna",
             elianna_route_progress,
             elianna_route_unlocked,
             elianna_route_locked,
             "elianna_route_event",
             "#A9D8B2",
+            "token elianna",
             0.30
         )
 
@@ -420,12 +543,13 @@ screen mirthhaven_map():
         use map_character_button(
             "Domitilla",
             "domitilla",
-            "Crestward Bastion",
+            "Meet up with Domitilla",
             domitilla_route_progress,
             domitilla_route_unlocked,
             domitilla_route_locked,
             "domitilla_route_event",
             "#D98282",
+            "token domitilla",
             0.40
         )
 
@@ -433,18 +557,18 @@ screen mirthhaven_map():
     # TANSY — SECRET ROUTE
     # ============================================================
 
-    if tansy_route_triggered or tansy_route_unlocked or tansy_route_progress > 0:
+    if chapter >= 3 and tansy_route_offer_seen:
 
         frame:
             at secret_card_enter
 
             xalign 0.5
-            ypos 585
+            ypos 700
 
-            xsize 400
-            ysize 170
+            xsize 380
+            ysize 240
 
-            background Solid("#35144DEE")
+            background Solid("#9C55D8")
             padding (2, 2)
 
             frame:
@@ -458,6 +582,11 @@ screen mirthhaven_map():
                     xalign 0.5
                     yalign 0.5
                     spacing 8
+
+                    add "token tansy":
+                        xalign 0.5
+                        xsize 80
+                        ysize 80
 
                     text "✦ SECRET ROUTE ✦":
                         xalign 0.5
@@ -508,7 +637,7 @@ screen mirthhaven_map():
 
         textbutton "Spend Time Alone":
             xalign 0.5
-            ypos 900
+            ypos 950
 
             at map_bottom_enter, map_bottom_hover
 
@@ -528,7 +657,7 @@ screen mirthhaven_map():
 
         textbutton "Continue Main Story":
             xalign 0.5
-            ypos 900
+            ypos 950
 
             at map_bottom_enter, map_bottom_hover
 

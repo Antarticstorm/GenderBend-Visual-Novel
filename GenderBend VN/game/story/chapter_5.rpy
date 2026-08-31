@@ -37,6 +37,7 @@ label chapter_5:
     # Location: The Solarium Sanctum — Grand Alchemy Laboratory
     # [SCENE START]
     # SFX: Sound Effect: Radiant choir-like hum, swirling golden wind, magical chiming bell, loud cork popping
+    scene bg nurse at bg_character_focus
     "(You lift the crystal goblet containing the golden Alkahest of True Form to your lips.)"
     "(Tansy, Ellie, Clara, and Domitilla—who just burst through the lab doors carrying a keg of armory mead—all stand in a hushed circle, holding their breath.)"
     # Source [SPRITE: Tansy — Nervous, Holding Breath]
@@ -131,7 +132,7 @@ label chapter_5:
     # SFX: Sound Effect: Night breeze blowing softly, distant ocean waves, stars twinkling overhead
     "(You step out onto the tavern balcony overlooking the glowing harbor lights of Mirthhaven. One by one, Tansy, Ellie, Clara, and Domitilla join you at the railing, leaning beside you under the moonlight.)"
     # Source [SPRITE: Tansy — Warm, Proud Smile]
-    show tansy talking at tansy_size, char_far_left, enter_from_left
+    show tansy talking at tansy_size, expression_pop
     tansy "So... the brew is finished. Your body is restored. The Alkahest worked. What’s your next step, little wizard?"
     # Source [SPRITE: Commander Bruni — Crossing Arms, Grinning]
     show domitilla talking at domitilla_size, char_mid_right, expression_pop

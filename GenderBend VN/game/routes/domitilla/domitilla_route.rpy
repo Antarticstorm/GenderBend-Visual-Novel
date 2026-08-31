@@ -9,38 +9,43 @@ label domitilla_chapter_1:
 
     call route_transition("Domitilla Bruni", 1, "Discipline and Iron")
 
-    show domitilla angry at domitilla_size, char_center
+
     # Scene 1: The Ring of Sweat and Steel
     # Location: The Crestward Bastion — The Iron Ring (Morning)
+    scene bg iron_ring at bg_character_focus
+    with fade
     # [SCENE START]
     # SFX: Sound Effect: Heavy iron clashing, rhythmic boots stomping in dirt, harsh shouting of drillmasters, wind snapping through heavy military banners
-    "(The Crestward Bastion smells of sun-baked stone, furnace smoke, and leather. In the center of the training grounds lies \"The Iron Ring\"—a sunken dirt pit where the city garrison's elite vanguard refines their combat readiness. You stand near the wooden perimeter rail, observing the tactical application of combat maneuvers for your Sanctum research.)"
+    "(The Crestward Bastion smells of sun-baked stone, furnace smoke, and leather. In the center of the training grounds" 
+    "lies \"The Iron Ring\"—a sunken dirt pit where the city garrison's elite vanguard refines their combat readiness. You stand near the wooden perimeter rail, observing the tactical application of combat maneuvers for your Sanctum research.)"
     "(Barking orders at a line of exhausted, sweat-drenched recruits is Commander Domitilla Bruni."
     "Towering, built like a siege wall, and wearing blackened steel plate armor marked by years of campaign scars, she commands the pit with terrifying authority.)"
     # Source [SPRITE: Commander Domitilla — Stern, Barking Orders]
+    show domitilla angry at domitilla_size, char_center, enter_from_bottom
     domitilla "Wider stance! If a harbor drake hits that shield wall, half of you are going into the bay! Again!"
     "(She turns to grab a water skin—and her sharp, dark eyes lock onto you standing by the rail. There is no polite greeting, no acknowledgement of your Sanctum robes.)"
     # SFX: Sound Effect: Sudden heavy wooden WHOOSH!
     "(Without warning, Domitilla scoops a heavy, padded practice buckler off a weapon rack and hurls it straight at your chest!)"
     # Source [SPRITE: Commander Domitilla — Smirking, Challenging]
+    show domitilla talking at domitilla_size
     domitilla "Hey! You! Sanctum scholar! Stop gawking from the cheap seats and get in the Ring! Let's see if those magic robes are just for show!"
 
     menu:
         "Catch the buckler cleanly.":
             "(You catch the heavy buckler cleanly out of the air and strap it to your forearm without breaking eye contact.)"
-            show domitilla surprised
+            show domitilla surprised at expression_squish
             "(The wooden buckler slaps into your palm with a dull thud. You tighten the leather strap instantly, stepping down into the dirt pit.)"
             "(Grunts, her dark eyes flashing with mild surprise)"
             domitilla "Decent grip. At least you don't have butterfingers like these new recruits."
         "Catch the buckler with kinetic magic.":
             "(You cast a swift kinetic pulse to catch and freeze the buckler mid-air, snagging it casually with a smirk.)"
-            show domitilla happy
+            show domitilla happy at expression_pop
             "(The shield stops dead an inch from your chest, enveloped in a blue shimmering aura before you take it in hand.)"
             "(Chuckles gruffly, hefting a heavy wooden practice longsword)"
             domitilla "Fancy tricks. Let's see if that aura holds up when eighty pounds of steel comes cracking down on it."
         "Catch it, recover, and step into the pit.":
             "(You catch the buckler clumsily against your chest, but immediately square your shoulders and step into the pit.)"
-            show domitilla surprised
+            show domitilla surprised at expression_squish
             "(You stumble back a step from the weight, but quickly catch your footing, strapping the buckler on and vaulting over the wooden rail.)"
             "(Raises an eyebrow)"
             domitilla "Lacks grace, but you didn't run away. That's already better than most bookworms."
@@ -49,7 +54,7 @@ label domitilla_chapter_1:
             # Source [SPRITE: Commander Domitilla — Weapon Raised, Battle Stance]
             domitilla "Garrison rules, wizard. No lethal spells. Keep your feet planted, protect your core, and don't cry if you get a bruise. Ready!"
 
-    show domitilla talking
+    show domitilla talking at expression_pop
     # Scene 2: Testing the Spine
     # Location: The Iron Ring — Sparring Circle
     # [SCENE START]
@@ -60,25 +65,25 @@ label domitilla_chapter_1:
     menu:
         "Reinforce your buckler and absorb the blow.":
             "(You raise your buckler and reinforce it with a dense kinetic barrier, absorbing her overhead blow head-on.)"
-            show domitilla surprised
+            show domitilla surprised at expression_squish
             # SFX: Sound Effect: HEAVY CRACK OF WOOD ON BARRIER!
             "(Her sword slams into your barrier-reinforced buckler. Shockwaves ripple through your arms, but your stance holds firm in the dirt. Domitilla's arms recoil from the impact.)"
             domitilla "Solid! You actually rooted your weight!"
         "Daze her and slip around her flank.":
             "(You weave a swift flash-light spell to momentarily daze her vision, stepping agilely around her flank.)"
-            show domitilla happy
+            show domitilla happy at expression_pop
             "(A burst of brilliant white light flares. Domitilla blinks, her strike missing by an inch as you pivot behind her, ringing your buckler against her backplate.)"
             "(Pivots instantly, a sharp grin spreading on her face)"
             domitilla "Clever footwork! Using the sun against me!"
         "Meet her strike with a kinetic counter-force.":
             "(You meet her blow halfway, using a targeted kinetic force-push against her sword hilt to lock weapons in a contest of leverage.)"
-            show domitilla surprised
+            show domitilla surprised at expression_squish
             # SFX: Sound Effect: DULL METALLIC REBOUND!
             "(Your magic-infused counter-force slams into her blade guard, locking your buckler against her sword. You stand toe-to-toe, your faces inches apart in a clash of pure willpower.)"
             "(Her muscles strain, eyes wide with fierce thrill)"
             domitilla "Look at you pushing back! Not bad, kid!"
 
-    show domitilla happy
+    show domitilla happy at expression_pop
     # Scene 3: Iron in the Spine
     # Location: The Iron Ring — Post-Spar
     # [SCENE START]
@@ -96,18 +101,19 @@ label domitilla_chapter_1:
     menu:
         "I'll be back, Commander. And next time, don't hold back.":
             "(You wipe the dirt off your tunic and smirk back at her.)"
-            show domitilla happy
+            show domitilla happy at expression_pop
             # [MC]
             mc "I'm holding you to that, Domitilla. Next time, give me everything you've got."
             # Source [SPRITE: Commander Domitilla — Boisterous Laugh, Grinning]
             "(Domitilla throws her head back and lets out a booming, full-chested laugh that echoes off the stone ramparts.)"
+            show domitilla talking at expression_pop     
             domitilla "Ha! I like the fire in your belly, wizard! Keep that attitude up, and I might just turn you into a vanguard officer yet. The Ring is open to you anytime."
             "(You unstrap the buckler and hand it back, leaving the Iron Ring with the fierce satisfaction of having earned the respect of the city's toughest warrior.)"
             hide domitilla
             jump finish_domitilla_event
         "It's an honor to learn from the best warrior in Mirthhaven.":
             "(You salute her respectfully with the buckler before returning it.)"
-            show domitilla talking
+            show domitilla talking at expression_pop
             # [MC]
             mc "Thank you, Commander. It's rare to find a martial master who understands how to test magic properly."
             # Source [SPRITE: Commander Domitilla — Nodding, Serious Respect]
@@ -118,7 +124,7 @@ label domitilla_chapter_1:
             jump finish_domitilla_event
         "I wanted to see the famous Commander Bruni in action.":
             "(You step closer, meeting her fierce dark eyes directly.)"
-            show domitilla surprised
+            show domitilla surprised at expression_squish
             # [MC]
             mc "I've heard rumors about the unbreakable Commander Bruni. I had to see if the legends were true."
             # Source [SPRITE: Commander Domitilla — Flustered Glint, Smirking]
@@ -133,9 +139,10 @@ label domitilla_chapter_2:
 
     call route_transition("Domitilla Bruni", 2, "Scars and Heavy Armor")
 
-    show domitilla normal at domitilla_size, char_center
     # Scene 1: After-Hours in the Armory
     # Location: The Crestward Bastion — The Central Armory (Night)
+    scene bg crestward_bastion at bg_character_focus
+    with fade
     # [SCENE START]
     # SFX: Sound Effect: Distant harbor waves, quiet crackle of dying forge embers, clinking of metal tools, heavy leather straps unbuckling
     "(The Bastion’s main armory is vast and shadowed at night.)"
@@ -147,29 +154,31 @@ label domitilla_chapter_2:
     "(She grimaces softly, reaching up with her right hand to flex and rub a dark, angry purple bruise along her left shoulder.)"
     # Source [SPRITE: Commander Domitilla — Unarmored, Weary, Sore]
     "(Without looking up)"
+    show domitilla normal at domitilla_size, char_center, expression_pop, enter_from_bottom
     domitilla "Armory is closed, soldier. Leave your requisition forms on the desk..."
     "(She turns her head and spots you holding your satchel. Her sharp stance instantly relaxes, replaced by a low, tired exhale.)"
+    show domitilla talking at expression_pop
     domitilla "Ah. It's you, wizard. Apologies. Fourteen hours in full plate will make a woman blind to who's walking through the door."
     menu:
         "That looks like a nasty blow. Are you alright?":
             "(You set your satchel down softly and point to her shoulder.)"
-            show domitilla surprised
+            show domitilla surprised at domitilla_size, char_center, expression_squish
             mc "That bruise looks painful, Domitilla."
             "(Grunts, flexing her arm with a grimace)"
             domitilla "Took a bad hit from a recruit's polearm during heavy drills. It's nothing I haven't slept off a hundred times before."
         "It looks like you need attention more than the armor does.":
             "(You step closer and offer your satchel.)"
-            show domitilla surprised
+            show domitilla surprised at domitilla_size, char_center
             mc "The charms can wait until morning. Let me see that shoulder."
             "(Raises an eyebrow, mildly surprised by your direct concern)"
             domitilla "Direct and attentive. I can respect that."
         "Even the unbreakable Commander Bruni needs a tune-up?":
             "(You tease her gently with a warm smile.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, char_center, expression_pop
             mc "Does the garrison know their commander has a weak spot?"
             "(A small, tired smirk touches her lips)"
             domitilla "Keep your voice down, scholar. You'll ruin my terrifying reputation."
-    show domitilla talking
+    show domitilla talking at domitilla_size, char_center, expression_pop
     # [SCENE CONTINUES]
     "(You unbutton your satchel and draw out a small glass jar of magic-infused healing salve. The amber potion glows faintly with a soothing, warm luminescence.)"
     # Source [SPRITE: Commander Domitilla — Hesitant, Guarded]
@@ -196,23 +205,23 @@ label domitilla_chapter_2:
     menu:
         "You've fought in a lot of hard battles to earn these, haven't you?":
             "(You gently trace the edge of a prominent scar near her collarbone with genuine respect.)"
-            show domitilla normal
+            show domitilla normal at domitilla_size, char_center, expression_pop
             "(Domitilla's eyes close as your fingers lightly skim the raised silver mark.)"
             "(Quietly)"
             domitilla "Campaign in the Northern Passes. Took a stray crossbow bolt holding the ridge. Reminds me why I wear heavy plate now."
         "Try to breathe through it. Your muscles are practically locked up.":
             "(You apply firm, expert pressure to a deep knot, focusing purely on easing her pain.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, char_center, expression_pop
             "(A satisfying pop echoes in the quiet room as the knot releases under your magic-infused pressure.)"
             "(Exhales deeply, her head resting back against your arm for support)"
             domitilla "Gods above... that magic of yours is a miracle, wizard."
         "You don't always have to bear the brunt of every hit.":
             "(You lean down slightly, speaking softly near her ear.)"
-            show domitilla surprised
+            show domitilla surprised at domitilla_size, char_center, expression_squish
             "(Your warm breath against her neck causes a faint goosebump to ripple down her arm.)"
             "(Whispers)"
             domitilla "If I don't take the hit... someone weaker does. That's the duty."
-    show domitilla normal
+    show domitilla normal at domitilla_size, char_center, expression_pop
     # Scene 3: The Wall That Gets Tired
     # Location: The Central Armory — Workbench
     # [SCENE START]
@@ -229,7 +238,7 @@ label domitilla_chapter_2:
     menu:
         "Then let me hold up the wall for a little while tonight.":
             "(You rest your hands gently on her uninjured shoulder, leaning in close.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, char_center, expression_pop
             "(You keep your hands rested on her broad shoulders, offering a solid, comforting anchor against her weariness.)"
             # [MC]
             mc "Lean on me tonight, Domitilla. The garrison can survive without their wall for a few hours."
@@ -241,7 +250,7 @@ label domitilla_chapter_2:
             jump finish_domitilla_event
         "You're a human being before you're a commander.":
             "(You step around to face her, looking down into her eyes with deep warmth.)"
-            show domitilla surprised
+            show domitilla surprised at domitilla_size, char_center, expression_squish
             "(You step in front of her, validating her humanity with steady, sincere conviction.)"
             # [MC]
             mc "You carry the weight of this whole city, Domitilla. Don't feel ashamed for feeling tired. You're allowed to be human."
@@ -253,7 +262,7 @@ label domitilla_chapter_2:
             jump finish_domitilla_event
         "You're much softer under all that steel than you let on.":
             "(You gently tilt her chin up with your fingers, giving a soft smile.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, char_center, expression_pop
             "(You gently touch her jaw, lifting her face to meet your gaze with a teasing, electric warmth.)"
             # [MC]
             mc "Everyone thinks you're made of stone and iron... but I'm starting to see how sweet you really are."
@@ -270,9 +279,10 @@ label domitilla_chapter_3:
 
     call route_transition("Domitilla Bruni", 3, "Off-Duty Fire")
 
-    show domitilla happy at domitilla_size, char_center
     # Scene 1: Mead and Unbuttoned Collars
     # Location: The Laughing Anchor — Private Corner Booth (Night)
+    scene bg laughing_anchor at bg_character_focus
+    with fade
     # [SCENE START]
     # SFX: Sound Effect: Boisterous sea-shanties, fiddle music, clinking wooden tankards, roaring fireplace crackle
     "(Far from the disciplined stone corridors of the Crestward Bastion, the back corner of The Laughing Anchor is warm, noisy, and thick with the scent of roasted meat and heavy mead.)"
@@ -281,6 +291,7 @@ label domitilla_chapter_3:
     "(Dressed in a loose, cream-colored linen shirt with the collar unbuttoned at her throat and a dark leather vest, she looks remarkably broad, relaxed, and striking.)"
     "(A half-empty horn of dark dwarven mead sits in her large hand.)"
     # Source [SPRITE: Commander Domitilla — Off-Duty, Relaxed, Boisterous]
+    show domitilla happy at domitilla_size, char_center, enter_from_bottom
     domitilla "Well, look what the tide washed in! Sit down, wizard! I was starting to think everyone in this tavern was too terrified to share a bench with me."
     "(She slams her mead horn onto the oak table with a heavy thud, sliding over on the bench to make room."
     "A deep, full-chested laugh rumbles from her chest—a rich, warm sound you’ve never heard on the parade grounds.)"
@@ -289,21 +300,21 @@ label domitilla_chapter_3:
     menu:
         "To off-duty commanders and surviving another week of garrison drills.":
             "(You slide onto the wooden bench beside her and raise a tankard.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, expression_pop
             # SFX: Sound Effect: CLINK OF TANKARDS!
             "(Laughs heartily, clinking her horn against yours)"
             domitilla "I'll drink to that! The recruits nearly drove me to execution duty on Tuesday!"
         "Commander... you look incredible out of your armor.":
             "(You look her up and down with an appreciative smile.)"
-            show domitilla surprised
+            show domitilla surprised at domitilla_size, expression_squish
             "(A dark, handsome flush touches her cheeks, though she smirks)"
             domitilla "Watch it, wizard. Flattery gets you extra laps in the pit... but I won't pretend I don't like hearing it."
         "Tell me some real campaign stories.":
             "(You lean back against the bench, amused.)"
-            show domitilla happy_talking
+            show domitilla happy_talking at domitilla_size, expression_pop
             "(Grins, taking a deep swig of mead)"
             domitilla "Oh, I've got stories that would make your Sanctum archmagi turn pale as chalk."
-    show domitilla happy_talking
+    show domitilla happy_talking at domitilla_size
     # [SCENE CONTINUES]
     "(The evening wears on.)"
     "(Domitilla drops her stern commander facade entirely, swapping rough military jokes, slapping the table when she laughs, and leaning her heavy shoulder into yours as the tavern music swells.)"
@@ -319,7 +330,7 @@ label domitilla_chapter_3:
     # Source [SPRITE: Commander Domitilla — Rising, Dangerous Scowl]
     domitilla "You've got three seconds to pull that filthy hand back before I—"
     "(Before she can step up to take the blow, you move.)"
-    show domitilla angry
+    show domitilla angry at domitilla_size, expression_squish
     menu:
         "Disarm him with a controlled kinetic spell.":
             "(You step smoothly between Domitilla and the mercenary, weaving a silent kinetic spell that disarms his aggression and sends his mug flying into the trash.)"
@@ -343,11 +354,10 @@ label domitilla_chapter_3:
             jump domitilla_chapter_3_dishonorable
 
 label domitilla_chapter_3_honorable:
-    show domitilla surprised
+    show domitilla surprised at domitilla_size, expression_squish
     # Scene 3: The Sentinel's Heat / Consequence
     # Location: The Laughing Anchor — Corner Booth
     # [SCENE START]
-    "(If Option A or Option B was chosen, the drunk mercenary retreats, leaving the booth safe and clear.)"
     "(Domitilla sits back down on the bench, completely stunned.)"
     "(Her dark eyes are wide as she looks at you—a woman who has spent her entire life standing on the frontlines for everyone else, suddenly realizing someone just stepped in front of her.)"
     # SFX: Sound Effect: Heartbeat hum, warm tavern lantern light
@@ -359,11 +369,11 @@ label domitilla_chapter_3_honorable:
     domitilla "I've spent fifteen years taking the blow for everyone in this city. Nobody steps in front of Commander Bruni. Nobody... except you."
     "(She squeezes your hand tighter, her thumb tracing over your knuckles with intense physical attraction.)"
     domitilla "I like it. Gods help me... I really like it."
-    show domitilla happy
+    show domitilla happy at domitilla_size, expression_pop
     menu:
         "From now on, you don't fight alone.":
             "(You turn your hand within her grip, lacing your fingers firmly with hers.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, char_center
             "(You lace your fingers tightly with hers, holding her calloused hand in an unbreakable grip.)"
             # [MC]
             mc "You're not the only one with iron in your spine, Domitilla. We stand together."
@@ -374,7 +384,7 @@ label domitilla_chapter_3_honorable:
             jump finish_domitilla_event
         "You protect the city... but who protects you?":
             "(You lean across the table, meeting her intense gaze inches away.)"
-            show domitilla surprised
+            show domitilla surprised at domitilla_size, expression_squish
             "(You lean in close, meeting her fierce gaze with steady, passionate conviction.)"
             # [MC]
             mc "Every shield needs someone backing it up. Let me stand behind you."
@@ -386,7 +396,7 @@ label domitilla_chapter_3_honorable:
             jump finish_domitilla_event
         "You look awfully flustered for a Garrison Commander.":
             "(You smirk softly, teasing her flustered state.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, expression_pop
             "(You offer a sleek, teasing smile, enjoying how completely undone the tough commander is.)"
             # [MC]
             mc "I didn't think the great Commander Bruni could get so flustered over a little protection."
@@ -400,7 +410,7 @@ label domitilla_chapter_3_honorable:
 label domitilla_chapter_3_dishonorable:
     $ domitilla_route_locked = True
     $ domitilla_romance_locked = True
-    show domitilla angry
+    show domitilla angry at domitilla_size, expression_squish
     # SFX: Sound Effect: TAVERN SILENCE, DISTRESSING GROANS OF THE TORTURED MERCENARY!
     "(As the drunk mercenary twitches and bleeds on the floor under your agonizing hex, you look back at Domitilla expecting praise... but find only cold, sharp disgust in her eyes.)"
     # Source [SPRITE: Commander Domitilla — Standing, Cold Disgust, Disappointed Scowl]
@@ -424,9 +434,10 @@ label domitilla_chapter_4:
 
     call route_transition("Domitilla Bruni", 4, "The Sentinel's Vow")
 
-    show domitilla normal at domitilla_size, char_center
     # Scene 1: Above the City of Sails
     # Location: The Crestward Bastion — Rooftop Ramparts at Dusk
+    scene bg crestward_bastion at bg_character_focus
+    with fade
     # [SCENE START]
     # SFX: Sound Effect: Heavy ocean breeze snapping through crimson garrison banners, distant gulls crying, twilight bell chiming across Mirthhaven
     "(High above the noise of the harbor, the rooftop ramparts of the Crestward Bastion offer an unbroken view of Mirthhaven.)"
@@ -440,26 +451,27 @@ label domitilla_chapter_4:
     "(As you step onto the battlements, Domitilla turns her head.)"
     "(Seeing you, the stern, hyper-vigilant posture she maintains for the garrison completely dissolves, replaced by an unmistakable softness in her dark eyes.)"
     # Source [SPRITE: Commander Domitilla — Windblown, Gentle Softness]
+    show domitilla normal at domitilla_size, char_center, expression_pop, enter_from_left
     domitilla "I was wondering when you'd arrive, wizard. Up here... the wind blows away the smell of forge smoke and old ledgers. It's the only place in the city where I can actually hear myself think."
     menu:
         "It's a breathtaking view, Domitilla. But I prefer the company.":
             "(You walk up to the battlement ledge and stand beside her, shoulder to shoulder.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, expression_pop
             mc "There's nowhere else in Mirthhaven I'd rather be right now."
             "(A soft, radiant smile touches her lips)"
             domitilla "Nor I. The city looks entirely different when I'm looking at it with you."
         "You shouldn't stand out in the sea chill without your armor.":
             "(You step up quietly and gently adjust the clasp of her heavy cloak against the cold wind.)"
-            show domitilla surprised
+            show domitilla surprised at domitilla_size, expression_squish
             "(Your fingers brush against her neck as you adjust her cloak. Domitilla leans into your touch slightly, exhaling a quiet, contented breath.)"
             domitilla "Always looking out for me... I'm still not used to it, but gods know I'm grateful."
         "Reporting for duty on the high watch, Commander Bruni.":
             "(You offer a sleek, playful military salute before leaning against the stone rail.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, expression_pop
             mc "Standing guard with you isn't the worst assignment in the world."
             "(Chuckles softly, her deep voice humming against the breeze)"
             domitilla "At ease, scholar. Tonight, there are no commanders. Just us."
-    show domitilla talking
+    show domitilla talking at domitilla_size, expression_pop
     # [SCENE CONTINUES]
     "(Domitilla turns her back to the city, leaning her hips against the stone parapet.)"
     "(She reaches up to the collar of her tunic, her large, calloused fingers resting on a heavy, ancient bronze insignium pinned to her lapel.)"
@@ -482,23 +494,23 @@ label domitilla_chapter_4:
     menu:
         "This is the highest honor you could ever give me.":
             "(You gently squeeze her broad hands back, looking up into her dark eyes.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, expression_pop
             mc "I know what this means to you. I won't ever take it for granted."
             "(Her fingers tighten around yours, her expression intensely tender)"
             domitilla "I know you won't. That's why it belongs in your hands."
         "I will guard it with my life.":
             "(You trace the warm metal with your thumb, feeling its weight.)"
-            show domitilla happy
+            show domitilla happy at domitilla_size, expression_pop
             mc "I'll wear this as a reminder that I always have your back."
             "(A proud, fierce light gleams in her eyes)"
             domitilla "A true vanguard. I couldn't have chosen a better partner."
         "Are you sure about this?":
             "(You hold her gaze with genuine concern.)"
-            show domitilla normal
+            show domitilla normal at domitilla_size, expression_pop
             mc "You don't have to give up your burden to prove your trust."
             "(Shakes her head softly, a quiet smile breaking across her face)"
             domitilla "I'm not giving up a burden, wizard. I'm choosing who I share my life with."
-    show domitilla happy
+    show domitilla happy at domitilla_size, expression_pop
     # [SCENE CONTINUES]
     "(The twilight sky shifts into a velvet dusk, the first stars sparkling above the sea. Domitilla does not let go of your hands. Her dark eyes shine with an unreserved, burning vulnerability.)"
     # Source [SPRITE: Commander Domitilla — Emotional Confession, Unreserved Love]
@@ -516,7 +528,7 @@ label domitilla_chapter_4:
         "Pull Domitilla into a passionate kiss.":
             "(You reach up, grab the lapels of her commander's cloak, and pull her down into a deep, passionate, and unreserved kiss under the twilight sky.)"
             $ domitilla_ending = "vanguard_of_the_heart"
-            show domitilla surprised
+            show domitilla surprised at domitilla_size, expression_squish
             # SFX: Sound Effect: Romantic brass and string orchestral swell, heavy sea wind whistling warmly
             "(You don't hesitate. You reach up, grabbing the heavy lapels of her cloak, and pull the towering commander down to meet you.)"
             "(You seal her confession with a deep, breathless, and fierce kiss under the starry sky.)"
@@ -535,7 +547,7 @@ label domitilla_chapter_4:
         "Pledge yourself as her lifelong vanguard partner.":
             "(You clasp the bronze insignium firmly over your heart and pledge your eternal loyalty as her vanguard partner on and off the battlefield.)"
             $ domitilla_ending = "shield_bound_oath"
-            show domitilla happy
+            show domitilla happy at domitilla_size, expression_pop
             # SFX: Sound Effect: Majestic military horn melody, warm ambient wind
             "(You take the heavy bronze crest and press it firmly over your heart, looking into her eyes with unshakeable conviction.)"
             # [MC]
@@ -549,7 +561,7 @@ label domitilla_chapter_4:
         "Return the crest and remain noble allies.":
             "(You gently close her broad fingers back over the bronze crest, holding her gaze with fond regret.)"
             $ domitilla_ending = "unyielding_watch"
-            show domitilla normal
+            show domitilla normal at domitilla_size, expression_pop
             # SFX: Sound Effect: Melancholic french horn and cello duet, cold gust of ocean wind
             "(You look at the bronze insignium in your palm, then gently lift her hand, closing her broad, calloused fingers back over the metal.)"
             # [MC]

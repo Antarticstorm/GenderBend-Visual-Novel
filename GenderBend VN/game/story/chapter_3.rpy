@@ -51,6 +51,8 @@ label chapter_3:
     show clara happy at clara_size, char_center, expression_pop
     clara "A deal’s a deal, sorcerer. Ingredient number four: Midnight Lotus Petal. You’ve earned my deep respect... now go give Commander Bruni at the fortress a run for her money!"
 
+    $ has_midnight_lotus = true
+    call item_acquired ("item midnight_lotus", "Midnight Lotus Petal")  
     hide clara
     # Scene 2: The Iron Ring
     # Location: The Crestward Bastion — Training Grounds
@@ -128,6 +130,10 @@ label chapter_3:
             "(Bruni reaches into her armor belt and tosses a heavy, gleaming ingot of black metal to you.)"
             show domitilla happy at domitilla_size, char_center
             domitilla "Ingredient number five: Steel-Core Marrow! You earned it, sorcerer! Any time you want a real commission in the Vanguard, my doors are open!"
+
+            $ has_steel_core = true
+            call item_acquired("item steel_core", "Steel-Core Marrow")
+
             hide domitilla
             call chapter_end(3, "Shadow Markets & The Crucible")
             $ story_progress += 1
@@ -146,6 +152,8 @@ label chapter_3:
             "(Bruni lowers her sword, wiping sweat from her brow with a grin of genuine military respect.)"
             show domitilla talking at domitilla_size, char_center, expression_pop
             domitilla "You’ve got raw iron in your core, scholar! Few recruits can take a hit like that without breaking a shoulder. Here is your Steel-Core Marrow—use it well!"
+            $ has_steel_core = true
+            call item_acquired("item steel_core", "Steel-Core Marrow")
             hide domitilla
             call chapter_end(3, "Shadow Markets & The Crucible")
             $ story_progress += 1
@@ -172,6 +180,8 @@ label chapter_3:
             domitilla "Take your marrow and get out of my ring."
             domitilla "You have the ingredient, but you leave here with broken gear, bruised ribs, and zero honor."
             domitilla "Learn how to fight properly before you get yourself killed."
+            $ has_steel_core = true
+            call item_acquired("item steel_core", "Steel-Core Marrow")
             # [SCENE END]
             hide domitilla
             call chapter_end(3, "Shadow Markets & The Crucible")

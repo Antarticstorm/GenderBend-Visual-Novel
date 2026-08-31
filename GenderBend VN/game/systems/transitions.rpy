@@ -241,7 +241,7 @@ screen end_credits():
             size 20
             color "#D7B56D"
 
-        text "CrematetedLiver":
+        text "Marby Blum":
             xalign 0.5
             size 26
 
@@ -254,7 +254,7 @@ screen end_credits():
             size 20
             color "#D7B56D"
 
-        text "Crematedliver  •  Evening":
+        text "Marby Blum  •  Evening":
             xalign 0.5
             size 26
 

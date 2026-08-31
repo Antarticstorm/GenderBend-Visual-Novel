@@ -55,7 +55,7 @@ label chapter_4:
     # [SCENE START]
     "(The pool of volatile potion sludge on the floor begins to swirl, forming a bubbling, multi-colored arcana vortex that creeps rapidly toward the glass greenhouse doors.)"
     # Source [SPRITE: Tansy — Grinning, Watching Intently]
-    show tansy happy at tansy_size, char_right, expression_pop
+    show tansy happy at tansy_size, expression_pop
     tansy "Well, look at that chemical feedback! Pure alchemy in action! What's your move, apprentice?"
     # [MC]
     mc "I'm not letting all our hard work go up in smoke!"
@@ -74,7 +74,7 @@ label chapter_4:
         "Absorb the volatile energy with a Siphon Ward.":
             "(Channel a Siphon Ward through your body to absorb the excess volatile energy)"
             "(You draw the raw magical heat into your palms, channeling it harmlessly down into the stone floorings. The sludge goes completely inert.)"
-            show tansy talking at tansy_size, char_right, expression_pop
+            show tansy talking at char_right, expression_pop
             tansy "Oho! Commander Bruni's fire training really taught you how to handle raw energy!"
 
     # SFX: Sound Effect: Hissing steam fading, quiet room restored, gentle dripping
@@ -86,6 +86,9 @@ label chapter_4:
     # Source [SPRITE: Ellie — Soft Smile, Handing Item]
     show elianna happy at elianna_size, char_left, expression_pop
     elianna "Here... ingredient number six: Solar Bloom Essence. All six catalyst components are finally gathered!"
+    
+    $ has_solar_bloom = true
+    call item_acquired("item solar_bloom", "Solar Bloom Essence")
     # Scene 3: The Grand Alembic Ritual
     # Location: The Solarium Sanctum — Grand Alchemy Laboratory
     # [SCENE START]
@@ -94,7 +97,7 @@ label chapter_4:
     "(In the center of the room stands the Grand Alembic—a massive, ancient bronze and glass apparatus mounted over a glowing mana-furnace.)"
     "(The base liquid of the Alkahest of True Form boils gently.)"
     # Source [SPRITE: Tansy — Proud, Masterful Tone]
-    show tansy talking at tansy_size, char_right
+    show tansy talking at tansy_size, expression_pop
     tansy "Alright, apprentice. This is it. Sunstone Powder, Luminescent Sea-Gland, Draconic Cinder-Ash, Midnight Lotus Petal, Steel-Core Marrow, and Solar Bloom Essence."
     "(Tansy steps back, placing her hands on her hips while Ellie nervously checks the temperature gauges.)"
     # Source [SPRITE: Ellie — Focused, Watching Gauges]
@@ -103,7 +106,7 @@ label chapter_4:
     elianna "Combining six wildly opposing elemental forces—fire, water, solar, dark, earth, and light—is extremely delicate."
     elianna "One wrong move during the infusion will destroy the batch!"
     # Source [SPRITE: Tansy — Smirking, Encouraging]
-    show tansy talking at tansy_size, char_right
+    show tansy talking at tansy_size, expression_pop
     tansy "You brought us this far, kiddo. I'm stepping back. You weave the catalyst infusion. How are you balancing the six elements into the brew?"
 
     menu:
@@ -113,10 +116,10 @@ label chapter_4:
             "(As you feed the ingredients in perfect opposing pairs, the violent magic reactions cancel each other out seamlessly.)"
             "(The liquid inside the Grand Alembic turns into a pristine, shimmering liquid gold that glows like a miniature sun.)"
             # Source [SPRITE: Tansy — Stunned, Deeply Impressed]
-            show tansy happy at tansy_size, char_right, expression_pop
+            show tansy happy at tansy_size, expression_pop
             tansy "By the Higher Mages... Perfect elemental balance on the first attempt! That is Grandmaster-level alchemy control!"
             # Source [SPRITE: Ellie — Beaming, Clapping Hands]
-            show elianna happy at elianna_size, char_left, expression_pop
+            show elianna happy at elianna_size, expression_pop
             elianna "It's flawless! Look at the clarity of the Alkahest! Not a single impurity!"
             "(The golden potion settles into a crystal goblet, radiating pure reversal magic. You stand over the completed cure with total mastery.)"
             hide elianna
@@ -131,7 +134,7 @@ label chapter_4:
             "(You extend your hands, weaving your personal magic aura around the six catalysts.)"
             "(As they dissolve into the alembic, the brew pulses in exact rhythm with your own heartbeat, turning into a rich, honey-golden nectar attuned specifically to your body.)"
             # Source [SPRITE: Tansy — Laughing Proudly]
-            show tansy happy at tansy_size, char_right
+            show tansy happy at tansy_size, expression_pop
             tansy "A living soul-bind infusion! You attuned the cure directly to your own mana signature! Brilliant thinking!"
             # Source [SPRITE: Ellie — Warm Smile]
             show elianna sad at elianna_size, char_left, expression_pop
@@ -153,15 +156,15 @@ label chapter_4:
             mc "AAAAGH! IT BURNS!"
             # SFX: Sound Effect: Sizzling arcana burn, glass crunching underfoot
             # Source [SPRITE: Ellie — Screaming, Running Forward]
-            show elianna angry at elianna_size, char_left, expression_squish
+            show elianna angry at elianna_size, expression_squish
             elianna "SORCERER! NO!"
             "(Ellie rushes over, desperately applying cooling salve to your severely scorched hands as you collapse to your knees. The ruined alembic smokes darkly, coated in a thick, muddy brown sludge.)"
             # Source [SPRITE: Tansy — Furious, Scolding]
-            show tansy surprised at char_right, expression_squish
+            show tansy surprised at tansy_size, expression_squish
             tansy "WHAT WERE YOU THINKING?! Forcing maximum pressure on six unstable catalysts?! Alchemy isn't a battering ram!"
             "(Tansy spends ten grueling minutes using her own high-tier mana to manually salvage whatever degraded residue remains at the bottom of the shattered furnace.)"
             # Source [SPRITE: Tansy — Sighing, Handing Corrupted Potion]
-            show tansy frown at char_right, expression_pop
+            show tansy frown at tansy_size, expression_pop
             tansy "The main batch is completely ruined."
             tansy "I managed to condense a degraded, bitter sludge tincture from the residue... but because of the magic burn on your hands and the corrupted brew, the transformation back is going to be incredibly painful."
             "(You hold the dark, foul-smelling goblet with bandaged, throbbing hands. The cure is barely usable, leaving you injured and forced to drink an agonizingly flawed potion.)"

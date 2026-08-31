@@ -9,6 +9,17 @@ image bg market = "images/backgrounds/Market.PNG"
 image bg nautilus_point = "images/backgrounds/Nautilus_Point.PNG"
 image bg solarium_sanctum = "images/backgrounds/Solarium_Sanctum.PNG"
 image bg furnace_pier = "images/backgrounds/The_Furnace_Pier.PNG"
+image bg nurse = "images/backgrounds/Nurse_Office.PNG"
+
+# =========================
+# ITEM ASSETS
+# =========================
+image item sunstone = "images/items/sunstone_powder.png"
+image item sea_gland = "images/items/sea_gland.png"
+image item cinder_ash = "images/items/cinder_ash.png"
+image item midnight_lotus = "images/items/midnight_lotus.png"
+image item steel_core = "images/items/steel_core_marrow.png"
+image item solar_bloom = "images/items/solar_bloom_essence.png"
 
 # ============================================================
 # BACKGROUND PRESENTATION
@@ -115,6 +126,16 @@ image elianna smug = "images/characters/elianna/smug1.png"
 
 image elianna very_smug = "images/characters/elianna/smug2.png"
 
+
+# ============================================================
+# MAP CHARACTER TOKENS
+# ============================================================
+
+image token clara = "images/ui/tokens/Clara_Token.png"
+image token elianna = "images/ui/tokens/Ellie_Token.png"
+image token domitilla = "images/ui/tokens/Domitilla_Token.png"
+image token tansy = "images/ui/tokens/Tansy_Token.png"
+
 # ============================================================
 # CHARACTER POSITIONS
 # ============================================================
@@ -189,18 +210,15 @@ transform enter_from_bottom:
     easeout 0.45 yoffset 0 alpha 1.0
 
 transform expression_pop:
+    yoffset 0
 
-    zoom 1.0
+    easeout 0.06 yoffset -18
+    easein 0.10 yoffset 0
 
-    linear 0.06 zoom 1.04
-    linear 0.08 zoom 0.98
-    easeout 0.08 zoom 1.0
 
 transform expression_squish:
+    yoffset 0
 
-    xzoom 1.0
-    yzoom 1.0
-
-    linear 0.06 xzoom 1.05 yzoom 0.94
-    linear 0.08 xzoom 0.97 yzoom 1.04
-    easeout 0.08 xzoom 1.0 yzoom 1.0
+    linear 0.05 yoffset 8
+    linear 0.07 yoffset -10
+    easeout 0.10 yoffset 0

@@ -124,3 +124,11 @@ default domitilla_ending = None
 # default barek_route_locked = False
 
 # default barek_ending = None
+
+#Items
+default has_sunstone = False
+default has_sea_gland = False
+default has_cinder_ash = False
+default has_midnight_lotus = False
+default has_steel_core = False
+default has_solar_bloom = False
