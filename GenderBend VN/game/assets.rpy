@@ -18,8 +18,8 @@ transform bg_normal:
     blur 1.0
 
 transform bg_character_focus:
-    blur 3.0
-    matrixcolor BrightnessMatrix(-0.08)
+    blur 8.0
+    matrixcolor BrightnessMatrix(-0.10)
 
 # =========================
 # CHARACTER ASSETS

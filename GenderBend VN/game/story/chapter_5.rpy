@@ -125,7 +125,7 @@ label chapter_5:
 
     # Scene 3: A Destiny Forged in Magic & Steel
     # Location: The Laughing Anchor — Balcony Overlooking Mirthhaven
-    show tansy normal at tansy_size, char_far_left
+    show tansy happy at tansy_size, char_far_left
     show clara normal at clara_size, char_mid_left
     show domitilla normal at domitilla_size, char_mid_right
     show elianna normal at elianna_size, char_far_right

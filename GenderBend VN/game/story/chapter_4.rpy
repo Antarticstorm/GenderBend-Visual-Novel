@@ -45,7 +45,7 @@ label chapter_4:
             "(Grasp Tansy's raised wrist to forcefully cut off her spell focus)"
             "(You grab Tansy's hand mid-incantation, redirecting her wand tip safely toward the stone hearth.)"
             show tansy teasing
-            tansy "Party pooper! I had that totally under control... mostly! Well, 40% under control!"
+            tansy "Party pooper! I had that totally under control... mostly! Well, 40 percent under control!"
 
     # SFX: Sound Effect: Potion froth growing larger, deep rumbling arcana reaction
     # Source [SPRITE: Ellie — Distressed, Trembling]
@@ -124,7 +124,8 @@ label chapter_4:
             hide tansy
             call chapter_end(4, "The Double-Witch Lab Panic")
             $ story_progress += 1
-            jump finish_chapter_4_free_time
+            $ setup_free_time(4)
+            jump free_time
         "Use your mana as a living bridge between all six catalysts.":
             "(You channel your own mana channels as a living bridge, harmonizing all six ingredients simultaneously into a unified golden nexus.)"
             # SFX: Sound Effect: Deep resonant hum, warm pulse of magic radiating through floor
@@ -141,7 +142,8 @@ label chapter_4:
             hide tansy
             call chapter_end(4, "The Double-Witch Lab Panic")
             $ story_progress += 1
-            jump finish_chapter_4_free_time
+            $ setup_free_time(4)
+            jump free_time
         "Force all six catalysts into the alembic at maximum pressure.":
             "(You dump all six ingredients into the boiling chamber at once while forcing maximum magic pressure to speed up the brewing process.)"
             $ chapter_4_bad_outcome = True
@@ -169,4 +171,5 @@ label chapter_4:
             hide tansy
             call chapter_end(4, "The Double-Witch Lab Panic")
             $ story_progress += 1
-            jump finish_chapter_4_free_time
+            $ setup_free_time(4)
+            jump free_time

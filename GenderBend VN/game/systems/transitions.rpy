@@ -128,7 +128,7 @@ screen chapter_end_card(number, title):
         text "MIRTHHAVEN":
             xalign 0.5
             size 24
-            
+
 label chapter_end(number, title):
 
 scene black
@@ -142,3 +142,70 @@ hide screen chapter_end_card
 with fade
 
 return
+
+# ============================================================
+# MAP CARD ANIMATIONS
+# ============================================================
+
+transform map_card_available:
+    alpha 1.0
+    zoom 1.0
+
+
+transform map_card_unavailable:
+    alpha 0.55
+    zoom 1.0
+
+
+transform map_card_hover:
+    on idle:
+        ease 0.15 zoom 1.0 yoffset 0
+
+    on hover:
+        ease 0.15 zoom 1.025 yoffset -8
+
+# Header enters from above.
+transform map_header_enter:
+    alpha 0.0
+    yoffset -25
+
+    pause 0.05
+
+    easeout 0.35 alpha 1.0 yoffset 0
+
+
+# Normal route cards appear one after another.
+transform map_card_enter(delay=0.0):
+    alpha 0.0
+    yoffset 25
+    zoom 0.97
+
+    pause delay
+
+    easeout 0.30 alpha 1.0 yoffset 0 zoom 1.0
+
+
+# Tansy appears separately from below.
+transform secret_card_enter:
+    alpha 0.0
+    yoffset 25
+    zoom 0.95
+
+    pause 0.45
+
+    easeout 0.35 alpha 1.0 yoffset 0 zoom 1.0
+
+
+# Dim cards that cannot currently be selected.
+transform map_card_unavailable:
+    alpha 0.48
+
+
+# Subtle pulse for an important available route.
+transform route_available_glow:
+    alpha 1.0
+
+    linear 1.1 alpha 0.82
+    linear 1.1 alpha 1.0
+
+    repeat
